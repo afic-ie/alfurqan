@@ -10,10 +10,10 @@
   --gold-deep: #9a7a2b;    /* gold text on light backgrounds */
   --mark: #7a5a12;         /* change triangles: dark enough on the jamaat tint and in greyscale */
   --gold-soft: #ead9a6;    /* gold text on dark panels */
-  --tint: #bfd5f8;         /* jamaat cells (dark enough to survive a greyscale print) */
-  --tint-2: #b3cbf4;       /* jamaat cells, alternate rows */
-  --fri: #e4edfb;          /* Friday rows */
-  --fri-j: #a6c2ef;        /* Friday jamaat cells */
+  --tint: #eaf2fd;         /* jamaat cells: a light wash; the column rules carry the greyscale print */
+  --tint-2: #e2ecfa;       /* jamaat cells, alternate rows */
+  --fri: #d6e3f8;          /* Friday and clock-change rows */
+  --fri-j: #b3cbf4;        /* their jamaat cells */
   --paper: #fcfcf9;
   --today: #ffe9a3;        /* today's row */
   --today-j: #f6d97e;      /* today's jamaat cells */
@@ -226,8 +226,8 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 .tt .mark { color: var(--gold-deep); font-weight: 700; margin-left: 0.3mm; }
 .tt tr:nth-child(even) td { background-color: rgb(21 71 194 / 0.025); }
 .tt tr:nth-child(even) td.j { background-color: var(--tint-2); }
-.tt tr.fri td { background: var(--fri); }
-.tt tr.fri td.j { background: var(--fri-j); }
+.tt tr.fri td, .tt tr.clock td { background: var(--fri); }
+.tt tr.fri td.j, .tt tr.clock td.j { background: var(--fri-j); }
 .tt tr.fri td.date { box-shadow: inset 0.8mm 0 0 var(--gold); }
 .tt tr.fri td.date .wd { color: var(--gold-deep); font-weight: 700; }
 .tt tr.clock td.date .wd::after { content: ' ⏱'; font-size: 7pt; }

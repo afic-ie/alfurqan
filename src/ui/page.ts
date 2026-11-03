@@ -40,6 +40,7 @@ export function brandNames(name: string, arabic: string): string {
  * line's data-max scale), then again once web fonts have loaded.
  */
 export function fitBrandNames(scope: ParentNode = document): void {
+  const ctx = typeof document !== 'undefined' ? document.createElement('canvas').getContext('2d') : null;
   const run = () => {
     scope.querySelectorAll<SVGSVGElement>('svg.brand-names').forEach((svg) => {
       const W = svg.viewBox.baseVal.width;
@@ -51,6 +52,26 @@ export function fitBrandNames(scope: ParentNode = document): void {
         if (!len) return;
         t.style.fontSize = `${(base * Math.min(max, W / len)).toFixed(2)}px`;
       });
+      // Place the two lines from their actual ink so the tall Arabic letters
+      // never run into the English, with the same gap whatever the letters.
+      const en = svg.querySelector<SVGTextElement>('.bn-en');
+      const ar = svg.querySelector<SVGTextElement>('.bn-ar');
+      if (!ctx || !en || !ar) return;
+      const ink = (t: SVGTextElement) => {
+        const cs = getComputedStyle(t);
+        ctx.font = `${cs.fontWeight} ${t.style.fontSize} ${cs.fontFamily}`;
+        const m = ctx.measureText(t.textContent ?? '');
+        return { asc: m.actualBoundingBoxAscent, desc: m.actualBoundingBoxDescent };
+      };
+      const e = ink(en);
+      const a = ink(ar);
+      if (!(e.asc > 0 && a.asc > 0)) return;
+      const gap = 7;
+      const y1 = 2 + e.asc;
+      const y2 = y1 + e.desc + gap + a.asc;
+      en.setAttribute('y', y1.toFixed(1));
+      ar.setAttribute('y', y2.toFixed(1));
+      svg.setAttribute('viewBox', `0 0 ${W} ${Math.ceil(y2 + a.desc + 2)}`);
     });
   };
   run();
