@@ -8,6 +8,7 @@
   --accent-soft: #a9d2ff;  /* light blue text on dark panels */
   --gold: #c9a24a;         /* borders, ornaments, markers */
   --gold-deep: #9a7a2b;    /* gold text on light backgrounds */
+  --mark: #7a5a12;         /* change triangles: dark enough on the jamaat tint and in greyscale */
   --gold-soft: #ead9a6;    /* gold text on dark panels */
   --tint: #bfd5f8;         /* jamaat cells (dark enough to survive a greyscale print) */
   --tint-2: #b3cbf4;       /* jamaat cells, alternate rows */
@@ -213,14 +214,15 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 .tt th.pr.d:first-child { border-left: none; }
 .tt th.pr:last-child { border-right: 0.3mm solid var(--line-col); }
 .tt td.chg::before {
-  content: ''; position: absolute; left: 1.1mm; top: 50%; width: 0; height: 0; margin-top: -0.9mm;
-  border-left: 1.1mm solid transparent; border-right: 1.1mm solid transparent;
+  content: ''; position: absolute; left: 0.9mm; top: 50%; width: 0; height: 0; margin-top: -1.05mm;
+  border-left: 1.25mm solid transparent; border-right: 1.25mm solid transparent;
 }
-.tt td.chg.up::before { border-bottom: 1.8mm solid var(--gold); }
-.tt td.chg.down::before { border-top: 1.8mm solid var(--gold); }
-.tri { display: inline-block; width: 0; height: 0; border-left: 1.1mm solid transparent; border-right: 1.1mm solid transparent; margin: 0 0.4mm; vertical-align: 0.1mm; }
-.tri.up { border-bottom: 1.8mm solid var(--gold); }
-.tri.down { border-top: 1.8mm solid var(--gold); }
+.tt td.chg.up::before { border-bottom: 2.1mm solid var(--mark); }
+.tt td.chg.down::before { border-top: 2.1mm solid var(--mark); }
+.tri { display: inline-block; width: 0; height: 0; border-left: 1.25mm solid transparent; border-right: 1.25mm solid transparent; margin: 0 0.4mm; vertical-align: 0.1mm; }
+.tri.up { border-bottom: 2.1mm solid var(--mark); }
+.tri.down { border-top: 2.1mm solid var(--mark); }
+.notes li.legend { white-space: nowrap; }
 .tt .mark { color: var(--gold-deep); font-weight: 700; margin-left: 0.3mm; }
 .tt tr:nth-child(even) td { background-color: rgb(21 71 194 / 0.025); }
 .tt tr:nth-child(even) td.j { background-color: var(--tint-2); }
@@ -243,7 +245,7 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
   display: flex; gap: 3mm; align-items: center;
   padding: 1.8mm 2.5mm; border-radius: 1.5mm;
   background: var(--pattern-dark), linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff;
-  max-width: 112mm;
+  max-width: 98mm;
   box-shadow: inset 0 0 0 0.3mm var(--gold);
 }
 .give-text { min-width: 0; }

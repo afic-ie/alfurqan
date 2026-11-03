@@ -113,7 +113,7 @@ export function footerNotes(rows: DayRow[]): string[] {
   if (fixedIsha.length) {
     notes.push(`<span class="mark">*</span> Summer: Isha adhan and jamaat are fixed at ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
   }
-  notes.push('<span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier');
+  notes.push('<span class="legend"><span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier</span>');
   return notes;
 }
 
@@ -156,7 +156,7 @@ export interface PageHead { title: string; titleYear?: string; sub: string; subA
 export function pageFrame(config: Config, head: PageHead, attrs: string, table: string, notes: string[], extra = ''): string {
   const info = config.mosque;
   const qrs = qrsHtml(config);
-  const noteItems = notes.map((n) => `<li>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
+  const noteItems = notes.map((n) => `<li${n.includes('class="legend"') ? ' class="legend"' : ''}>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
   return `<section class="page" ${attrs}>
 <div class="frame">
 <div class="corner tl">${cornerOrnament('var(--gold)')}</div><div class="corner tr">${cornerOrnament('var(--gold)')}</div>
