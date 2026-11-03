@@ -10,6 +10,7 @@ import { starPattern } from './ui/art';
 import { fitBrandNames, renderMonth } from './ui/page';
 import { renderRamadan } from './ui/ramadan';
 import { ramadanDates } from './engine/ramadan';
+import { ALL_HADITH } from './engine/hadith';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
@@ -377,6 +378,15 @@ app.addEventListener('click', (e) => {
   else if (a === 'settings') { renderDrawer(); drawer.hidden = false; document.body.classList.add('drawer-open'); }
   else if (a === 'close-settings') { drawer.hidden = true; document.body.classList.remove('drawer-open'); }
   else if (a === 'export') downloadJson(state, `alfurqan-timetable-settings-${iso(today())}.json`);
+  else if (a === 'hadith-toggle') {
+    const id = btn.dataset.id!;
+    const hidden = new Set(state.config.hadith.hidden);
+    if ((btn as HTMLInputElement).checked) hidden.delete(id); else hidden.add(id);
+    state.config.hadith.hidden = [...hidden];
+    persist();
+    const sum = drawer.querySelector('.hadith-list summary');
+    if (sum) sum.textContent = `${ALL_HADITH.length - hidden.size} of ${ALL_HADITH.length} hadith shown · open to choose`;
+  }
   else if (a === 'clear-logo') { state.config.mosque.logo = ''; refresh(); }
   else if (a === 'logo-default') { state.config.mosque.logo = 'builtin:logo'; refresh(); }
   else if (a === 'qr-add') { qrs.push({ label: 'New QR code', url: '', image: '' }); refresh(); }

@@ -4,6 +4,7 @@
 
 import type { Config, Period, StepRule } from '../engine/config';
 import { isBuiltin, resolveImage } from './assets';
+import { ALL_HADITH } from '../engine/hadith';
 
 const esc = (v: unknown) =>
   String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -128,6 +129,22 @@ ${text('Zakat-ul-Fitr', 'ramadan.zakatFitr', c.ramadan.zakatFitr, 'e.g. €10 pe
 ${text('Taraweeh', 'ramadan.taraweeh', c.ramadan.taraweeh, 'Website and TV only, e.g. “after Isha jamaat”.')}
 </div>
 ${text('Extra note on the Ramadan timetable (optional)', 'ramadan.note', c.ramadan.note)}
+</fieldset>
+
+<fieldset><legend>Hadith on the TV display</legend>
+<p class="help">Shows one hadith (Arabic, English and reference) for a short time at regular intervals, never around a jamaat, the Jumu'ah khutbah or while the jamaat screen is up. The list below is fixed and sourced from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com references; untick any you do not want shown. Nothing is shown until the list has been checked and <strong>reviewed</strong> is ticked.</p>
+${check('Show hadith on the TV', 'hadith.enabled', c.hadith.enabled)}
+${check('The list has been reviewed by the imam', 'hadith.approved', c.hadith.approved)}
+<div class="grid">
+${num('Every (minutes)', 'hadith.everyMin', c.hadith.everyMin)}
+${num('For (seconds)', 'hadith.showSec', c.hadith.showSec)}
+${num('Not within (minutes) before a jamaat', 'hadith.quietBefore', c.hadith.quietBefore)}
+${num('Nor (minutes) after it', 'hadith.quietAfter', c.hadith.quietAfter)}
+</div>
+<p class="help">Preview on the TV page with <code>tv/?preview=hadith</code> (cycles through the list).</p>
+<details class="hadith-list"><summary>${ALL_HADITH.length - c.hadith.hidden.length} of ${ALL_HADITH.length} hadith shown · open to choose</summary>
+${ALL_HADITH.map((h) => `<label class="hadith-item"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}><span><span class="h-ar" lang="ar" dir="rtl">${esc(h.ar)}</span><span class="h-en">${esc(h.en)}</span><small>${esc(h.ref)} · ${esc(h.grade)}${h.season ? ' · Ramadan only' : ''}</small></span></label>`).join('')}
+</details>
 </fieldset>
 
 <fieldset><legend>Hijri date</legend>

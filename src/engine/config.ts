@@ -96,10 +96,24 @@ export interface RamadanInfo {
   note: string;
 }
 
+/** Hadith rotation on the TV display (see src/engine/hadith.ts). */
+export interface HadithSettings {
+  enabled: boolean;
+  /** The list has been checked by the imam; nothing shows until this is ticked. */
+  approved: boolean;
+  everyMin: number;
+  showSec: number;
+  quietBefore: number;
+  quietAfter: number;
+  /** ids of hadith not to show */
+  hidden: string[];
+}
+
 export interface Config {
   version: 1;
   mosque: MosqueInfo;
   ramadan: RamadanInfo;
+  hadith: HadithSettings;
   rules: Record<JamaatPrayer, Rule>;
   khutbah: Period[];
   hijriOffset: number; // days, added to the Umm al-Qura (Saudi) date
@@ -150,6 +164,7 @@ export const DEFAULT_CONFIG: Config = {
     start: '', startConfirmed: false, eid: '', eidConfirmed: false,
     eidPrayer: '', eidVenue: '', zakatFitr: '', taraweeh: '', note: '',
   },
+  hadith: { enabled: false, approved: false, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [] },
   hijriOffset: 0,
   showHijri: true,
 };
@@ -169,6 +184,7 @@ export function normaliseConfig(raw: unknown): Config {
     version: 1,
     mosque: { ...base.mosque, ...(r.mosque ?? {}), qrs: Array.isArray(r.mosque?.qrs) ? r.mosque.qrs : base.mosque.qrs },
     ramadan: { ...base.ramadan, ...(r.ramadan ?? {}) },
+    hadith: { ...base.hadith, ...(r.hadith ?? {}), hidden: Array.isArray(r.hadith?.hidden) ? r.hadith.hidden : [] },
     rules: { ...base.rules, ...(r.rules ?? {}) },
     khutbah: Array.isArray(r.khutbah) ? r.khutbah : base.khutbah,
   };

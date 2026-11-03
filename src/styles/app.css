@@ -309,6 +309,12 @@ legend { font-family: var(--head); font-weight: 700; color: var(--navy); padding
 .qr-fields .f { margin: 2px 0; }
 .qr-fields small { color: var(--muted); font-size: 12px; }
 
+.hadith-list summary { cursor: pointer; font-weight: 600; color: var(--navy); margin: 6px 0; }
+.hadith-item { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; align-items: start; }
+.hadith-item .h-ar { display: block; font-family: var(--ar); font-size: 16px; line-height: 1.7; color: var(--navy-deep); }
+.hadith-item .h-en { display: block; color: var(--ink); margin: 2px 0; }
+.hadith-item small { color: var(--muted); }
+
 /* ---------------- dialogs ---------------- */
 dialog.editor { border: none; border-radius: 14px; padding: 18px 20px; width: min(440px, 94vw); box-shadow: 0 20px 60px rgb(0 0 0 / 0.3); }
 dialog::backdrop { background: rgb(6 20 63 / 0.5); }
