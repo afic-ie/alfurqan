@@ -5,14 +5,16 @@ import '@fontsource/outfit/latin-500.css';
 import '@fontsource/outfit/latin-700.css';
 import '@fontsource/montserrat/latin-700.css';
 import '@fontsource/cairo/arabic-700.css';
+import '@fontsource/reem-kufi/arabic-500.css';
 import '@fontsource/amiri/arabic-400.css';
 import '@fontsource/amiri/arabic-700.css';
 import './styles/app.css';
 
 import { cloneConfig, DEFAULT_CONFIG, JAMAAT_PRAYERS, type JamaatPrayer } from './engine/config';
 import { ruleJamaat, weekDays } from './engine/jamaat';
+import { applyJamaat, countEdits, daysBetween } from './engine/overrides';
 import { buildDay } from './engine/timetable';
-import { addDays, compare, daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today, ymd } from './engine/time';
+import { daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today, ymd } from './engine/time';
 import { starPattern } from './ui/art';
 import { renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
@@ -118,7 +120,7 @@ function renderPages() {
 }
 
 function renderDrawer() {
-  drawer.innerHTML = renderSettings(state.config, Object.values(state.overrides).reduce((n, o) => n + Object.keys(o).length, 0));
+  drawer.innerHTML = renderSettings(state.config, countEdits(state.overrides));
 }
 
 function refresh() {
@@ -161,28 +163,6 @@ const dayLabel = (k: string) => {
   const d = parseIso(k);
   return `${DAY[new Date(Date.UTC(d.y, d.m - 1, d.d)).getUTCDay()]} ${d.d} ${MONTH_NAMES[d.m - 1].slice(0, 3)}`;
 };
-
-function daysBetween(from: string, to: string): string[] {
-  const a = parseIso(from);
-  const b = parseIso(to);
-  if (compare(a, b) > 0) return daysBetween(to, from);
-  const out: string[] = [];
-  for (let d = a; compare(d, b) <= 0; d = addDays(d, 1)) out.push(iso(d));
-  return out;
-}
-
-/** Set (or clear, with t === null) the jamaat for a prayer on a list of days. */
-function applyJamaat(p: JamaatPrayer, keys: string[], t: number | null) {
-  for (const k of keys) {
-    const o = state.overrides[k];
-    if (t === null || t === ruleJamaat(p, state.config.rules[p], parseIso(k))) {
-      if (o) delete o[p];
-    } else {
-      (state.overrides[k] ??= {})[p] = t;
-    }
-    if (state.overrides[k] && !Object.keys(state.overrides[k]).length) delete state.overrides[k];
-  }
-}
 
 /**
  * key: the day that was clicked (or the first shown day for the toolbar
@@ -238,10 +218,10 @@ function openEditor(key: string, p: JamaatPrayer, pick = false) {
     if (action === 'save') {
       const t = parseTime(String(fd.get('t')));
       if (t === null) return;
-      applyJamaat(prayer, keys, t);
+      applyJamaat(state.overrides, state.config, prayer, keys, t);
       toast(`${NAMES[prayer]} jamaat set to ${fmt12ampm(t)} for ${keys.length} day${keys.length === 1 ? '' : 's'}.`);
     } else if (action === 'reset') {
-      applyJamaat(prayer, keys, null);
+      applyJamaat(state.overrides, state.config, prayer, keys, null);
     } else return;
     refresh();
   });

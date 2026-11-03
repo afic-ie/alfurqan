@@ -162,3 +162,34 @@ describe('default rules vs published timetables', () => {
   }
   it('report', () => console.log(report.join('\n')));
 });
+
+describe('manual jamaat changes (overrides)', async () => {
+  const { applyJamaat, countEdits, daysBetween } = await import('../src/engine/overrides');
+
+  it('lists every day in a range, either order', () => {
+    expect(daysBetween('2027-01-30', '2027-02-02')).toEqual(['2027-01-30', '2027-01-31', '2027-02-01', '2027-02-02']);
+    expect(daysBetween('2027-02-02', '2027-01-30')).toHaveLength(4);
+    expect(daysBetween('2027-05-05', '2027-05-05')).toEqual(['2027-05-05']);
+  });
+
+  it('sets, keeps, counts and clears changes', () => {
+    const o: Record<string, Partial<Record<JamaatPrayer, number>>> = {};
+    const days = daysBetween('2027-01-10', '2027-02-20');
+    applyJamaat(o, DEFAULT_CONFIG, 'isha', days, 19 * 60);
+    // days the rule already gives 19:00 are not stored as changes
+    expect(countEdits(o)).toBeLessThan(days.length);
+    expect(countEdits(o)).toBeGreaterThan(0);
+    expect(buildDay(parseIso('2027-02-20'), DEFAULT_CONFIG, o).jamaat.isha).toBe(19 * 60);
+    expect(buildDay(parseIso('2027-02-20'), DEFAULT_CONFIG, o).edited.isha).toBe(true);
+    expect(buildDay(parseIso('2027-02-21'), DEFAULT_CONFIG, o).edited.isha).toBe(false);
+    // another prayer on the same day is independent
+    applyJamaat(o, DEFAULT_CONFIG, 'fajr', ['2027-02-20'], 7 * 60 + 30);
+    expect(buildDay(parseIso('2027-02-20'), DEFAULT_CONFIG, o).jamaat).toMatchObject({ fajr: 450, isha: 1140 });
+    // clearing removes only that prayer, and empties the day when nothing is left
+    applyJamaat(o, DEFAULT_CONFIG, 'isha', days, null);
+    expect(buildDay(parseIso('2027-02-20'), DEFAULT_CONFIG, o).edited.isha).toBe(false);
+    expect(o['2027-02-20']).toEqual({ fajr: 450 });
+    applyJamaat(o, DEFAULT_CONFIG, 'fajr', ['2027-02-20'], null);
+    expect(countEdits(o)).toBe(0);
+  });
+});
