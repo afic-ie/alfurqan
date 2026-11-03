@@ -198,6 +198,10 @@ the clock changes, as long as the box's own clock stays right.
 
 The page asks the browser for persistent storage and fetches every font while
 online so nothing is missing later, and it never reloads itself while offline.
+Setting up over a phone hotspot and disconnecting afterwards is fine: load the
+TV page, leave it a minute, then switch the hotspot off; the page carries on.
+Do not turn on any "clear cache on start" or "clear web storage" option in the
+kiosk browser, as that would throw away the stored copy on every boot.
 Two limits remain: nothing published from the admin page reaches an offline
 box until it is back on wifi, and a browser that is uninstalled, reset or
 cleared loses the stored copy and needs one more online load. A box that is
