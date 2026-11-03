@@ -3,7 +3,7 @@
 :root {
   --navy: #0a1f5c; --navy-deep: #06143f; --blue: #1547c2; --blue-bright: #1e6fe8;
   --accent: #3fa0ff; --accent-soft: #a9d2ff; --gold: #c9a24a; --gold-deep: #9a7a2b; --gold-soft: #ead9a6;
-  --tint: #e6f0ff; --paper: #fbfcfe; --ink: #16213a; --muted: #5f6b84; --line: #dde4f0;
+  --tint: #e6f0ff; --paper: #fdfbf5; --ink: #16213a; --muted: #5f6b84; --line: #dde4f0;
   --en: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --head: 'Outfit', 'Manrope', system-ui, sans-serif;
   --ar: 'Amiri', 'Traditional Arabic', serif;

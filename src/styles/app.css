@@ -13,7 +13,7 @@
   --tint-2: #dce9fb;       /* jamaat cells, alternate rows */
   --fri: #eef5ff;          /* Friday rows */
   --fri-j: #d2e4fb;        /* Friday jamaat cells */
-  --paper: #fbfcfe;
+  --paper: #fdfbf5;
   --ink: #16213a;
   --muted: #5f6b84;
   --line: #dde4f0;
@@ -220,13 +220,15 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 .qr-code svg, .qr-code img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .qr-label { font-size: 6.2pt; text-align: center; line-height: 1.15; color: var(--gold-soft); font-weight: 600; }
 
+/* today's row (on screen and in print, when the month shown is the current one) */
+.tt tr.today td { background-image: linear-gradient(rgb(201 162 74 / 0.18), rgb(201 162 74 / 0.18)); }
+.tt tr.today td.date .dn { color: var(--gold-deep); }
+
 /* ---------------- screen-only affordances ---------------- */
 @media screen {
   .tt td.j { cursor: pointer; transition: box-shadow 0.15s; }
   .tt td.j:hover { box-shadow: inset 0 0 0 0.4mm var(--blue-bright); }
   .tt td.edited { box-shadow: inset 0 -0.6mm 0 var(--gold); }
-  .tt tr.today td { background-image: linear-gradient(rgb(201 162 74 / 0.16), rgb(201 162 74 / 0.16)); }
-  .tt tr.today td.date .dn { color: var(--gold-deep); }
 }
 
 /* ---------------- settings drawer ---------------- */

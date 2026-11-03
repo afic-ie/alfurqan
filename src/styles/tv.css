@@ -51,7 +51,8 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .ov-in { text-align: center; }
 .ov-ar { font-family: var(--ar-brand); font-size: 20vh; color: var(--gold-soft); line-height: 1.1; }
 .ov-en { font-family: var(--head); font-size: 10vh; font-weight: 700; line-height: 1.1; }
-.ov-sub { font-size: 4vh; margin-top: 3vh; opacity: 0.9; }
+.ov-ar-sub { font-family: var(--ar); font-size: 6.5vh; color: var(--gold-soft); margin-top: 2vh; line-height: 1.4; }
+.ov-sub { font-size: 3.6vh; margin-top: 1vh; opacity: 0.9; }
 .ov-time { font-family: var(--head); font-size: 6vh; color: var(--gold-soft); margin-top: 2vh; }
 
 @media (orientation: portrait) {
