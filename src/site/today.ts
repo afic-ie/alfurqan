@@ -49,7 +49,7 @@ export function renderToday(pub: Published, root: string): string {
   <div class="pr-list">${rows}</div>
   ${kh}
   ${row.beforeAdhan.isha ? '<div class="note">* Summer: Isha adhan and jamaat are fixed.</div>' : ''}
-  <a class="btn ghost" href="${root}timetable/">${icon('print')} Full monthly timetable</a>
+  <a class="btn ghost" href="${root}#pages">${icon('print')} Full monthly timetable below</a>
 </section>`;
 }
 

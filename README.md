@@ -1,19 +1,19 @@
-# Masjid Al-Furqan – website and prayer timetable
+# Masjid Al-Furqan – prayer timetable app
 
-The website for Masjid Al-Furqan (Al Furqan Community Association, Limerick)
-and the prayer timetable generator behind it. Live at
-<https://saajunaid.github.io/alfurqan/>.
+Manages and publishes the prayer timetable for Masjid Al-Furqan (Limerick).
+Live at <https://saajunaid.github.io/alfurqan/>.
 
 | Page | What it is |
 |---|---|
-| `/` | Home: today's adhan and jamaat times, next-prayer countdown, appeal, services |
-| `/timetable/` | Monthly timetable for the public; print or save as PDF |
-| `/about/`, `/services/`, `/project/`, `/donate/`, `/contact/` | Content pages (text in `src/site/content.ts`) |
-| `/admin/` | Timetable editor: jamaat rules, manual changes, settings, print |
+| `/` | Public timetable: today's adhan and jamaat times, next-prayer countdown, the monthly timetable, print / save as PDF |
+| `/admin/` | Editor: jamaat rules, manual changes, settings, print |
 
-The public pages read `public/data/published.json`; the admin page edits a
-local copy in the browser (a Publish step that writes the file to the repo is
-the next piece of work).
+The public page reads `public/data/published.json`; the admin page edits a
+local copy in the browser. A Publish step that writes that file to the repo,
+a TV display mode and the Ramadan timetable are the next pieces.
+
+The mosque website (afic.ie) is a separate project; it will embed today's
+times and the timetable from this app.
 
 ## The timetable generator
 
@@ -77,8 +77,8 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 | `src/engine/config.ts` | Default settings and jamaat rules (explained in comments) |
 | `src/assets/` | Logo and QR code images (WhatsApp group, Stripe donations) |
 | `src/ui/` | Timetable page design, settings panel, storage |
-| `src/site/` | Website: layout and navigation, content, today widget, published data |
-| `src/pages/` | Entry scripts for the website pages |
+| `src/site/` | Public page: layout and navigation, today widget, published data |
+| `src/pages/` | Entry script for the public page |
 | `public/data/published.json` | Published jamaat changes read by the public pages |
 | `src/styles/app.css` | Look and feel, including the print layout |
 | `tests/` | Tests; `fixtures/published-jamaat.json` holds the mosque's published jamaat times (2024 – Dec 2026) |
@@ -87,8 +87,8 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 ## Roadmap
 
 1. ~~Monthly timetable generator~~
-2. ~~Website shell: navigation, home, public timetable, content pages~~
-3. Publish from the admin page (GitHub token) so the public site updates
+2. ~~Public timetable page with today's times~~
+3. Publish from the admin page (GitHub token) so the public page updates
 4. TV display mode for the mosque screen (offline Android box)
 5. Ramadan timetable
-6. afic.ie domain, then redirect alfurqan.ie
+6. Embed for the afic.ie website (separate project)
