@@ -130,7 +130,6 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
   width: 21mm; height: 21mm; flex: none;
   display: grid; place-items: center;
   border-radius: 50%; background: #fff; color: var(--blue);
-  box-shadow: 0 0 0 0.6mm var(--gold), 0 0 0 1mm var(--navy-deep);
   overflow: hidden;
 }
 .logo .emblem { width: 17mm; height: 17mm; color: var(--blue); }

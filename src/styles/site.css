@@ -31,7 +31,7 @@ p { margin: 0 0 1em; }
 .top { position: sticky; top: 0; z-index: 30; background: var(--navy-deep) var(--pattern-dark); color: #fff; box-shadow: 0 2px 14px rgb(6 20 63 / 0.35); border-bottom: 2px solid var(--gold); }
 .top-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
 .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
-.brand img { width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--gold); }
+.brand img { width: 44px; height: 44px; border-radius: 50%; background: #fff; }
 .brand .brand-names { width: 168px; height: 42px; display: block; overflow: visible; }
 .brand .bn-en { font-family: 'Montserrat', var(--head); font-weight: 700; fill: #fff; }
 .brand .bn-ar { font-family: var(--ar-brand); font-weight: 500; fill: var(--gold-soft); }
