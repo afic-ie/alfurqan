@@ -1,13 +1,4 @@
-import '@fontsource/manrope/latin-500.css';
-import '@fontsource/manrope/latin-600.css';
-import '@fontsource/manrope/latin-700.css';
-import '@fontsource/outfit/latin-500.css';
-import '@fontsource/outfit/latin-700.css';
-import '@fontsource/montserrat/latin-700.css';
-import '@fontsource/cairo/arabic-700.css';
-import '@fontsource/reem-kufi/arabic-500.css';
-import '@fontsource/amiri/arabic-400.css';
-import '@fontsource/amiri/arabic-700.css';
+import './styles/fonts';
 import './styles/app.css';
 
 import { cloneConfig, DEFAULT_CONFIG, JAMAAT_PRAYERS, type JamaatPrayer } from './engine/config';
@@ -52,7 +43,8 @@ function persist() {
 app.innerHTML = `
 <div class="toolbar no-print">
   <div class="tb-left">
-    <div class="tb-title">Prayer Timetable</div>
+    <a class="tb-title" href="../" title="Back to the website">‹ Website</a>
+    <div class="tb-title">Timetable admin</div>
     <div class="nav">
       <button type="button" class="icon" data-action="prev" title="Previous month" aria-label="Previous month">‹</button>
       <select data-control="month" aria-label="Month">${MONTH_NAMES.map((n, i) => `<option value="${i + 1}">${n}</option>`).join('')}</select>

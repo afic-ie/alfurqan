@@ -50,7 +50,8 @@ button, input, select { font: inherit; }
   box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
 }
 .tb-left, .tb-right { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
-.tb-title { font-family: var(--head); font-weight: 700; font-size: 17px; letter-spacing: 0.02em; }
+.tb-title { font-family: var(--head); font-weight: 700; font-size: 17px; letter-spacing: 0.02em; color: #fff; text-decoration: none; }
+a.tb-title { font-weight: 500; opacity: 0.85; }
 .nav { display: flex; align-items: center; gap: 6px; }
 .toolbar select, .toolbar input {
   padding: 6px 8px; border-radius: 8px; border: 1px solid rgb(255 255 255 / 0.25);
@@ -218,7 +219,8 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
   .tt td.j { cursor: pointer; transition: box-shadow 0.15s; }
   .tt td.j:hover { box-shadow: inset 0 0 0 0.4mm var(--blue-bright); }
   .tt td.edited { box-shadow: inset 0 -0.6mm 0 var(--gold); }
-  .tt tr.today td { box-shadow: inset 0 0.3mm 0 var(--blue), inset 0 -0.3mm 0 var(--blue); }
+  .tt tr.today td { background-image: linear-gradient(rgb(201 162 74 / 0.16), rgb(201 162 74 / 0.16)); }
+  .tt tr.today td.date .dn { color: var(--gold-deep); }
 }
 
 /* ---------------- settings drawer ---------------- */
