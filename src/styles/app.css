@@ -18,7 +18,9 @@
   --ink: #16213a;
   --muted: #5f6b84;
   --line: #dde4f0;
-  --en: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --en: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --head: 'Outfit', 'Manrope', system-ui, sans-serif;
+  --table-ink: #1c2333;
   --ar: 'Amiri', 'Traditional Arabic', serif;
   --fit: 1;
   color-scheme: light;
@@ -28,6 +30,7 @@
 html, body { margin: 0; }
 body {
   font-family: var(--en);
+  font-weight: 500;
   color: var(--ink);
   background: #e8edf5 var(--pattern-soft);
   -webkit-font-smoothing: antialiased;
@@ -46,7 +49,7 @@ button, input, select { font: inherit; }
   box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
 }
 .tb-left, .tb-right { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
-.tb-title { font-weight: 600; letter-spacing: 0.02em; }
+.tb-title { font-family: var(--head); font-weight: 700; font-size: 17px; letter-spacing: 0.02em; }
 .nav { display: flex; align-items: center; gap: 6px; }
 .toolbar select, .toolbar input {
   padding: 6px 8px; border-radius: 8px; border: 1px solid rgb(255 255 255 / 0.25);
@@ -121,11 +124,11 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .logo .emblem { width: 19mm; height: 19mm; color: var(--blue); }
 .logo .logo-img { width: 100%; height: 100%; object-fit: contain; }
 .names { line-height: 1.15; }
-.name-en { font-size: 17pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.name-en { font-family: var(--head); font-size: 18pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .name-ar { font-size: 19pt; font-weight: 700; color: var(--gold-soft); margin-top: 0.5mm; }
-.city { font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-top: 1mm; }
+.city { font-family: var(--head); font-size: 8.5pt; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.85; margin-top: 1mm; }
 .month { text-align: right; line-height: 1.2; }
-.month-en { font-size: 22pt; font-weight: 700; letter-spacing: 0.01em; }
+.month-en { font-family: var(--head); font-size: 24pt; font-weight: 700; letter-spacing: 0.01em; }
 .month-en span { font-weight: 400; color: var(--gold-soft); }
 .month-hijri { font-size: 9pt; opacity: 0.9; margin-top: 0.8mm; }
 .month-hijri-ar { font-size: 12pt; color: var(--gold-soft); }
@@ -141,12 +144,12 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .tt th { font-weight: 600; color: var(--navy); padding: 0; }
 .tt thead tr:first-child th { padding-top: 1mm; }
 .tt th.pr { vertical-align: bottom; padding-bottom: 0.6mm; }
-.tt th .en { display: block; font-size: 9pt; letter-spacing: 0.04em; text-transform: uppercase; }
+.tt th .en { display: block; font-family: var(--head); font-size: 9.5pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .tt th .ar { display: block; font-family: var(--ar); font-size: 11pt; font-weight: 700; color: var(--gold-deep); line-height: 1.1; }
-.tt th.grp { border-bottom: 0.3mm solid var(--gold); }
-.tt th.sub { font-size: 6.8pt; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.6mm 0 1mm; }
+.tt th.grp { border-bottom: 0.25mm solid var(--line); }
+.tt th.sub { font-size: 6.8pt; font-weight: 600; color: #3c4660; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.6mm 0 1mm; }
 .tt th.sub.j { color: var(--blue); font-weight: 700; }
-.tt thead tr:last-child th, .tt thead th[rowspan] { border-bottom: 0.45mm solid var(--navy); box-shadow: 0 0.75mm 0 var(--gold); }
+.tt thead tr:last-child th, .tt thead th[rowspan] { border-bottom: 0.5mm solid var(--navy); }
 
 .tt td { text-align: center; padding: 0; height: 6.05mm; border-bottom: 0.2mm solid var(--line); white-space: nowrap; }
 .tt tbody.rows-28 td { height: 6.7mm; }
@@ -154,11 +157,11 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .tt tbody.rows-30 td { height: 6.25mm; }
 .tt td.date { text-align: left; padding-left: 1.5mm; }
 .tt td.date .dn { display: inline-block; width: 5.5mm; font-weight: 700; color: var(--navy); vertical-align: baseline; }
-.tt td.date .wd { font-size: 7.5pt; color: var(--muted); vertical-align: baseline; }
-.tt td.hijri { font-size: 8pt; color: var(--muted); }
+.tt td.date .wd { font-size: 7.5pt; color: var(--table-ink); font-weight: 600; vertical-align: baseline; }
+.tt td.hijri { font-size: 8pt; color: var(--table-ink); font-weight: 600; }
 .tt td.hijri .hm { font-size: 6.2pt; margin-left: 0.8mm; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; }
-.tt td.a { color: #1c2333; font-weight: 500; }
-.tt td.j { font-weight: 700; color: var(--navy); background: var(--tint); position: relative; }
+.tt td.a { color: var(--table-ink); font-weight: 600; }
+.tt td.j { font-weight: 800; color: var(--navy); background: var(--tint); position: relative; }
 .tt td.a.has-j { border-left: 0.2mm solid var(--line); }
 .tt td.chg::before {
   content: ''; position: absolute; left: 1.2mm; top: 50%; width: 1.4mm; height: 1.4mm; margin-top: -0.7mm;
@@ -175,10 +178,10 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 
 /* footer */
 .foot {
-  margin-top: auto; padding: 2.5mm 1.2mm 0;
+  margin-top: auto; padding: 2.5mm 1.2mm 1.5mm;
   display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: end;
 }
-.notes { list-style: none; margin: 0; padding: 0; font-size: 7.6pt; color: #33405c; line-height: 1.45; }
+.notes { list-style: none; margin: 0; padding: 0; font-size: 7.6pt; color: var(--table-ink); line-height: 1.45; }
 .notes li { display: flex; gap: 1.6mm; align-items: baseline; }
 .notes .star { flex: none; position: relative; top: 0.3mm; }
 .notes strong { color: var(--navy); }
@@ -191,7 +194,7 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
   box-shadow: inset 0 0 0 0.3mm var(--gold);
 }
 .give-text { min-width: 0; }
-.give-title { font-weight: 700; font-size: 9pt; color: var(--gold-soft); letter-spacing: 0.02em; }
+.give-title { font-family: var(--head); font-weight: 700; font-size: 10pt; color: var(--gold-soft); letter-spacing: 0.04em; }
 .bank { font-size: 7.3pt; line-height: 1.35; margin-top: 0.6mm; }
 .web { font-size: 7.5pt; margin-top: 0.8mm; font-weight: 600; letter-spacing: 0.03em; }
 .qrs { display: flex; gap: 2.5mm; flex: none; }
@@ -199,7 +202,6 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .qr-code { width: 20mm; height: 20mm; background: #fff; border-radius: 1mm; padding: 0.8mm; display: grid; place-items: center; box-shadow: 0 0 0 0.3mm var(--gold); }
 .qr-code svg, .qr-code img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .qr-label { font-size: 6.2pt; text-align: center; line-height: 1.15; color: var(--gold-soft); font-weight: 600; }
-.credit { font-size: 6.4pt; color: var(--muted); text-align: center; margin: 1.6mm 0 0.6mm; letter-spacing: 0.02em; }
 
 /* ---------------- screen-only affordances ---------------- */
 @media screen {
@@ -216,13 +218,13 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
   display: flex; flex-direction: column;
 }
 .drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--navy-deep) var(--pattern-dark); color: #fff; }
-.drawer-head h2 { margin: 0; font-size: 18px; }
+.drawer-head h2 { margin: 0; font-size: 18px; font-family: var(--head); }
 .drawer-head button { background: transparent; color: #fff; border-color: rgb(255 255 255 / 0.3); }
 .drawer-body { overflow-y: auto; padding: 8px 18px 40px; }
-.drawer h3 { margin: 22px 0 4px; color: var(--navy); font-size: 16px; }
+.drawer h3 { margin: 22px 0 4px; color: var(--navy); font-size: 16px; font-family: var(--head); }
 fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px 12px; margin: 12px 0; min-width: 0; }
 .grid > *, .uploads > * { min-width: 0; }
-legend { font-weight: 600; color: var(--navy); padding: 0 6px; }
+legend { font-family: var(--head); font-weight: 700; color: var(--navy); padding: 0 6px; }
 .help { font-size: 13px; color: var(--muted); margin: 4px 0 8px; line-height: 1.45; }
 .help code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-size: 12px; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
@@ -253,7 +255,7 @@ legend { font-weight: 600; color: var(--navy); padding: 0 6px; }
 /* ---------------- dialogs ---------------- */
 dialog.editor { border: none; border-radius: 14px; padding: 18px 20px; width: min(440px, 94vw); box-shadow: 0 20px 60px rgb(0 0 0 / 0.3); }
 dialog::backdrop { background: rgb(6 20 63 / 0.5); }
-dialog h3 { margin: 0 0 6px; color: var(--navy); }
+dialog h3 { margin: 0 0 6px; color: var(--navy); font-family: var(--head); }
 dialog ol { padding-left: 20px; line-height: 1.6; font-size: 14px; }
 dialog select { padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; width: 100%; }
 .scope { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }

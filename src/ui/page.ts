@@ -152,7 +152,6 @@ ${hijriCell}${cells}</tr>`;
     <div class="qrs">${qrsHtml(config)}</div>
   </div>
 </footer>
-<div class="credit">Adhan times: Islamic Foundation of Ireland (${esc(info.city)}). Jamaat times: ${esc(info.name)}.</div>
 </div>
 </section>`;
 }
