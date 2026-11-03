@@ -11,6 +11,7 @@ import { renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
+import { registerPwa } from './site/pwa';
 import { getToken, publish, PublishError, setToken, TARGET, TOKEN_HELP_URL } from './site/publish';
 
 // ---------- state ----------
@@ -66,7 +67,7 @@ app.innerHTML = `
     <button type="button" class="publish" data-action="publish">Publish</button>
   </div>
 </div>
-<p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. Blue diamonds mark the days jamaat changes.</p>
+<p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. ▲▼ mark the days a jamaat time changes.</p>
 <main class="pages" id="pages"></main>
 <aside class="drawer no-print" id="drawer" hidden></aside>
 <dialog class="editor no-print" id="editor"></dialog>
@@ -107,7 +108,7 @@ function renderPages() {
   let y = state.y;
   let m = state.m;
   for (let i = 0; i < state.months; i++) {
-    out.push(renderMonth(y, m, state.config, state.overrides));
+    out.push(`<div class="page-wrap">${renderMonth(y, m, state.config, state.overrides)}</div>`);
     m++;
     if (m > 12) { m = 1; y++; }
   }
@@ -389,3 +390,4 @@ document.addEventListener('keydown', (e) => {
 });
 
 renderPages();
+registerPwa('../');

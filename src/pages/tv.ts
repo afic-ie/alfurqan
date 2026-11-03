@@ -19,6 +19,7 @@ import { addDays, DAY_NAMES, MONTH_NAMES, fmt12, fmt12ampm, today, type Ymd } fr
 import { starPattern } from '../ui/art';
 import type { Published } from '../site/data';
 import { loadPublished } from '../site/data';
+import { registerPwa } from '../site/pwa';
 
 const root = '../';
 const CACHE_KEY = 'alfurqan.tv.published';
@@ -48,7 +49,7 @@ async function getPublished(): Promise<Published> {
 }
 
 let pub = await getPublished();
-if ('serviceWorker' in navigator) navigator.serviceWorker.register(`${root}sw.js`).catch(() => undefined);
+registerPwa(root);
 
 // ---------- layout ----------
 const app = document.getElementById('app')!;

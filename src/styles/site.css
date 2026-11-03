@@ -12,6 +12,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; font-family: var(--en); font-weight: 500; color: var(--ink); background: #f3f6fb var(--pattern-soft); -webkit-font-smoothing: antialiased; line-height: 1.55; }
 body.nav-open { overflow: hidden; }
 a { color: var(--blue); }
@@ -105,7 +106,7 @@ p { margin: 0 0 1em; }
 .tt-month { font-family: var(--head); font-weight: 700; font-size: 20px; min-width: 170px; text-align: center; }
 .hero .btn.ghost.icon-btn { background: rgb(255 255 255 / 0.1); color: #fff; }
 .pages.public { display: flex; flex-direction: column; align-items: center; padding: 24px 8px 48px; }
-.pages.public .page { zoom: var(--fit); box-shadow: 0 6px 30px rgb(10 31 92 / 0.22); }
+.pages.public .page { box-shadow: 0 6px 30px rgb(10 31 92 / 0.22); }
 .pages.public .tt td.j { cursor: default; }
 .pages.public .tt td.j:hover, .pages.public .tt td.edited { box-shadow: none; }
 
@@ -121,5 +122,5 @@ p { margin: 0 0 1em; }
   .top, .foot-site, .hero { display: none !important; }
   body { background: #fff; }
   .pages.public { display: block; padding: 0; }
-  .pages.public .page { zoom: 1; box-shadow: none; }
+  .pages.public .page { box-shadow: none; }
 }

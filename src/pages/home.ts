@@ -4,6 +4,7 @@ import '../styles/fonts';
 import '../styles/app.css';
 import '../styles/site.css';
 import { loadPublished } from '../site/data';
+import { registerPwa } from '../site/pwa';
 import { icon, mountShell } from '../site/layout';
 import { renderToday, startCountdown } from '../site/today';
 import { MONTH_NAMES, today } from '../engine/time';
@@ -41,7 +42,7 @@ startCountdown(pub);
 const pages = document.getElementById('pages')!;
 function render() {
   document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
-  pages.innerHTML = renderMonth(y, m, pub.config, pub.overrides);
+  pages.innerHTML = `<div class="page-wrap">${renderMonth(y, m, pub.config, pub.overrides)}</div>`;
   history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
   fit();
 }
@@ -57,3 +58,4 @@ document.addEventListener('click', (e) => {
   if (a === 'print') window.print();
 });
 render();
+registerPwa(root);
