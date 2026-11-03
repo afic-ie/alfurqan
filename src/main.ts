@@ -10,7 +10,7 @@ import { starPattern } from './ui/art';
 import { fitBrandNames, renderMonth } from './ui/page';
 import { renderRamadan } from './ui/ramadan';
 import { ramadanDates } from './engine/ramadan';
-import { ALL_HADITH } from './engine/hadith';
+import { ALL_HADITH, scheduleFor } from './engine/hadith';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
@@ -387,8 +387,16 @@ app.addEventListener('click', (e) => {
     const sum = drawer.querySelector('.hadith-list summary');
     if (sum) sum.textContent = `${ALL_HADITH.filter((h) => !hidden.has(h.id)).length} of ${ALL_HADITH.length} built-in hadith shown · open to choose`;
   }
+  else if (a === 'hadith-month') {
+    const cat = btn.dataset.cat!;
+    const sch = { ...scheduleFor(state.config, cat) };
+    const months = new Set(sch.months ?? []);
+    if ((btn as HTMLInputElement).checked) months.add(Number(btn.dataset.month)); else months.delete(Number(btn.dataset.month));
+    state.config.hadith.schedule = { ...state.config.hadith.schedule, [cat]: { when: 'months', months: [...months].sort((x, y) => x - y) } };
+    persist();
+  }
   else if (a === 'hadith-add') {
-    state.config.hadith.custom.push({ id: `custom-${Date.now().toString(36)}`, ar: '', en: '', ref: '', grade: '' });
+    state.config.hadith.custom.push({ id: `custom-${Date.now().toString(36)}`, category: 'faith', ar: '', en: '', ref: '', grade: '' });
     persist(); renderDrawer();
     drawer.querySelector<HTMLTextAreaElement>('.custom-hadith:last-child textarea')?.focus();
   }
@@ -418,6 +426,16 @@ app.addEventListener('click', (e) => {
 
 app.addEventListener('change', (e) => {
   const el = e.target as HTMLElement;
+  if (el.dataset.action === 'hadith-when') {
+    const sel = el as HTMLSelectElement;
+    const cat = sel.dataset.cat!;
+    const prev = scheduleFor(state.config, cat);
+    state.config.hadith.schedule = { ...state.config.hadith.schedule, [cat]: { when: sel.value as 'always' | 'never' | 'months' | 'friday', months: prev.months ?? [] } };
+    const months = sel.parentElement?.querySelector<HTMLElement>('.cat-months');
+    if (months) months.hidden = sel.value !== 'months';
+    persist();
+    return;
+  }
   if (el === monthSel) { state.m = Number(monthSel.value); state.view = "months"; renderPages(); }
   if (el === yearIn && /^\d{4}$/.test(yearIn.value)) { state.y = Number(yearIn.value); renderPages(); }
   if (el === monthsSel) { state.months = Number(monthsSel.value); renderPages(); }
