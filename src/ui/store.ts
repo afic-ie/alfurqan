@@ -10,6 +10,10 @@ export interface Saved {
   overrides: Overrides;
 }
 
+export function hasSaved(): boolean {
+  try { return localStorage.getItem(KEY) !== null; } catch { return false; }
+}
+
 export function load(): Saved {
   try {
     const raw = localStorage.getItem(KEY);

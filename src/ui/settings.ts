@@ -116,8 +116,13 @@ ${periods("Jumu'ah khutbah", 'khutbah', c.khutbah, anchorHelp)}
 ${num('Adjust by days', 'hijriOffset', c.hijriOffset, 'Use -1 or +1 if the local announcement differs from Umm al-Qura.')}
 </fieldset>
 
+<fieldset><legend>Publishing</legend>
+<p class="help">Edits are saved in this browser only. <strong>Publish</strong> (toolbar) sends them to the website and the TV. Use the button below to start from what is currently published, e.g. on a new computer.</p>
+<div class="buttons"><button type="button" data-action="load-published">Load the published version</button></div>
+</fieldset>
+
 <fieldset><legend>Save and share</legend>
-<p class="help">Settings and edits are saved in this browser automatically. Download a settings file to back them up or use them on another computer.</p>
+<p class="help">Download a settings file to back up or move your settings and edits to another computer.</p>
 <div class="buttons">
 <button type="button" data-action="export">Download settings file</button>
 <label class="button">Load settings file<input type="file" accept="application/json,.json" data-upload="settings" hidden></label>
