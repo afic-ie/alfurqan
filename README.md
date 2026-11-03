@@ -8,9 +8,23 @@ Live at <https://saajunaid.github.io/alfurqan/>.
 | `/` | Public timetable: today's adhan and jamaat times, next-prayer countdown, the monthly timetable, print / save as PDF |
 | `/admin/` | Editor: jamaat rules, manual changes, settings, print |
 
-The public page reads `public/data/published.json`; the admin page edits a
-local copy in the browser. A Publish step that writes that file to the repo,
-a TV display mode and the Ramadan timetable are the next pieces.
+The public page reads `public/data/published.json`. The admin page edits a
+copy in the browser and **Publish** writes it back to the repository, which
+republishes the site within a couple of minutes.
+
+## Publishing (admins)
+
+1. Open `/admin/`, make your changes, click **Publish**.
+2. The first time, it asks for a GitHub token. Create a *fine-grained*
+   personal access token on GitHub with access to only this repository and
+   the permission **Contents: read and write**. Paste it in; it is kept in
+   that browser only. Only people with write access to the repository can
+   create such a token, so only they can publish.
+3. Later publishes are one click. Use **Forget token** in the dialog to
+   remove it from a shared computer.
+
+Edits are stored per browser. On a new computer, Settings → **Load the
+published version** starts you from what is live.
 
 The mosque website (afic.ie) is a separate project; it will embed today's
 times and the timetable from this app.
@@ -88,7 +102,7 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 
 1. ~~Monthly timetable generator~~
 2. ~~Public timetable page with today's times~~
-3. Publish from the admin page (GitHub token) so the public page updates
+3. ~~Publish from the admin page~~
 4. TV display mode for the mosque screen (offline Android box)
 5. Ramadan timetable
 6. Embed for the afic.ie website (separate project)

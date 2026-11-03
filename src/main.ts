@@ -9,11 +9,13 @@ import { daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, t
 import { starPattern } from './ui/art';
 import { renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
-import { downloadJson, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
+import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
+import { loadPublished } from './site/data';
+import { getToken, publish, PublishError, setToken, TARGET, TOKEN_HELP_URL } from './site/publish';
 
 // ---------- state ----------
-const state: Saved & { y: number; m: number; months: number } = (() => {
-  const s = load();
+const state: Saved & { y: number; m: number; months: number } = await (async () => {
+  const s = hasSaved() ? load() : await loadPublished('../');
   const t = today();
   // Timetables are made two months at a time (Jan-Feb, Mar-Apr, ...):
   // start on the next block after the current one.
@@ -61,12 +63,14 @@ app.innerHTML = `
     <button type="button" data-action="adjust">Adjust jamaat</button>
     <button type="button" data-action="settings">Settings</button>
     <button type="button" class="primary" data-action="print">Print / Save PDF</button>
+    <button type="button" class="publish" data-action="publish">Publish</button>
   </div>
 </div>
 <p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. Blue diamonds mark the days jamaat changes.</p>
 <main class="pages" id="pages"></main>
 <aside class="drawer no-print" id="drawer" hidden></aside>
 <dialog class="editor no-print" id="editor"></dialog>
+<dialog class="editor no-print" id="publish"></dialog>
 <dialog class="editor no-print" id="print-help">
   <h3>Save as PDF</h3>
   <ol>
@@ -83,6 +87,7 @@ const pages = document.getElementById('pages')!;
 const drawer = document.getElementById('drawer')!;
 const editor = document.getElementById('editor') as HTMLDialogElement;
 const printHelp = document.getElementById('print-help') as HTMLDialogElement;
+const publishDlg = document.getElementById('publish') as HTMLDialogElement;
 const monthSel = app.querySelector<HTMLSelectElement>('[data-control="month"]')!;
 const yearIn = app.querySelector<HTMLInputElement>('[data-control="year"]')!;
 const monthsSel = app.querySelector<HTMLSelectElement>('[data-control="months"]')!;
@@ -220,6 +225,57 @@ function openEditor(key: string, p: JamaatPrayer, pick = false) {
   editor.showModal();
 }
 
+// ---------- publish ----------
+function openPublish() {
+  const token = getToken();
+  const edits = countEdits(state.overrides);
+  publishDlg.innerHTML = token
+    ? `<form method="dialog">
+  <h3>Publish the timetable</h3>
+  <p class="help">This sends the current settings and ${edits} manual jamaat ${edits === 1 ? 'change' : 'changes'} to the website. The public timetable and the TV update within a few minutes.</p>
+  <p class="help" id="publish-status"></p>
+  <div class="buttons">
+    <button type="button" class="primary" data-action="publish-now">Publish now</button>
+    <button type="submit" value="cancel">Cancel</button>
+    <button type="button" class="ghost danger" data-action="token-clear">Forget token</button>
+  </div>
+</form>`
+    : `<form method="dialog">
+  <h3>Set up publishing</h3>
+  <p class="help">Publishing writes the timetable into the GitHub repository <code>${TARGET.owner}/${TARGET.repo}</code>. It needs a GitHub token, entered once in this browser. Only people with write access to the repository can publish.</p>
+  <ol>
+    <li><a href="${TOKEN_HELP_URL}" target="_blank" rel="noopener">Create a fine-grained token</a> on GitHub (you must be signed in as a repository owner or collaborator).</li>
+    <li>Repository access: <strong>Only select repositories → ${TARGET.repo}</strong>.</li>
+    <li>Permissions: <strong>Contents → Read and write</strong>. Nothing else.</li>
+    <li>Copy the token and paste it here.</li>
+  </ol>
+  <label class="f"><span>GitHub token</span><input type="password" name="token" autocomplete="off" placeholder="github_pat_…" required></label>
+  <div class="buttons"><button type="submit" class="primary" value="save-token">Save token</button><button type="submit" value="cancel" formnovalidate>Cancel</button></div>
+</form>`;
+  publishDlg.querySelector('form')!.addEventListener('submit', (e) => {
+    const action = (e.submitter as HTMLButtonElement | null)?.value;
+    if (action === 'save-token') {
+      setToken(String(new FormData(e.target as HTMLFormElement).get('token')));
+      setTimeout(openPublish, 0);
+    }
+  });
+  publishDlg.showModal();
+}
+
+async function publishNow(btn: HTMLButtonElement) {
+  const status = document.getElementById('publish-status')!;
+  btn.disabled = true;
+  status.textContent = 'Publishing…';
+  try {
+    const r = await publish(state, getToken());
+    status.innerHTML = `Published. The website rebuilds in about 2 minutes.${r.commitUrl ? ` <a href="${r.commitUrl}" target="_blank" rel="noopener">View on GitHub</a>` : ''}`;
+    toast('Published.');
+  } catch (err) {
+    status.textContent = err instanceof PublishError ? err.message : 'Could not reach GitHub. Check your internet connection and try again.';
+    btn.disabled = false;
+  }
+}
+
 // ---------- settings writes ----------
 function setPath(obj: unknown, path: string, value: unknown) {
   const parts = path.split('.');
@@ -288,6 +344,14 @@ app.addEventListener('click', (e) => {
   else if (a === 'next') shiftMonth(1);
   else if (a === 'adjust') openEditor(iso(ymd(state.y, state.m, 1)), 'fajr', true);
   else if (a === 'print') printHelp.showModal();
+  else if (a === 'publish') openPublish();
+  else if (a === 'publish-now') void publishNow(btn as HTMLButtonElement);
+  else if (a === 'token-clear') { setToken(''); publishDlg.close(); toast('Token forgotten.'); }
+  else if (a === 'load-published') {
+    if (confirm('Replace the settings and changes in this browser with the published version?')) {
+      void loadPublished('../').then((p) => { state.config = p.config; state.overrides = p.overrides; refresh(); toast('Loaded the published version.'); });
+    }
+  }
   else if (a === 'print-now') { printHelp.close(); setTimeout(() => window.print(), 50); }
   else if (a === 'close-dialog') (btn.closest('dialog') as HTMLDialogElement).close();
   else if (a === 'settings') { renderDrawer(); drawer.hidden = false; document.body.classList.add('drawer-open'); }
