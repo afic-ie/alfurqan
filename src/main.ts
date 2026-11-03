@@ -66,7 +66,7 @@ app.innerHTML = `
     <button type="button" class="publish" data-action="publish">Publish</button>
   </div>
 </div>
-<p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. Blue diamonds mark the days jamaat changes.</p>
+<p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. ▲▼ mark the days a jamaat time changes.</p>
 <main class="pages" id="pages"></main>
 <aside class="drawer no-print" id="drawer" hidden></aside>
 <dialog class="editor no-print" id="editor"></dialog>
