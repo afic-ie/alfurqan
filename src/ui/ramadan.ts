@@ -55,7 +55,7 @@ export function ramadanNotes(r: RamadanDates, rows: DayRow[], config: Config): s
   const notes: string[] = [];
   if (!r.startConfirmed || !r.eidConfirmed) notes.push('<strong>Moon sighting:</strong> the beginning and end of Ramadan depend on the sighting of the moon and may move by a day.');
   for (const n of footerNotes(rows)) if (!n.includes('jamaat moves')) notes.push(n);
-  notes.push('<span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier');
+  notes.push('<span class="legend"><span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier</span>');
   if (ram.note) notes.push(esc(ram.note));
   return notes;
 }

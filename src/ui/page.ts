@@ -28,9 +28,10 @@ export const COLS: Col[] = [
  * stay crisp; the Arabic name can be lengthened with kashida (ـ) to match.
  */
 export function brandNames(name: string, arabic: string): string {
-  return `<svg class="brand-names" viewBox="0 0 420 90" aria-label="${esc(name)}">
-<text class="bn-en" x="210" y="37" text-anchor="middle" data-base="40" data-max="1.05">${esc(name.toUpperCase())}</text>
-<text class="bn-ar" x="210" y="81" text-anchor="middle" data-base="46" data-max="1.25">${esc(arabic)}</text>
+  // 420×106: the Arabic baseline sits at 78 so descenders (ق, ن) fit above 106.
+  return `<svg class="brand-names" viewBox="0 0 420 106" aria-label="${esc(name)}">
+<text class="bn-en" x="210" y="36" text-anchor="middle" data-base="40" data-max="1.05">${esc(name.toUpperCase())}</text>
+<text class="bn-ar" x="210" y="78" text-anchor="middle" data-base="46" data-max="1.25">${esc(arabic)}</text>
 </svg>`;
 }
 
@@ -113,7 +114,7 @@ export function footerNotes(rows: DayRow[]): string[] {
   if (fixedIsha.length) {
     notes.push(`<span class="mark">*</span> Summer: Isha adhan and jamaat are fixed at ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
   }
-  notes.push('<span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier');
+  notes.push('<span class="legend"><span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier</span>');
   return notes;
 }
 
@@ -156,7 +157,7 @@ export interface PageHead { title: string; titleYear?: string; sub: string; subA
 export function pageFrame(config: Config, head: PageHead, attrs: string, table: string, notes: string[], extra = ''): string {
   const info = config.mosque;
   const qrs = qrsHtml(config);
-  const noteItems = notes.map((n) => `<li>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
+  const noteItems = notes.map((n) => `<li${n.includes('class="legend"') ? ' class="legend"' : ''}>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
   return `<section class="page" ${attrs}>
 <div class="frame">
 <div class="corner tl">${cornerOrnament('var(--gold)')}</div><div class="corner tr">${cornerOrnament('var(--gold)')}</div>
