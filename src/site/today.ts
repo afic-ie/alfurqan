@@ -38,7 +38,7 @@ export function renderToday(pub: Published, root: string): string {
     </div>`;
   }).join('');
   const kh = row.khutbah !== null ? `<div class="jumuah">Jumu'ah khutbah ${fmt12ampm(row.khutbah)}${row.isFriday ? ' · today' : ''}</div>` : '';
-  return `<section class="today" id="today">
+  return `<section class="today-card" id="today">
   <div class="today-head">
     <div>
       <div class="today-date">${DAY_NAMES[row.weekday]} ${t.d} ${MONTH_NAMES[t.m - 1]} ${t.y}</div>
