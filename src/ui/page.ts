@@ -3,7 +3,7 @@
 import type { Config } from '../engine/config';
 import { buildMonth, type DayRow, type Overrides } from '../engine/timetable';
 import { MONTH_NAMES, fmt12, fmt12ampm, iso, today, type Ymd } from '../engine/time';
-import { defaultEmblem, qrSvg, starGlyph } from './art';
+import { cornerOrnament, defaultEmblem, qrSvg, starGlyph } from './art';
 import { resolveImage } from './assets';
 
 const esc = (s: string) =>
@@ -111,10 +111,12 @@ ${hijriCell}${cells}</tr>`;
   ).join('');
   const head2 = COLS.filter((c) => c.jamaat).map(() => '<th class="sub">Adhan</th><th class="sub j">Jamaat</th>').join('');
 
-  const notes = footerNotes(rows).map((n) => `<li>${starGlyph('var(--accent)', 8)}<span>${n}</span></li>`).join('');
+  const notes = footerNotes(rows).map((n) => `<li>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
 
   return `<section class="page" data-month="${y}-${m}">
 <div class="frame">
+<div class="corner tl">${cornerOrnament('var(--gold)')}</div><div class="corner tr">${cornerOrnament('var(--gold)')}</div>
+<div class="corner bl">${cornerOrnament('var(--gold)')}</div><div class="corner br">${cornerOrnament('var(--gold)')}</div>
 <header class="head">
   <div class="brand">
     <div class="logo">${logoHtml(config)}</div>
@@ -130,7 +132,7 @@ ${hijriCell}${cells}</tr>`;
     <div class="month-hijri-ar" lang="ar" dir="rtl">${esc(hr.ar)}</div>
   </div>
 </header>
-<div class="rule">${starGlyph('var(--accent)', 12)}</div>
+<div class="rule"><span class="rule-dot"></span>${starGlyph('var(--gold)', 12)}<span class="rule-dot"></span></div>
 <table class="tt">
   <colgroup><col class="c-date">${config.showHijri ? '<col class="c-hijri">' : ''}${COLS.map((c) => (c.jamaat ? '<col class="c-a"><col class="c-j">' : '<col class="c-a">')).join('')}</colgroup>
   <thead>
@@ -140,7 +142,7 @@ ${hijriCell}${cells}</tr>`;
   <tbody class="rows-${rows.length}">${body}</tbody>
 </table>
 <footer class="foot">
-  <ul class="notes">${notes}${info.extraNote ? `<li>${starGlyph('var(--accent)', 8)}<span>${esc(info.extraNote)}</span></li>` : ''}</ul>
+  <ul class="notes">${notes}${info.extraNote ? `<li>${starGlyph('var(--gold-deep)', 8)}<span>${esc(info.extraNote)}</span></li>` : ''}</ul>
   <div class="give">
     <div class="give-text">
       <div class="give-title">${esc(info.donateCaption)}</div>

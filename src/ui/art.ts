@@ -44,6 +44,26 @@ export function defaultEmblem(): string {
 </g></svg>`;
 }
 
+/**
+ * Corner ornament for the page frame: a quarter arabesque of arcs, an
+ * eight-pointed star and a trefoil, drawn in gold line-work.
+ */
+export function cornerOrnament(color: string): string {
+  return `<svg class="corner" viewBox="0 0 100 100" aria-hidden="true">
+<g fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round">
+<path d="M2 60C2 28 28 2 60 2"/>
+<path d="M2 78C2 36 36 2 78 2" stroke-width="1" opacity=".7"/>
+<path d="M14 42c6-16 12-22 28-28" stroke-width="1.2"/>
+<path d="M60 2c-6 10-6 18 0 26M2 60c10-6 18-6 26 0" stroke-width="1.2"/>
+<circle cx="30" cy="30" r="7"/>
+</g>
+<g fill="${color}">
+<rect x="25" y="25" width="10" height="10"/>
+<rect x="25" y="25" width="10" height="10" transform="rotate(45 30 30)"/>
+<circle cx="60" cy="28" r="2.2"/><circle cx="28" cy="60" r="2.2"/><circle cx="78" cy="2" r="1.6"/><circle cx="2" cy="78" r="1.6"/>
+</g></svg>`;
+}
+
 /** QR code as an inline SVG string (empty string if no text). */
 export function qrSvg(text: string): string {
   if (!text.trim()) return '';

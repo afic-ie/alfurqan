@@ -35,7 +35,7 @@ const state: Saved & { y: number; m: number; months: number } = (() => {
 })();
 
 const app = document.getElementById('app')!;
-document.documentElement.style.setProperty('--pattern-dark', starPattern('#8fc4ff', 0.22));
+document.documentElement.style.setProperty('--pattern-dark', starPattern('#d9b96a', 0.2));
 document.documentElement.style.setProperty('--pattern-soft', starPattern('#1547c2', 0.06, 64));
 
 function persist() {

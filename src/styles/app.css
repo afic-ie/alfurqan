@@ -4,13 +4,17 @@
   --navy-deep: #06143f;
   --blue: #1547c2;
   --blue-bright: #1e6fe8;
-  --accent: #3fa0ff;       /* ornaments, markers, Arabic headings */
-  --accent-soft: #a9d2ff;  /* light text on dark panels */
+  --accent: #3fa0ff;       /* light blue highlights */
+  --accent-soft: #a9d2ff;  /* light blue text on dark panels */
+  --gold: #c9a24a;         /* borders, ornaments, markers */
+  --gold-deep: #9a7a2b;    /* gold text on light backgrounds */
+  --gold-soft: #ead9a6;    /* gold text on dark panels */
+  --cream: #fdfbf4;
   --tint: #e6f0ff;         /* jamaat cells */
   --tint-2: #dce9fb;       /* jamaat cells, alternate rows */
   --fri: #eef5ff;          /* Friday rows */
   --fri-j: #d2e4fb;        /* Friday jamaat cells */
-  --paper: #fbfcff;
+  --paper: #fdfcf7;
   --ink: #16213a;
   --muted: #5f6b84;
   --line: #dde4f0;
@@ -82,11 +86,18 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .frame {
   height: 100%;
   display: flex; flex-direction: column;
-  border: 0.6mm solid var(--blue);
-  outline: 0.25mm solid var(--accent); outline-offset: -1.6mm;
-  border-radius: 2mm;
-  padding: 3mm;
+  border: 0.55mm solid var(--gold);
+  outline: 0.2mm solid var(--gold); outline-offset: -1.7mm;
+  border-radius: 1.5mm;
+  padding: 3.4mm;
+  position: relative;
 }
+.corner { position: absolute; width: 13mm; height: 13mm; pointer-events: none; }
+.corner svg { width: 100%; height: 100%; display: block; }
+.corner.tl { top: 0.9mm; left: 0.9mm; }
+.corner.tr { top: 0.9mm; right: 0.9mm; transform: scaleX(-1); }
+.corner.bl { bottom: 0.9mm; left: 0.9mm; transform: scaleY(-1); }
+.corner.br { bottom: 0.9mm; right: 0.9mm; transform: scale(-1); }
 
 /* header */
 .head {
@@ -96,43 +107,46 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
   background: var(--pattern-dark), linear-gradient(135deg, var(--blue) 0%, var(--navy) 55%, var(--navy-deep) 100%);
   border-radius: 1.5mm;
   min-height: 30mm;
+  box-shadow: inset 0 0 0 0.35mm var(--gold), inset 0 0 0 0.9mm var(--navy-deep), inset 0 0 0 1.1mm var(--gold-soft);
+  margin: 1.2mm 1.2mm 0;
 }
 .brand { display: flex; align-items: center; gap: 4mm; }
 .logo {
   width: 23mm; height: 23mm; flex: none;
   display: grid; place-items: center;
   border-radius: 50%; background: #fff; color: var(--blue);
-  box-shadow: 0 0 0 0.7mm var(--accent-soft);
+  box-shadow: 0 0 0 0.6mm var(--gold), 0 0 0 1mm var(--navy-deep);
   overflow: hidden;
 }
 .logo .emblem { width: 19mm; height: 19mm; color: var(--blue); }
 .logo .logo-img { width: 100%; height: 100%; object-fit: contain; }
 .names { line-height: 1.15; }
 .name-en { font-size: 17pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-.name-ar { font-size: 19pt; font-weight: 700; color: var(--accent-soft); margin-top: 0.5mm; }
+.name-ar { font-size: 19pt; font-weight: 700; color: var(--gold-soft); margin-top: 0.5mm; }
 .city { font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-top: 1mm; }
 .month { text-align: right; line-height: 1.2; }
 .month-en { font-size: 22pt; font-weight: 700; letter-spacing: 0.01em; }
-.month-en span { font-weight: 400; color: var(--accent-soft); }
+.month-en span { font-weight: 400; color: var(--gold-soft); }
 .month-hijri { font-size: 9pt; opacity: 0.9; margin-top: 0.8mm; }
-.month-hijri-ar { font-size: 12pt; color: var(--accent-soft); }
+.month-hijri-ar { font-size: 12pt; color: var(--gold-soft); }
 
-.rule { display: flex; align-items: center; gap: 3mm; margin: 2.2mm 0 1.6mm; }
-.rule::before, .rule::after { content: ''; flex: 1; height: 0.3mm; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+.rule { display: flex; align-items: center; gap: 2mm; margin: 2.2mm 1.2mm 1.6mm; }
+.rule::before, .rule::after { content: ''; flex: 1; height: 0.3mm; background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent); }
+.rule-dot { width: 1.2mm; height: 1.2mm; background: var(--gold); transform: rotate(45deg); }
 
 /* table */
-.tt { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-variant-numeric: tabular-nums; }
+.tt { width: calc(100% - 2.4mm); margin: 0 1.2mm; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-variant-numeric: tabular-nums; }
 .c-date { width: 19.5mm; }
 .c-hijri { width: 14mm; }
 .tt th { font-weight: 600; color: var(--navy); padding: 0; }
 .tt thead tr:first-child th { padding-top: 1mm; }
 .tt th.pr { vertical-align: bottom; padding-bottom: 0.6mm; }
 .tt th .en { display: block; font-size: 9pt; letter-spacing: 0.04em; text-transform: uppercase; }
-.tt th .ar { display: block; font-family: var(--ar); font-size: 11pt; font-weight: 700; color: var(--blue-bright); line-height: 1.1; }
-.tt th.grp { border-bottom: 0.3mm solid var(--accent-soft); }
+.tt th .ar { display: block; font-family: var(--ar); font-size: 11pt; font-weight: 700; color: var(--gold-deep); line-height: 1.1; }
+.tt th.grp { border-bottom: 0.3mm solid var(--gold); }
 .tt th.sub { font-size: 6.8pt; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.6mm 0 1mm; }
 .tt th.sub.j { color: var(--blue); font-weight: 700; }
-.tt thead tr:last-child th, .tt thead th[rowspan] { border-bottom: 0.45mm solid var(--blue); }
+.tt thead tr:last-child th, .tt thead th[rowspan] { border-bottom: 0.45mm solid var(--navy); box-shadow: 0 0.75mm 0 var(--gold); }
 
 .tt td { text-align: center; padding: 0; height: 6.05mm; border-bottom: 0.2mm solid var(--line); white-space: nowrap; }
 .tt tbody.rows-28 td { height: 6.7mm; }
@@ -142,55 +156,56 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .tt td.date .dn { display: inline-block; width: 5.5mm; font-weight: 700; color: var(--navy); vertical-align: baseline; }
 .tt td.date .wd { font-size: 7.5pt; color: var(--muted); vertical-align: baseline; }
 .tt td.hijri { font-size: 8pt; color: var(--muted); }
-.tt td.hijri .hm { font-size: 6.2pt; margin-left: 0.8mm; color: var(--blue-bright); font-weight: 600; text-transform: uppercase; }
-.tt td.a { color: #3a4560; }
+.tt td.hijri .hm { font-size: 6.2pt; margin-left: 0.8mm; color: var(--gold-deep); font-weight: 600; text-transform: uppercase; }
+.tt td.a { color: #1c2333; font-weight: 500; }
 .tt td.j { font-weight: 700; color: var(--navy); background: var(--tint); position: relative; }
 .tt td.a.has-j { border-left: 0.2mm solid var(--line); }
 .tt td.chg::before {
   content: ''; position: absolute; left: 1.2mm; top: 50%; width: 1.4mm; height: 1.4mm; margin-top: -0.7mm;
-  background: var(--blue-bright); transform: rotate(45deg);
+  background: var(--gold); transform: rotate(45deg);
 }
-.tt .mark { color: var(--blue-bright); font-weight: 700; margin-left: 0.3mm; }
+.tt .mark { color: var(--gold-deep); font-weight: 700; margin-left: 0.3mm; }
 .tt tr:nth-child(even) td { background-color: rgb(21 71 194 / 0.025); }
 .tt tr:nth-child(even) td.j { background-color: var(--tint-2); }
 .tt tr.fri td { background: var(--fri); }
 .tt tr.fri td.j { background: var(--fri-j); }
-.tt tr.fri td.date { box-shadow: inset 0.8mm 0 0 var(--blue-bright); }
-.tt tr.fri td.date .wd { color: var(--blue); font-weight: 700; }
+.tt tr.fri td.date { box-shadow: inset 0.8mm 0 0 var(--gold); }
+.tt tr.fri td.date .wd { color: var(--gold-deep); font-weight: 700; }
 .tt tr.clock td.date .wd::after { content: ' ⏱'; }
 
 /* footer */
 .foot {
-  margin-top: auto; padding-top: 2.5mm;
+  margin-top: auto; padding: 2.5mm 1.2mm 0;
   display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: end;
 }
 .notes { list-style: none; margin: 0; padding: 0; font-size: 7.6pt; color: #33405c; line-height: 1.45; }
 .notes li { display: flex; gap: 1.6mm; align-items: baseline; }
 .notes .star { flex: none; position: relative; top: 0.3mm; }
 .notes strong { color: var(--navy); }
-.legend-dot { display: inline-block; width: 1.4mm; height: 1.4mm; background: var(--blue-bright); transform: rotate(45deg); margin: 0 0.4mm; }
+.legend-dot { display: inline-block; width: 1.4mm; height: 1.4mm; background: var(--gold); transform: rotate(45deg); margin: 0 0.4mm; }
 .give {
   display: flex; gap: 4mm; align-items: center;
   padding: 2.5mm 3mm; border-radius: 1.5mm;
   background: var(--pattern-dark), linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff;
   max-width: 118mm;
+  box-shadow: inset 0 0 0 0.3mm var(--gold);
 }
 .give-text { min-width: 0; }
-.give-title { font-weight: 700; font-size: 9pt; color: var(--accent-soft); letter-spacing: 0.02em; }
+.give-title { font-weight: 700; font-size: 9pt; color: var(--gold-soft); letter-spacing: 0.02em; }
 .bank { font-size: 7.3pt; line-height: 1.35; margin-top: 0.6mm; }
 .web { font-size: 7.5pt; margin-top: 0.8mm; font-weight: 600; letter-spacing: 0.03em; }
 .qrs { display: flex; gap: 2.5mm; flex: none; }
 .qr { display: flex; flex-direction: column; align-items: center; gap: 0.8mm; width: 22mm; }
-.qr-code { width: 20mm; height: 20mm; background: #fff; border-radius: 1mm; padding: 0.8mm; display: grid; place-items: center; }
+.qr-code { width: 20mm; height: 20mm; background: #fff; border-radius: 1mm; padding: 0.8mm; display: grid; place-items: center; box-shadow: 0 0 0 0.3mm var(--gold); }
 .qr-code svg, .qr-code img { width: 100%; height: 100%; display: block; object-fit: contain; }
-.qr-label { font-size: 6.2pt; text-align: center; line-height: 1.15; color: var(--accent-soft); font-weight: 600; }
-.credit { font-size: 6.4pt; color: var(--muted); text-align: center; margin-top: 1.6mm; letter-spacing: 0.02em; }
+.qr-label { font-size: 6.2pt; text-align: center; line-height: 1.15; color: var(--gold-soft); font-weight: 600; }
+.credit { font-size: 6.4pt; color: var(--muted); text-align: center; margin: 1.6mm 0 0.6mm; letter-spacing: 0.02em; }
 
 /* ---------------- screen-only affordances ---------------- */
 @media screen {
   .tt td.j { cursor: pointer; transition: box-shadow 0.15s; }
   .tt td.j:hover { box-shadow: inset 0 0 0 0.4mm var(--blue-bright); }
-  .tt td.edited { box-shadow: inset 0 -0.6mm 0 var(--accent); }
+  .tt td.edited { box-shadow: inset 0 -0.6mm 0 var(--gold); }
   .tt tr.today td { box-shadow: inset 0 0.3mm 0 var(--blue), inset 0 -0.3mm 0 var(--blue); }
 }
 
