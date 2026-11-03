@@ -69,6 +69,8 @@ export interface MosqueInfo {
   logo: string; // uploaded logo (data URL) or "builtin:logo"
   qrs: QrItem[];
   extraNote: string;
+  /** Short message shown on the TV display (and nowhere else). */
+  announcement: string;
 }
 
 export interface Config {
@@ -95,6 +97,7 @@ export const DEFAULT_CONFIG: Config = {
       { label: 'Donate online', url: 'https://donate.stripe.com/14kg0o9m60b78mY9AA', image: 'builtin:qr-stripe' },
     ],
     extraNote: '',
+    announcement: '',
   },
   rules: {
     fajr: { kind: 'step', gapWinter: 20, gapSummer: 20, step: 15, earliest: '04:00' },

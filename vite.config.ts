@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         home: resolve(__dirname, 'index.html'),
         admin: resolve(__dirname, 'admin/index.html'),
+        tv: resolve(__dirname, 'tv/index.html'),
       },
     },
   },

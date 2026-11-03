@@ -5,7 +5,24 @@
 
 import type { Saved } from '../ui/store';
 
-export const TARGET = { owner: 'saajunaid', repo: 'alfurqan', branch: 'main', path: 'public/data/published.json' };
+/**
+ * Which repository to publish to. Worked out from the page address on
+ * GitHub Pages (owner.github.io/repo/), so moving the repository to another
+ * account or organisation needs no code change. Falls back to the original
+ * repository when the site is served elsewhere (e.g. a custom domain) and
+ * nothing is saved in Settings.
+ */
+function detectTarget(): { owner: string; repo: string } {
+  try {
+    const saved = localStorage.getItem('alfurqan.timetable.publish-target');
+    if (saved) return JSON.parse(saved);
+  } catch { /* ignore */ }
+  const m = /^([a-z0-9-]+)\.github\.io$/i.exec(location.hostname);
+  const repo = location.pathname.split('/').filter(Boolean)[0];
+  if (m && repo && repo !== 'admin') return { owner: m[1], repo };
+  return { owner: 'saajunaid', repo: 'alfurqan' };
+}
+export const TARGET = { ...detectTarget(), branch: 'main', path: 'public/data/published.json' };
 const TOKEN_KEY = 'alfurqan.timetable.github-token';
 
 export const getToken = () => { try { return localStorage.getItem(TOKEN_KEY) ?? ''; } catch { return ''; } };

@@ -89,6 +89,7 @@ ${text('Website', 'mosque.website', m.website)}
 ${text('Bank details line', 'mosque.bankLine', m.bankLine)}
 ${text('Donation heading', 'mosque.donateCaption', m.donateCaption)}
 ${text('Extra note on every page (optional)', 'mosque.extraNote', m.extraNote)}
+${text('TV announcement (optional)', 'mosque.announcement', m.announcement, 'Shown along the bottom of the TV display after you publish.')}
 <div class="uploads">
   <label class="upload"><span>Logo</span>${logoSrc ? `<img src="${esc(logoSrc)}" alt="">` : '<em>Using placeholder emblem</em>'}
     <input type="file" accept="image/*" data-upload="logo"></label>
