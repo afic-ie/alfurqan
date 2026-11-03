@@ -94,6 +94,15 @@ export interface RamadanInfo {
   taraweeh: string;
   /** Extra line printed on the Ramadan timetable (optional). */
   note: string;
+  /** Jamaat during Ramadan (how the mosque set the 2026 timetable):
+   *  Fajr follows the latest adhan of the week more closely (10 min instead
+   *  of 20), Isha is never before 8 pm so Taraweeh starts at a steady time,
+   *  the days before the first Friday of Ramadan use that Friday's week, and
+   *  the khutbah moves to 1:30 pm. */
+  fajrGap: number;
+  ishaEarliest: string;
+  firstWeekFromFriday: boolean;
+  khutbah: string;
 }
 
 /** Hadith rotation on the TV display (see src/engine/hadith.ts). */
@@ -163,6 +172,7 @@ export const DEFAULT_CONFIG: Config = {
   ramadan: {
     start: '', startConfirmed: false, eid: '', eidConfirmed: false,
     eidPrayer: '', eidVenue: '', zakatFitr: '', taraweeh: '', note: '',
+    fajrGap: 10, ishaEarliest: '20:00', firstWeekFromFriday: true, khutbah: '13:30',
   },
   hadith: { enabled: false, approved: false, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [] },
   hijriOffset: 0,

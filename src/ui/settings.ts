@@ -128,7 +128,15 @@ ${text('Eid prayer venue', 'ramadan.eidVenue', c.ramadan.eidVenue)}
 ${text('Zakat-ul-Fitr', 'ramadan.zakatFitr', c.ramadan.zakatFitr, 'e.g. €10 per person')}
 ${text('Taraweeh', 'ramadan.taraweeh', c.ramadan.taraweeh, 'Website and TV only, e.g. “after Isha jamaat”.')}
 </div>
-${text('Extra note on the Ramadan timetable (optional)', 'ramadan.note', c.ramadan.note)}
+${text('Extra note on the Ramadan timetable (optional)', 'ramadan.note', c.ramadan.note, 'e.g. “For sponsoring Iftar contact …”')}
+<h4>Jamaat during Ramadan</h4>
+<p class="help">How the 2026 Ramadan timetable was set. Leave as is unless the committee changes practice.</p>
+<div class="grid">
+${num('Fajr: minutes after the latest adhan', 'ramadan.fajrGap', c.ramadan.fajrGap, 'Regular months use the Fajr rule above (20 min).')}
+${time('Isha jamaat never earlier than', 'ramadan.ishaEarliest', c.ramadan.ishaEarliest)}
+${time("Jumu'ah khutbah in Ramadan", 'ramadan.khutbah', c.ramadan.khutbah)}
+</div>
+${check("Days before the first Friday of Ramadan use that Friday's times", 'ramadan.firstWeekFromFriday', c.ramadan.firstWeekFromFriday)}
 </fieldset>
 
 <fieldset><legend>Hadith on the TV display</legend>

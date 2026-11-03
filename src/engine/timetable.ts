@@ -4,8 +4,9 @@ import { adhanTimes, type DayTimes } from './ifi';
 import { JAMAAT_PRAYERS, type Config, type JamaatPrayer } from './config';
 import { ruleJamaat, periodFor } from './jamaat';
 import { hijri, type HijriDate } from './hijri';
+import { firstFriday, ramadanDates, ramadanDay } from './ramadan';
 import {
-  addDays, daysInMonth, iso, isClockChangeDay, isSummerTime, parseTime, weekday, ymd, type Ymd,
+  addDays, compare, daysInMonth, iso, isClockChangeDay, isSummerTime, parseTime, weekday, ymd, type Ymd,
 } from './time';
 
 /** Manual changes: { "2027-01-08": { fajr: 420 } } (minutes after midnight). */
@@ -37,6 +38,24 @@ export interface DayRow {
   khutbah: number | null;
 }
 
+/** Jamaat from the rules alone, with the Ramadan adjustments when `x` is in Ramadan. */
+export function ruleJamaatFor(p: JamaatPrayer, config: Config, x: Ymd): number {
+  const r = ramadanDates(config);
+  if (!ramadanDay(r, x)) return ruleJamaat(p, config.rules[p], x);
+  const ram = config.ramadan;
+  // the days before the first Friday of Ramadan take that Friday's week
+  const ff = firstFriday(r!);
+  const d = ram.firstWeekFromFriday && compare(x, ff) < 0 && ramadanDay(r, ff) ? ff : x;
+  let rule = config.rules[p];
+  if (p === 'fajr' && rule.kind === 'step') rule = { ...rule, gapWinter: ram.fajrGap, gapSummer: ram.fajrGap };
+  let j = ruleJamaat(p, rule, d);
+  if (p === 'isha') {
+    const lo = parseTime(ram.ishaEarliest);
+    if (lo !== null) j = Math.max(j, lo);
+  }
+  return j;
+}
+
 export function jamaatFor(x: Ymd, config: Config, overrides: Overrides = {}) {
   const o = overrides[iso(x)] ?? {};
   const jamaat = {} as Record<JamaatPrayer, number>;
@@ -44,7 +63,7 @@ export function jamaatFor(x: Ymd, config: Config, overrides: Overrides = {}) {
   for (const p of JAMAAT_PRAYERS) {
     const manual = o[p];
     edited[p] = manual !== undefined;
-    jamaat[p] = manual ?? ruleJamaat(p, config.rules[p], x);
+    jamaat[p] = manual ?? ruleJamaatFor(p, config, x);
   }
   return { jamaat, edited };
 }
@@ -65,6 +84,7 @@ export function buildDay(x: Ymd, config: Config, overrides: Overrides = {}): Day
   }
   const wd = weekday(x);
   const k = periodFor(config.khutbah, x);
+  const ramKhutbah = ramadanDay(ramadanDates(config), x) ? parseTime(config.ramadan.khutbah) : null;
   return {
     date: x,
     key: iso(x),
@@ -79,7 +99,7 @@ export function buildDay(x: Ymd, config: Config, overrides: Overrides = {}): Day
     shownAdhan,
     edited,
     beforeAdhan,
-    khutbah: k ? parseTime(k.time) : null,
+    khutbah: ramKhutbah ?? (k ? parseTime(k.time) : null),
   };
 }
 

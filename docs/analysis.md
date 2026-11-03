@@ -88,6 +88,11 @@ future rule change cannot quietly drift from current practice.
   and no adhan.
 * Nov–Dec 2022/2023: Friday Dhuhr jamaat followed the khutbah (1:25–1:30)
   while other days were 1:00. Since 2024 the khutbah time is a footnote.
-* Ramadan timetables keep the same jamaat rules. Fajr is labelled "Suhr ends"
-  and Maghrib "Iftaar", with a Ramadan-day column and extra notes (du'a, Zakat
-  al-Fitr, moon sighting). This will be a separate layout later.
+* Ramadan timetables use the same adhan data and Dhuhr/Asr rules, with four
+  differences seen on the 2026 sheet (18 Feb – 19 Mar 2026) and reproduced to
+  the minute by `tests/fixtures/ramadan-2026.json`: Fajr jamaat follows the
+  week's latest adhan by 10 minutes instead of 20 (so 6:15 rather than 6:30),
+  Isha jamaat is never before 8:00 pm, the days before the first Friday of
+  Ramadan use that Friday's week, and the khutbah is at 1:30 pm. These are
+  settings under Settings → Ramadan. The 2025 sheet used a less regular Fajr
+  pattern (5:50, 5:35) that no rule reproduces; 2026 is taken as current practice.
