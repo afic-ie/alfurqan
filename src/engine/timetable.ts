@@ -22,6 +22,14 @@ export interface DayRow {
   jamaat: Record<JamaatPrayer, number>;
   /** jamaat differs from the day before (worth highlighting) */
   changed: Record<JamaatPrayer, boolean>;
+  /** +1 if jamaat moved later than the day before, -1 if earlier, 0 if same */
+  direction: Record<JamaatPrayer, 1 | -1 | 0>;
+  /**
+   * Adhan times to print. Same as `adhan`, except when a fixed jamaat is
+   * earlier than the adhan (summer Isha): then the jamaat time is shown for
+   * the adhan too, so the timetable never shows a jamaat before its adhan.
+   */
+  shownAdhan: DayTimes;
   /** set by hand rather than by the rules */
   edited: Record<JamaatPrayer, boolean>;
   /** jamaat is earlier than the adhan (e.g. fixed summer Isha) */
@@ -46,10 +54,14 @@ export function buildDay(x: Ymd, config: Config, overrides: Overrides = {}): Day
   const { jamaat, edited } = jamaatFor(x, config, overrides);
   const prev = jamaatFor(addDays(x, -1), config, overrides).jamaat;
   const changed = {} as Record<JamaatPrayer, boolean>;
+  const direction = {} as Record<JamaatPrayer, 1 | -1 | 0>;
   const beforeAdhan = {} as Record<JamaatPrayer, boolean>;
+  const shownAdhan = { ...adhan };
   for (const p of JAMAAT_PRAYERS) {
     changed[p] = p !== 'maghrib' && prev[p] !== jamaat[p];
+    direction[p] = !changed[p] ? 0 : jamaat[p] > prev[p] ? 1 : -1;
     beforeAdhan[p] = jamaat[p] < adhan[p];
+    if (beforeAdhan[p]) shownAdhan[p] = jamaat[p];
   }
   const wd = weekday(x);
   const k = periodFor(config.khutbah, x);
@@ -63,6 +75,8 @@ export function buildDay(x: Ymd, config: Config, overrides: Overrides = {}): Day
     adhan,
     jamaat,
     changed,
+    direction,
+    shownAdhan,
     edited,
     beforeAdhan,
     khutbah: k ? parseTime(k.time) : null,
