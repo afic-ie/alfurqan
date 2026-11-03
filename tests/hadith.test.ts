@@ -7,7 +7,6 @@ import { ymd } from '../src/engine/time';
 const on = () => {
   const c = cloneConfig(DEFAULT_CONFIG);
   c.hadith.enabled = true;
-  c.hadith.approved = true;
   return c;
 };
 
@@ -36,11 +35,22 @@ describe('hadith slots', () => {
   const d = ymd(2026, 11, 3); // Tuesday; jamaat 6:15, 1:00, 3:00, 5:06, 7:15
   const row = buildDay(d, DEFAULT_CONFIG);
 
-  it('shows nothing until enabled and reviewed', () => {
-    expect(hadithNow(DEFAULT_CONFIG, row, d, 10 * 60, false)).toBeNull();
+  it('shows nothing when switched off', () => {
     const c = on();
-    c.hadith.approved = false;
+    c.hadith.enabled = false;
     expect(hadithNow(c, row, d, 10 * 60, false)).toBeNull();
+  });
+
+  it('includes custom hadith and skips empty ones', () => {
+    const c = on();
+    c.hadith.custom = [
+      { id: 'custom-1', ar: 'نص', en: 'Text', ref: 'Sahih Muslim 1', grade: 'Sahih' },
+      { id: 'custom-2', ar: '', en: '  ', ref: '', grade: '' },
+    ];
+    const list = hadithList(c, false);
+    expect(list.filter((h) => h.id.startsWith('custom')).map((h) => h.id)).toEqual(['custom-1']);
+    c.hadith.hidden = ['custom-1'];
+    expect(hadithList(c, false).some((h) => h.id === 'custom-1')).toBe(false);
   });
 
   it('shows at the start of a slot, for the set seconds only', () => {

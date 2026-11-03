@@ -105,17 +105,26 @@ export interface RamadanInfo {
   khutbah: string;
 }
 
+/** A hadith added in Settings (the built-in list is in src/data/hadith.json). */
+export interface CustomHadith {
+  id: string;
+  ar: string;
+  en: string;
+  ref: string;
+  grade: string;
+}
+
 /** Hadith rotation on the TV display (see src/engine/hadith.ts). */
 export interface HadithSettings {
   enabled: boolean;
-  /** The list has been checked by the imam; nothing shows until this is ticked. */
-  approved: boolean;
   everyMin: number;
   showSec: number;
   quietBefore: number;
   quietAfter: number;
   /** ids of hadith not to show */
   hidden: string[];
+  /** hadith added in Settings, shown in the rotation with the built-in ones */
+  custom: CustomHadith[];
 }
 
 export interface Config {
@@ -174,7 +183,7 @@ export const DEFAULT_CONFIG: Config = {
     eidPrayer: '', eidVenue: '', zakatFitr: '', taraweeh: '', note: '',
     fajrGap: 10, ishaEarliest: '20:00', firstWeekFromFriday: true, khutbah: '13:30',
   },
-  hadith: { enabled: false, approved: false, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [] },
+  hadith: { enabled: true, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [], custom: [] },
   hijriOffset: 0,
   showHijri: true,
 };
@@ -194,7 +203,7 @@ export function normaliseConfig(raw: unknown): Config {
     version: 1,
     mosque: { ...base.mosque, ...(r.mosque ?? {}), qrs: Array.isArray(r.mosque?.qrs) ? r.mosque.qrs : base.mosque.qrs },
     ramadan: { ...base.ramadan, ...(r.ramadan ?? {}) },
-    hadith: { ...base.hadith, ...(r.hadith ?? {}), hidden: Array.isArray(r.hadith?.hidden) ? r.hadith.hidden : [] },
+    hadith: { ...base.hadith, ...(r.hadith ?? {}), hidden: Array.isArray(r.hadith?.hidden) ? r.hadith.hidden : [], custom: Array.isArray(r.hadith?.custom) ? r.hadith.custom : [] },
     rules: { ...base.rules, ...(r.rules ?? {}) },
     khutbah: Array.isArray(r.khutbah) ? r.khutbah : base.khutbah,
   };

@@ -140,9 +140,8 @@ ${check("Days before the first Friday of Ramadan use that Friday's times", 'rama
 </fieldset>
 
 <fieldset><legend>Hadith on the TV display</legend>
-<p class="help">Shows one hadith (Arabic, English and reference) for a short time at regular intervals, never around a jamaat, the Jumu'ah khutbah or while the jamaat screen is up. The list below is fixed and sourced from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com references; untick any you do not want shown. Nothing is shown until the list has been checked and <strong>reviewed</strong> is ticked.</p>
+<p class="help">Shows one hadith (Arabic, English and reference) for a short time at regular intervals, never around a jamaat, the Jumu'ah khutbah or while the jamaat screen is up. The built-in list comes from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com references; untick any you do not want shown and add your own below. Please have the imam check the list.</p>
 ${check('Show hadith on the TV', 'hadith.enabled', c.hadith.enabled)}
-${check('The list has been reviewed by the imam', 'hadith.approved', c.hadith.approved)}
 <div class="grid">
 ${num('Every (minutes)', 'hadith.everyMin', c.hadith.everyMin)}
 ${num('For (seconds)', 'hadith.showSec', c.hadith.showSec)}
@@ -150,9 +149,26 @@ ${num('Not within (minutes) before a jamaat', 'hadith.quietBefore', c.hadith.qui
 ${num('Nor (minutes) after it', 'hadith.quietAfter', c.hadith.quietAfter)}
 </div>
 <p class="help">Preview on the TV page with <code>tv/?preview=hadith</code> (cycles through the list).</p>
-<details class="hadith-list"><summary>${ALL_HADITH.length - c.hadith.hidden.length} of ${ALL_HADITH.length} hadith shown · open to choose</summary>
+<details class="hadith-list"><summary>${ALL_HADITH.filter((h) => !c.hadith.hidden.includes(h.id)).length} of ${ALL_HADITH.length} built-in hadith shown · open to choose</summary>
 ${ALL_HADITH.map((h) => `<label class="hadith-item"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}><span><span class="h-ar" lang="ar" dir="rtl">${esc(h.ar)}</span><span class="h-en">${esc(h.en)}</span><small>${esc(h.ref)} · ${esc(h.grade)}${h.season ? ' · Ramadan only' : ''}</small></span></label>`).join('')}
 </details>
+<h4>Your own hadith</h4>
+<p class="help">Added to the rotation with the built-in ones. Give the Arabic, the English and the reference (collection and number) so people can look it up.</p>
+<div class="custom-list">
+${c.hadith.custom.map((h, i) => `<div class="custom-hadith">
+  <label class="f"><span>Arabic</span><textarea rows="2" lang="ar" dir="rtl" data-path="hadith.custom.${i}.ar">${esc(h.ar)}</textarea></label>
+  <label class="f"><span>English</span><textarea rows="2" data-path="hadith.custom.${i}.en">${esc(h.en)}</textarea></label>
+  <div class="grid">
+    ${text('Reference', `hadith.custom.${i}.ref`, h.ref, 'e.g. Sahih Muslim 2699')}
+    ${text('Grading', `hadith.custom.${i}.grade`, h.grade, 'e.g. Sahih')}
+  </div>
+  <div class="buttons small">
+    <label class="check"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}> Show on the TV</label>
+    <button type="button" class="ghost danger" data-action="hadith-del" data-index="${i}">Remove</button>
+  </div>
+</div>`).join('')}
+</div>
+<button type="button" class="ghost" data-action="hadith-add">+ Add a hadith</button>
 </fieldset>
 
 <fieldset><legend>Hijri date</legend>

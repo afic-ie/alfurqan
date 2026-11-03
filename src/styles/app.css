@@ -320,6 +320,11 @@ fieldset h4 { margin: 14px 0 2px; font-family: var(--head); color: var(--navy); 
 .hadith-item .h-ar { display: block; font-family: var(--ar); font-size: 16px; line-height: 1.7; color: var(--navy-deep); }
 .hadith-item .h-en { display: block; color: var(--ink); margin: 2px 0; }
 .hadith-item small { color: var(--muted); }
+.custom-list { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 8px; }
+.custom-hadith { border: 1px dashed var(--line); border-radius: 10px; padding: 8px 10px; }
+.custom-hadith .f { margin: 4px 0; }
+.custom-hadith textarea { padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; width: 100%; font: inherit; resize: vertical; }
+.custom-hadith textarea[lang='ar'] { font-family: var(--ar); font-size: 17px; line-height: 1.6; }
 
 /* ---------------- dialogs ---------------- */
 dialog.editor { border: none; border-radius: 14px; padding: 18px 20px; width: min(440px, 94vw); box-shadow: 0 20px 60px rgb(0 0 0 / 0.3); }
