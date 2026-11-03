@@ -17,6 +17,7 @@ import { JAMAAT_PRAYERS, normaliseConfig, type JamaatPrayer } from '../engine/co
 import { buildDay } from '../engine/timetable';
 import { addDays, DAY_NAMES, MONTH_NAMES, fmt12, fmt12ampm, today, type Ymd } from '../engine/time';
 import { starPattern } from '../ui/art';
+import { brandNames } from '../ui/page';
 import type { Published } from '../site/data';
 import { loadPublished } from '../site/data';
 import { registerPwa } from '../site/pwa';
@@ -57,7 +58,7 @@ document.documentElement.style.setProperty('--pattern-dark', starPattern('#d9b96
 app.innerHTML = `
 <div class="tv">
   <aside class="tv-left">
-    <div class="tv-brand"><img src="${logo}" alt=""><div><div class="tv-name">${esc(pub.config.mosque.name)}</div><div class="tv-name-ar" lang="ar">${esc(pub.config.mosque.arabicName)}</div></div></div>
+    <div class="tv-brand"><img src="${logo}" alt="">${brandNames(pub.config.mosque.name, pub.config.mosque.arabicName)}</div>
     <div class="tv-clock" id="clock">--:--</div>
     <div class="tv-date" id="date"></div>
     <div class="tv-hijri" id="hijri"></div>

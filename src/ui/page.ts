@@ -22,7 +22,7 @@ const COLS: { p: 'fajr' | 'sunrise' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'; en: 
 ];
 
 /** Mosque name in English and Arabic, both stretched to the same width. */
-function brandNames(name: string, arabic: string): string {
+export function brandNames(name: string, arabic: string): string {
   const W = 420;
   return `<svg class="brand-names" viewBox="0 0 ${W} 86" aria-label="${esc(name)}">
 <text class="bn-en" x="0" y="38" textLength="${W}" lengthAdjust="spacing">${esc(name.toUpperCase())}</text>

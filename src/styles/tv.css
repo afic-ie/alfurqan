@@ -3,7 +3,7 @@
   --navy: #0a1f5c; --navy-deep: #06143f; --blue: #1547c2; --blue-bright: #1e6fe8;
   --gold: #c9a24a; --gold-soft: #ead9a6; --ink: #fff;
   --en: 'Manrope', system-ui, sans-serif; --head: 'Outfit', 'Manrope', system-ui, sans-serif;
-  --ar: 'Amiri', serif; --ar-brand: 'Reem Kufi', 'Cairo', sans-serif;
+  --ar: 'Reem Kufi', 'Cairo', sans-serif; --ar-brand: 'Reem Kufi', 'Cairo', sans-serif;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; }
@@ -12,13 +12,14 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .tv-left { display: flex; flex-direction: column; justify-content: center; gap: 1.2vh; }
 .tv-brand { display: flex; align-items: center; gap: 1.2vw; margin-bottom: 1vh; }
 .tv-brand img { width: 7vh; height: 7vh; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0.4vh var(--gold); }
-.tv-name { font-family: var(--head); font-weight: 700; font-size: 3.2vh; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.1; }
-.tv-name-ar { font-family: var(--ar-brand); color: var(--gold-soft); font-size: 3.4vh; line-height: 1.2; }
+.tv-brand .brand-names { width: 22vw; height: 4.4vw; display: block; }
+.bn-en { font-family: 'Montserrat', var(--head); font-weight: 700; font-size: 40px; fill: #fff; }
+.bn-ar { font-family: var(--ar-brand); font-weight: 500; font-size: 46px; fill: var(--gold-soft); }
 .tv-clock { font-family: var(--head); font-weight: 700; font-size: 17vh; line-height: 1; letter-spacing: -0.02em; display: flex; align-items: baseline; gap: 1vw; }
 .tv-clock::after { content: attr(data-ampm); font-size: 4vh; color: var(--gold-soft); font-weight: 500; letter-spacing: 0.1em; }
 .tv-date { font-family: var(--head); font-size: 4vh; font-weight: 500; }
 .tv-hijri { font-size: 2.8vh; color: var(--gold-soft); }
-.tv-hijri [lang='ar'] { font-family: var(--ar); font-size: 3.2vh; margin-left: 1vw; }
+.tv-hijri [lang='ar'] { font-family: var(--ar); font-size: 2.9vh; margin-left: 1vw; }
 .tv-next { margin-top: 2.5vh; background: rgb(255 255 255 / 0.08); border: 0.25vh solid var(--gold); border-radius: 2vh; padding: 2vh 2.4vw; line-height: 1.15; }
 .tv-next small { display: block; font-size: 2.2vh; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
 .tv-next strong { font-family: var(--head); font-size: 6vh; display: block; }
@@ -51,7 +52,7 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .ov-in { text-align: center; }
 .ov-ar { font-family: var(--ar-brand); font-size: 20vh; color: var(--gold-soft); line-height: 1.1; }
 .ov-en { font-family: var(--head); font-size: 10vh; font-weight: 700; line-height: 1.1; }
-.ov-ar-sub { font-family: var(--ar); font-size: 6.5vh; color: var(--gold-soft); margin-top: 2vh; line-height: 1.4; }
+.ov-ar-sub { font-family: var(--ar); font-size: 5.6vh; color: var(--gold-soft); margin-top: 2vh; line-height: 1.5; }
 .ov-sub { font-size: 3.6vh; margin-top: 1vh; opacity: 0.9; }
 .ov-time { font-family: var(--head); font-size: 6vh; color: var(--gold-soft); margin-top: 2vh; }
 
