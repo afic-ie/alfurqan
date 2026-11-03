@@ -1,59 +1,59 @@
+// Public timetable page: today's times, the monthly timetable, print.
+
 import '../styles/fonts';
+import '../styles/app.css';
 import '../styles/site.css';
-import { HADITH, SERVICES, SITE } from '../site/content';
 import { loadPublished } from '../site/data';
-import { esc, hadith, icon, mountShell } from '../site/layout';
+import { icon, mountShell } from '../site/layout';
 import { renderToday, startCountdown } from '../site/today';
+import { MONTH_NAMES, today } from '../engine/time';
+import { renderMonth } from '../ui/page';
 
 const root = './';
 const pub = await loadPublished(root);
-const pct = Math.min(100, Math.round((SITE.appeal.raised / SITE.appeal.target) * 100));
-const eur = (n: number) => '€' + n.toLocaleString('en-IE');
+const t = today();
+let y = t.y;
+let m = t.m;
+const q = new URLSearchParams(location.search);
+if (/^\d{4}$/.test(q.get('y') ?? '')) y = Number(q.get('y'));
+if (/^\d{1,2}$/.test(q.get('m') ?? '') && Number(q.get('m')) >= 1 && Number(q.get('m')) <= 12) m = Number(q.get('m'));
 
 mountShell(root, '', `
-<section class="hero home-hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <div class="eyebrow">${esc(SITE.org)} · Limerick</div>
-      <h1>${esc(SITE.name)} <span lang="ar">${esc(SITE.arabicName)}</span></h1>
-      <p class="lead">${esc(SITE.tagline)}. Daily prayers, Jumu'ah, Quran classes and community services in the heart of Limerick City.</p>
-      <div class="actions">
-        <a class="btn primary" href="${root}timetable/">${icon('clock')} Prayer timetable</a>
-        <a class="btn gold" href="${root}donate/">${icon('heart')} Donate</a>
-        <a class="btn ghost" href="${SITE.whatsapp}" target="_blank" rel="noopener">${icon('chat')} WhatsApp group</a>
-      </div>
+<section class="hero"><div class="wrap hero-grid">
+  <div class="hero-text">
+    <div class="eyebrow">Limerick · prayer times</div>
+    <h1>Prayer timetable</h1>
+    <p class="lead">Adhan and jamaat times for Masjid Al-Furqan. Today's times are on the right; the full month is below, ready to print or save as a PDF.</p>
+    <div class="tt-bar">
+      <button type="button" class="btn ghost icon-btn" data-action="prev" aria-label="Previous month">‹</button>
+      <div class="tt-month" id="tt-month"></div>
+      <button type="button" class="btn ghost icon-btn" data-action="next" aria-label="Next month">›</button>
+      <button type="button" class="btn primary" data-action="print">${icon('print')} Print / Save PDF</button>
     </div>
-    ${renderToday(pub, root)}
   </div>
-</section>
-${hadith(HADITH.home)}
-${SITE.appeal.active ? `
-<section class="wrap appeal">
-  <div class="appeal-text">
-    <div class="eyebrow">Urgent appeal</div>
-    <h2>${esc(SITE.appeal.title)}</h2>
-    <p>${esc(SITE.appeal.summary)}</p>
-    <div class="actions"><a class="btn primary" href="${root}project/">Read about the project ${icon('arrow')}</a><a class="btn gold" href="${SITE.stripe}" target="_blank" rel="noopener">${icon('heart')} Donate now</a></div>
-  </div>
-  <div class="progress-card">
-    <div class="progress-nums"><strong>${eur(SITE.appeal.raised)}</strong><span>raised of ${eur(SITE.appeal.target)}</span></div>
-    <div class="progress"><div class="bar" style="width:${pct}%"></div></div>
-    <div class="progress-pct">${pct}% of target</div>
-  </div>
-</section>` : ''}
-<section class="wrap">
-  <div class="sec-head"><h2>Services & activities</h2><a href="${root}services/">All services ${icon('arrow')}</a></div>
-  <div class="cards">${SERVICES.slice(0, 4).map((s) => `<a class="card" href="${root}services/">${icon(s.icon)}<h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></a>`).join('')}</div>
-</section>
-<section class="wrap visit">
-  <div>
-    <h2>Visit us</h2>
-    <p>${icon('pin')} ${esc(SITE.address)}</p>
-    <p>${icon('phone')} <a href="${SITE.phoneHref}">${esc(SITE.phone)}</a></p>
-    <a class="btn ghost" href="${root}contact/">Contact & directions ${icon('arrow')}</a>
-  </div>
-  <iframe class="map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&output=embed"></iframe>
-</section>
-`, { title: 'Home' });
+  ${renderToday(pub, root)}
+</div></section>
+<section class="pages public" id="pages"></section>
+`, 'Prayer timetable');
 
 startCountdown(pub);
+
+const pages = document.getElementById('pages')!;
+function render() {
+  document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
+  pages.innerHTML = renderMonth(y, m, pub.config, pub.overrides);
+  history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
+  fit();
+}
+function fit() {
+  const scale = Math.min(1, (pages.clientWidth - 16) / (210 * 3.7795));
+  document.documentElement.style.setProperty('--fit', String(Math.max(0.3, scale)));
+}
+window.addEventListener('resize', fit);
+document.addEventListener('click', (e) => {
+  const a = (e.target as HTMLElement).closest<HTMLElement>('[data-action]')?.dataset.action;
+  if (a === 'prev') { m--; if (m < 1) { m = 12; y--; } render(); }
+  if (a === 'next') { m++; if (m > 12) { m = 1; y++; } render(); }
+  if (a === 'print') window.print();
+});
+render();
