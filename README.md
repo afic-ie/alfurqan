@@ -119,6 +119,18 @@ breaking the fast, Zakat-ul-Fitr and Eid). After publishing, the website and the
 TV show the Ramadan day, Suhoor/Iftar and Taraweeh from two weeks before the
 start until Eid, and the TV checks for changes every five minutes in that period.
 
+## Hadith on the TV display
+
+Settings → **Hadith on the TV display** switches on a rotation of short hadith
+(Arabic, English, reference and grading) from `src/data/hadith.json`, sourced
+from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com
+references. Nothing is shown until the list has been checked and *reviewed by the
+imam* is ticked. One hadith appears for the set number of seconds at the start of
+every interval (default every 15 minutes for 30 seconds), never within the quiet
+window around a jamaat (default 10 minutes before to 20 after), around the
+Jumu'ah khutbah, or while the jamaat screen is up. Individual hadith can be
+unticked; Ramadan ones show only during Ramadan. Preview with `tv/?preview=hadith`.
+
 ## Project layout
 
 | Path | What it is |
@@ -142,5 +154,5 @@ start until Eid, and the TV checks for changes every five minutes in that period
 3. ~~Publish from the admin page~~
 4. ~~TV display mode for the mosque screen~~
 5. ~~Ramadan timetable~~
-6. Hadith rotation on the TV display
+6. ~~Hadith rotation on the TV display~~
 7. Embed for the afic.ie website (separate project)

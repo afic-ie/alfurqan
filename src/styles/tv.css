@@ -60,6 +60,18 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .ov-sub { font-size: 3.6vh; margin-top: 1vh; opacity: 0.9; }
 .ov-time { font-family: var(--head); font-size: 6vh; color: var(--gold-soft); margin-top: 2vh; }
 
+/* hadith slot */
+.tv-hadith { position: fixed; inset: 0; display: grid; place-items: center; padding: 6vh 8vw; background: var(--pattern-dark), linear-gradient(160deg, var(--navy), var(--navy-deep) 70%, #03091f); z-index: 9; animation: hd-in 0.6s ease-out; }
+.tv-hadith[hidden] { display: none; }
+@keyframes hd-in { from { opacity: 0; } to { opacity: 1; } }
+.hd-in { max-width: 84vw; text-align: center; }
+.hd-label { font-family: var(--head); font-size: 2.6vh; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 3vh; }
+.hd-ar { font-family: 'Amiri', 'Traditional Arabic', serif; font-size: 6.4vh; line-height: 1.75; color: #fff; }
+.hd-en { font-size: 3.6vh; line-height: 1.5; margin-top: 3vh; color: rgb(255 255 255 / 0.92); max-width: 70vw; margin-left: auto; margin-right: auto; }
+.hd-ref { margin-top: 3vh; font-family: var(--head); font-size: 2.4vh; color: var(--gold-soft); letter-spacing: 0.08em; }
+.hd-in::before, .hd-in::after { content: ''; display: block; width: 18vw; height: 0.3vh; margin: 0 auto 3vh; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.hd-in::after { margin: 3vh auto 0; }
+
 @media (orientation: portrait) {
   .tv { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
   .tv-clock { font-size: 12vh; }
