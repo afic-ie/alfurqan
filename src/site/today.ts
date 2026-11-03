@@ -37,7 +37,7 @@ export function renderToday(pub: Published, root: string): string {
       <div class="pr-jamaat"><small>Jamaat</small>${fmt12(row.jamaat[p])}${row.beforeAdhan[p] ? '*' : ''}</div>${sun}
     </div>`;
   }).join('');
-  const kh = row.khutbah !== null ? `<div class="jumuah">${icon('mosque')} Jumu'ah khutbah ${fmt12ampm(row.khutbah)}${row.isFriday ? ' · today' : ''}</div>` : '';
+  const kh = row.khutbah !== null ? `<div class="jumuah">Jumu'ah khutbah ${fmt12ampm(row.khutbah)}${row.isFriday ? ' · today' : ''}</div>` : '';
   return `<section class="today" id="today">
   <div class="today-head">
     <div>

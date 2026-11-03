@@ -13,7 +13,9 @@
   --tint-2: #dce9fb;       /* jamaat cells, alternate rows */
   --fri: #eef5ff;          /* Friday rows */
   --fri-j: #d2e4fb;        /* Friday jamaat cells */
-  --paper: #fdfbf5;
+  --paper: #fcfcf9;
+  --today: #ffe9a3;        /* today's row */
+  --today-j: #f6d97e;      /* today's jamaat cells */
   --ink: #16213a;
   --muted: #5f6b84;
   --line: #dde4f0;
@@ -220,9 +222,12 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 .qr-code svg, .qr-code img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .qr-label { font-size: 6.2pt; text-align: center; line-height: 1.15; color: var(--gold-soft); font-weight: 600; }
 
-/* today's row (on screen and in print, when the month shown is the current one) */
-.tt tr.today td { background-image: linear-gradient(rgb(201 162 74 / 0.18), rgb(201 162 74 / 0.18)); }
-.tt tr.today td.date .dn { color: var(--gold-deep); }
+/* today's row (on screen and in print, when the month shown is the current one).
+   Solid colours: semi-transparent overlays are flattened to white by some print engines. */
+.tt tr.today td, .tt tr.today:nth-child(even) td, .tt tr.today.fri td { background: var(--today); }
+.tt tr.today td.j, .tt tr.today:nth-child(even) td.j, .tt tr.today.fri td.j { background: var(--today-j); }
+.tt tr.today td.date { box-shadow: inset 0.8mm 0 0 var(--gold-deep); }
+.tt tr.today td.date .dn, .tt tr.today td.date .wd { color: var(--navy-deep); font-weight: 800; }
 
 /* ---------------- screen-only affordances ---------------- */
 @media screen {

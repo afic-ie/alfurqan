@@ -5,6 +5,7 @@
 import logo from '../assets/logo.png';
 import { NAV, SITE } from './content';
 import { starPattern } from '../ui/art';
+import { brandNames } from '../ui/page';
 
 export const esc = (v: unknown) =>
   String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -30,7 +31,7 @@ export function shell(root: string, current: string, body: string): string {
   <div class="wrap top-in">
     <a class="brand" href="${root}">
       <img src="${logo}" alt="" width="44" height="44">
-      <span class="brand-text"><span class="brand-en">${esc(SITE.name)}</span><span class="brand-ar" lang="ar">${esc(SITE.arabicName)}</span></span>
+      ${brandNames(SITE.name, SITE.arabicName)}
     </a>
     <nav class="nav" id="nav" aria-label="Main">${links}<a class="nav-cta" href="${SITE.website}">${icon('globe')} alfurqan.ie</a></nav>
     <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">${icon('menu')}${icon('close')}</button>
