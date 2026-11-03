@@ -21,6 +21,8 @@ import { brandNames, fitBrandNames } from '../ui/page';
 import type { Published } from '../site/data';
 import { loadPublished } from '../site/data';
 import { registerPwa } from '../site/pwa';
+import { isEid, ramadanDates, ramadanDay, ramadanSeason } from '../engine/ramadan';
+import { longDate } from '../ui/page';
 
 const root = '../';
 const CACHE_KEY = 'alfurqan.tv.published';
@@ -62,6 +64,7 @@ app.innerHTML = `
     <div class="tv-clock" id="clock">--:--</div>
     <div class="tv-date" id="date"></div>
     <div class="tv-hijri" id="hijri"></div>
+    <div class="tv-ram" id="ram" hidden></div>
     <div class="tv-next" id="next"></div>
   </aside>
   <section class="tv-right">
@@ -108,6 +111,21 @@ function render() {
     if (row.clockChange) bits.push(`Clocks go ${row.clockChange} one hour today`);
     if (row.beforeAdhan.isha) bits.push('Isha adhan and jamaat fixed for summer');
     $('foot').innerHTML = bits.map((b) => `<span>${b}</span>`).join('');
+    // Ramadan strip: day number, suhoor/iftar, taraweeh; Eid greeting on the day.
+    const rd = ramadanDates(pub.config);
+    const ramEl = $('ram');
+    if (ramadanSeason(rd, t)) {
+      const ram = pub.config.ramadan;
+      const day = ramadanDay(rd, t);
+      let html = '';
+      if (day) html = `<strong>Ramadan ${day}</strong><span>Suhoor ends <b>${fmt12ampm(row.adhan.fajr)}</b></span><span>Iftar <b>${fmt12ampm(row.adhan.maghrib)}</b></span>${ram.taraweeh ? `<span>Taraweeh <b>${esc(ram.taraweeh)}</b></span>` : ''}`;
+      else if (isEid(rd, t)) html = `<strong>Eid Mubarak</strong>${ram.eidPrayer ? `<span>Eid prayer <b>${esc(ram.eidPrayer)}</b></span>` : ''}${ram.eidVenue ? `<span>${esc(ram.eidVenue)}</span>` : ''}`;
+      else if (t.y * 400 + t.m * 32 + t.d < rd!.start.y * 400 + rd!.start.m * 32 + rd!.start.d) html = `<strong>Ramadan</strong><span>${rd!.startConfirmed ? 'begins' : 'expected to begin'} <b>${longDate(rd!.start)}</b></span>`;
+      else html = `<strong>Eid al-Fitr</strong><span>${rd!.eidConfirmed ? '' : 'expected '}<b>${longDate(rd!.eid)}</b></span>${ram.eidPrayer ? `<span>Eid prayer <b>${esc(ram.eidPrayer)}</b></span>` : ''}`;
+      if (ram.zakatFitr && !isEid(rd, t)) html += `<span>Zakat-ul-Fitr <b>${esc(ram.zakatFitr)}</b></span>`;
+      ramEl.innerHTML = html;
+      ramEl.hidden = false;
+    } else ramEl.hidden = true;
     const ann = pub.config.mosque.announcement?.trim();
     $('ticker').hidden = !ann;
     $('ticker').innerHTML = ann ? `<span>${esc(ann)}</span>` : '';
@@ -147,11 +165,16 @@ function render() {
 render();
 setInterval(render, 1000);
 
-// Refresh published data every 30 minutes; reload daily at 03:30 for updates.
+// Refresh published data every 30 minutes (every 5 around Ramadan, when the
+// dates can change at short notice); reload daily at 03:30 for app updates.
+let lastRefresh = Date.now();
 setInterval(async () => {
+  const every = ramadanSeason(ramadanDates(pub.config), today()) ? 5 : 30;
+  if (Date.now() - lastRefresh < every * 60 * 1000) return;
+  lastRefresh = Date.now();
   const fresh = await getPublished();
   if (fresh.publishedAt !== pub.publishedAt) { pub = fresh; shownDay = ''; render(); }
-}, 30 * 60 * 1000);
+}, 60 * 1000);
 setInterval(() => {
   const n = new Date();
   if (n.getHours() === 3 && n.getMinutes() === 30 && n.getSeconds() < 2) location.reload();

@@ -8,6 +8,8 @@ import { buildDay } from './engine/timetable';
 import { daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today, ymd } from './engine/time';
 import { starPattern } from './ui/art';
 import { fitBrandNames, renderMonth } from './ui/page';
+import { renderRamadan } from './ui/ramadan';
+import { ramadanDates } from './engine/ramadan';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
@@ -15,7 +17,7 @@ import { registerPwa } from './site/pwa';
 import { getToken, publish, PublishError, setToken, TARGET, TOKEN_HELP_URL } from './site/publish';
 
 // ---------- state ----------
-const state: Saved & { y: number; m: number; months: number } = await (async () => {
+const state: Saved & { y: number; m: number; months: number; view: 'months' | 'ramadan' } = await (async () => {
   const s = hasSaved() ? load() : await loadPublished('../');
   const t = today();
   // Timetables are made two months at a time (Jan-Feb, Mar-Apr, ...):
@@ -31,7 +33,7 @@ const state: Saved & { y: number; m: number; months: number } = await (async () 
   if (qy >= 2000 && qy <= 2099) y = qy;
   if (qm >= 1 && qm <= 12) m = qm;
   const months = [1, 2, 3, 6, 12].includes(qn) ? qn : 2;
-  return { ...s, y, m, months };
+  return { ...s, y, m, months, view: q.get('view') === 'ramadan' ? 'ramadan' as const : 'months' as const };
 })();
 
 const app = document.getElementById('app')!;
@@ -61,6 +63,7 @@ app.innerHTML = `
     </label>
   </div>
   <div class="tb-right">
+    <button type="button" data-action="ramadan" id="ramadan-btn">Ramadan</button>
     <button type="button" data-action="adjust">Adjust jamaat</button>
     <button type="button" data-action="settings">Settings</button>
     <button type="button" class="primary" data-action="print">Print / Save PDF</button>
@@ -105,16 +108,24 @@ function renderPages() {
   yearIn.value = String(state.y);
   monthsSel.value = String(state.months);
   const out: string[] = [];
-  let y = state.y;
-  let m = state.m;
-  for (let i = 0; i < state.months; i++) {
-    out.push(`<div class="page-wrap">${renderMonth(y, m, state.config, state.overrides)}</div>`);
-    m++;
-    if (m > 12) { m = 1; y++; }
+  const ram = state.view === 'ramadan' ? renderRamadan(state.config, state.overrides) : null;
+  if (ram) {
+    out.push(`<div class="page-wrap">${ram}</div>`);
+    document.title = `${state.config.mosque.name} – Ramadan ${ramadanDates(state.config)?.year ?? ''}`;
+  } else {
+    state.view = 'months';
+    let y = state.y;
+    let m = state.m;
+    for (let i = 0; i < state.months; i++) {
+      out.push(`<div class="page-wrap">${renderMonth(y, m, state.config, state.overrides)}</div>`);
+      m++;
+      if (m > 12) { m = 1; y++; }
+    }
+    document.title = `${state.config.mosque.name} – ${MONTH_NAMES[state.m - 1]} ${state.y}`;
   }
+  document.getElementById('ramadan-btn')?.classList.toggle('primary', state.view === 'ramadan');
   pages.innerHTML = out.join('');
   fitBrandNames(pages);
-  document.title = `${state.config.mosque.name} – ${MONTH_NAMES[state.m - 1]} ${state.y}`;
   fitPages();
 }
 
@@ -342,8 +353,15 @@ app.addEventListener('click', (e) => {
   const a = btn.dataset.action;
   const qrs = state.config.mosque.qrs;
   const idx = Number(btn.dataset.index);
-  if (a === 'prev') shiftMonth(-1);
-  else if (a === 'next') shiftMonth(1);
+  if (a === 'prev') { state.view = 'months'; shiftMonth(-1); }
+  else if (a === 'next') { state.view = 'months'; shiftMonth(1); }
+  else if (a === 'ramadan') {
+    if (!ramadanDates(state.config)) {
+      renderDrawer(); drawer.hidden = false; document.body.classList.add('drawer-open');
+      toast('Set the first day of fasting under Settings → Ramadan first.');
+      drawer.querySelector<HTMLInputElement>('[data-path="ramadan.start"]')?.focus();
+    } else { state.view = state.view === 'ramadan' ? 'months' : 'ramadan'; renderPages(); }
+  }
   else if (a === 'adjust') openEditor(iso(ymd(state.y, state.m, 1)), 'fajr', true);
   else if (a === 'print') printHelp.showModal();
   else if (a === 'publish') openPublish();
@@ -381,7 +399,7 @@ app.addEventListener('click', (e) => {
 
 app.addEventListener('change', (e) => {
   const el = e.target as HTMLElement;
-  if (el === monthSel) { state.m = Number(monthSel.value); renderPages(); }
+  if (el === monthSel) { state.m = Number(monthSel.value); state.view = "months"; renderPages(); }
   if (el === yearIn && /^\d{4}$/.test(yearIn.value)) { state.y = Number(yearIn.value); renderPages(); }
   if (el === monthsSel) { state.months = Number(monthsSel.value); renderPages(); }
 });

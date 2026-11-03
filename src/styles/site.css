@@ -98,6 +98,10 @@ p { margin: 0 0 1em; }
 .pr-jamaat { font-weight: 800; color: var(--navy); }
 .pr-row .sun { grid-column: 1 / -1; font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; margin-top: -2px; }
 .jumuah { margin-top: 10px; font-weight: 700; color: var(--gold-deep); }
+.ram-line { margin: 4px 0 10px; padding: 10px 12px; border-radius: 10px; background: var(--navy) var(--pattern-dark); color: #fff; font-size: 14px; line-height: 1.4; border-left: 4px solid var(--gold); }
+.ram-line strong { color: var(--gold-soft); font-family: var(--head); font-size: 16px; }
+.ram-line small { display: block; font-size: 12.5px; opacity: 0.9; margin-top: 2px; }
+.hero .btn.ghost.active { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
 .today-card .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
 .today-card .btn { margin-top: 12px; width: 100%; justify-content: center; }
 
