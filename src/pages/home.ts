@@ -8,7 +8,7 @@ import { registerPwa } from '../site/pwa';
 import { icon, mountShell } from '../site/layout';
 import { renderToday, startCountdown } from '../site/today';
 import { MONTH_NAMES, today } from '../engine/time';
-import { renderMonth } from '../ui/page';
+import { fitBrandNames, renderMonth } from '../ui/page';
 
 const root = './';
 const pub = await loadPublished(root);
@@ -43,6 +43,7 @@ const pages = document.getElementById('pages')!;
 function render() {
   document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
   pages.innerHTML = `<div class="page-wrap">${renderMonth(y, m, pub.config, pub.overrides)}</div>`;
+  fitBrandNames(pages);
   history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
   fit();
 }

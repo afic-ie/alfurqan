@@ -1,6 +1,6 @@
 // Renders one month as an A4 page (HTML string).
 
-import type { Config } from '../engine/config';
+import type { Config, QrItem } from '../engine/config';
 import { buildMonth, type DayRow, type Overrides } from '../engine/timetable';
 import { MONTH_NAMES, fmt12, fmt12ampm, iso, today, type Ymd } from '../engine/time';
 import { cornerOrnament, defaultEmblem, qrSvg, starGlyph } from './art';
@@ -21,13 +21,38 @@ const COLS: { p: 'fajr' | 'sunrise' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'; en: 
   { p: 'isha', en: 'Isha', ar: 'العشاء', jamaat: true },
 ];
 
-/** Mosque name in English and Arabic, both stretched to the same width. */
+/**
+ * Mosque name in English and Arabic, centred on the same width. Each line is
+ * scaled uniformly by fitBrandNames() (never stretched), so the letterforms
+ * stay crisp; the Arabic name can be lengthened with kashida (ـ) to match.
+ */
 export function brandNames(name: string, arabic: string): string {
-  const W = 420;
-  return `<svg class="brand-names" viewBox="0 0 ${W} 86" aria-label="${esc(name)}">
-<text class="bn-en" x="0" y="38" textLength="${W}" lengthAdjust="spacing">${esc(name.toUpperCase())}</text>
-<text class="bn-ar" x="0" y="78" textLength="${W}" lengthAdjust="spacingAndGlyphs">${esc(arabic)}</text>
+  return `<svg class="brand-names" viewBox="0 0 420 90" aria-label="${esc(name)}">
+<text class="bn-en" x="210" y="37" text-anchor="middle" data-base="40" data-max="1.05">${esc(name.toUpperCase())}</text>
+<text class="bn-ar" x="210" y="81" text-anchor="middle" data-base="46" data-max="1.25">${esc(arabic)}</text>
 </svg>`;
+}
+
+/**
+ * Sizes each brand-name line so its natural width fills the SVG (up to the
+ * line's data-max scale), then again once web fonts have loaded.
+ */
+export function fitBrandNames(scope: ParentNode = document): void {
+  const run = () => {
+    scope.querySelectorAll<SVGSVGElement>('svg.brand-names').forEach((svg) => {
+      const W = svg.viewBox.baseVal.width;
+      svg.querySelectorAll<SVGTextElement>('text').forEach((t) => {
+        const base = Number(t.dataset.base) || 40;
+        const max = Number(t.dataset.max) || 1;
+        t.style.fontSize = `${base}px`;
+        const len = t.getComputedTextLength();
+        if (!len) return;
+        t.style.fontSize = `${(base * Math.min(max, W / len)).toFixed(2)}px`;
+      });
+    });
+  };
+  run();
+  if (typeof document !== 'undefined' && document.fonts?.ready) void document.fonts.ready.then(run);
 }
 
 function logoHtml(config: Config): string {
@@ -35,15 +60,19 @@ function logoHtml(config: Config): string {
   return src ? `<img class="logo-img" src="${esc(src)}" alt="${esc(config.mosque.name)} logo">` : defaultEmblem();
 }
 
-function qrsHtml(config: Config): string {
-  return config.mosque.qrs
-    .map((q) => {
-      const src = resolveImage(q.image);
-      const code = src ? `<img src="${esc(src)}" alt="QR code">` : qrSvg(q.url);
-      if (!code) return '';
-      return `<div class="qr"><div class="qr-code">${code}</div><div class="qr-label">${esc(q.label)}</div></div>`;
-    })
-    .join('');
+function qrHtml(q: QrItem): string {
+  const src = resolveImage(q.image);
+  const code = src ? `<img src="${esc(src)}" alt="QR code">` : qrSvg(q.url);
+  if (!code) return '';
+  return `<div class="qr"><div class="qr-code">${code}</div><div class="qr-label">${esc(q.label)}</div></div>`;
+}
+
+/** QR codes are kept apart so each one scans cleanly: the last one sits in the
+ *  donation panel on the right, the others at the left end of the footer. */
+function qrsHtml(config: Config): { side: string; give: string } {
+  const list = config.mosque.qrs.map(qrHtml).filter(Boolean);
+  const give = list.length ? list[list.length - 1] : '';
+  return { side: list.slice(0, -1).join(''), give };
 }
 
 function hijriRange(rows: DayRow[]): { en: string; ar: string } {
@@ -124,6 +153,7 @@ ${hijriCell}${cells}</tr>`;
   const head2 = COLS.filter((c) => c.jamaat).map(() => '<th class="sub">Adhan</th><th class="sub j">Jamaat</th>').join('');
 
   const notes = footerNotes(rows).map((n) => `<li>${starGlyph('var(--gold-deep)', 8)}<span>${n}</span></li>`).join('');
+  const qrs = qrsHtml(config);
 
   return `<section class="page" data-month="${y}-${m}">
 <div class="frame">
@@ -150,9 +180,10 @@ ${hijriCell}${cells}</tr>`;
     <tr><th class="pr d" rowspan="2"><span class="en">Date</span><span class="ar">التاريخ</span></th>${config.showHijri ? '<th class="pr d" rowspan="2"><span class="en">Hijri</span><span class="ar">هجري</span></th>' : ''}${head1}</tr>
     <tr>${head2}</tr>
   </thead>
-  <tbody class="rows-${rows.length}">${body}</tbody>
+  <tbody class="rows-${rows.length + rows.filter((r) => r.clockChange).length}">${body}</tbody>
 </table>
 <footer class="foot">
+  <div class="qrs qr-side">${qrs.side}</div>
   <ul class="notes">${notes}${info.extraNote ? `<li>${starGlyph('var(--gold-deep)', 8)}<span>${esc(info.extraNote)}</span></li>` : ''}</ul>
   <div class="give">
     <div class="give-text">
@@ -160,7 +191,7 @@ ${hijriCell}${cells}</tr>`;
       <div class="bank">${esc(info.bankLine)}</div>
       <div class="web">${esc(info.website)}</div>
     </div>
-    <div class="qrs">${qrsHtml(config)}</div>
+    <div class="qrs">${qrs.give}</div>
   </div>
 </footer>
 </div>

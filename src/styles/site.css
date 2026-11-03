@@ -32,9 +32,9 @@ p { margin: 0 0 1em; }
 .top-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
 .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
 .brand img { width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--gold); }
-.brand .brand-names { width: 168px; height: 34px; display: block; }
-.brand .bn-en { font-family: 'Montserrat', var(--head); font-weight: 700; font-size: 40px; fill: #fff; }
-.brand .bn-ar { font-family: var(--ar-brand); font-weight: 500; font-size: 46px; fill: var(--gold-soft); }
+.brand .brand-names { width: 168px; height: 36px; display: block; }
+.brand .bn-en { font-family: 'Montserrat', var(--head); font-weight: 700; fill: #fff; }
+.brand .bn-ar { font-family: var(--ar-brand); font-weight: 500; fill: var(--gold-soft); }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 8px 12px; border-radius: 8px; border-bottom: 2px solid transparent; }
 .nav a:hover { background: rgb(255 255 255 / 0.08); }

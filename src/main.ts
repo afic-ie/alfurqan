@@ -7,7 +7,7 @@ import { applyJamaat, countEdits, daysBetween } from './engine/overrides';
 import { buildDay } from './engine/timetable';
 import { daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today, ymd } from './engine/time';
 import { starPattern } from './ui/art';
-import { renderMonth } from './ui/page';
+import { fitBrandNames, renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
@@ -113,6 +113,7 @@ function renderPages() {
     if (m > 12) { m = 1; y++; }
   }
   pages.innerHTML = out.join('');
+  fitBrandNames(pages);
   document.title = `${state.config.mosque.name} – ${MONTH_NAMES[state.m - 1]} ${state.y}`;
   fitPages();
 }
