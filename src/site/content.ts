@@ -3,7 +3,7 @@
 
 export const SITE = {
   name: 'Masjid Al-Furqan',
-  arabicName: 'مسجد الفرقان',
+  arabicName: 'مســجــد الفــرقــان',
   city: 'Limerick',
   website: 'https://alfurqan.ie',
   whatsapp: 'https://chat.whatsapp.com/IPdUcxaNsjyFQ5RMLtEvYN',

@@ -5,7 +5,7 @@
 import logo from '../assets/logo.png';
 import { NAV, SITE } from './content';
 import { starPattern } from '../ui/art';
-import { brandNames } from '../ui/page';
+import { brandNames, fitBrandNames } from '../ui/page';
 
 export const esc = (v: unknown) =>
   String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -58,4 +58,5 @@ export function mountShell(root: string, current: string, body: string, title?: 
   burger.addEventListener('click', () => setOpen(burger.getAttribute('aria-expanded') !== 'true'));
   nav.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) setOpen(false); });
   if (title) document.title = `${title} · ${SITE.name}`;
+  fitBrandNames(app);
 }

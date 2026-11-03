@@ -86,7 +86,7 @@ export const DEFAULT_CONFIG: Config = {
   version: 1,
   mosque: {
     name: 'Masjid Al-Furqan',
-    arabicName: 'مسجد الفرقان',
+    arabicName: 'مســجــد الفــرقــان', // kashida (ـ) lengthens the name to match the English
     city: 'Limerick',
     website: 'www.alfurqan.ie',
     bankLine: 'BANK: BOI · IBAN: IE36 BOFI 9043 0983 4507 78 · BIC: BOFIIE2D',

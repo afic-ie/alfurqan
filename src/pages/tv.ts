@@ -17,7 +17,7 @@ import { JAMAAT_PRAYERS, normaliseConfig, type JamaatPrayer } from '../engine/co
 import { buildDay } from '../engine/timetable';
 import { addDays, DAY_NAMES, MONTH_NAMES, fmt12, fmt12ampm, today, type Ymd } from '../engine/time';
 import { starPattern } from '../ui/art';
-import { brandNames } from '../ui/page';
+import { brandNames, fitBrandNames } from '../ui/page';
 import type { Published } from '../site/data';
 import { loadPublished } from '../site/data';
 import { registerPwa } from '../site/pwa';
@@ -73,6 +73,7 @@ app.innerHTML = `
 </div>
 <div class="tv-overlay" id="overlay" hidden></div>`;
 
+fitBrandNames(app);
 const $ = (id: string) => document.getElementById(id)!;
 
 function rowsHtml(d: Ymd) {

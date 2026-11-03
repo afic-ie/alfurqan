@@ -82,7 +82,7 @@ export function renderSettings(c: Config, editCount: number): string {
 <fieldset><legend>Mosque details</legend>
 <div class="grid">
 ${text('Name', 'mosque.name', m.name)}
-${text('Arabic name', 'mosque.arabicName', m.arabicName)}
+${text('Arabic name', 'mosque.arabicName', m.arabicName, 'Add kashida (ـ) between joined letters to lengthen the name so it matches the English, e.g. مســجــد.')}
 ${text('City', 'mosque.city', m.city)}
 ${text('Website', 'mosque.website', m.website)}
 </div>
