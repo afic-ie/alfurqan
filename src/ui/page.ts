@@ -28,9 +28,10 @@ export const COLS: Col[] = [
  * stay crisp; the Arabic name can be lengthened with kashida (ـ) to match.
  */
 export function brandNames(name: string, arabic: string): string {
-  return `<svg class="brand-names" viewBox="0 0 420 90" aria-label="${esc(name)}">
-<text class="bn-en" x="210" y="37" text-anchor="middle" data-base="40" data-max="1.05">${esc(name.toUpperCase())}</text>
-<text class="bn-ar" x="210" y="81" text-anchor="middle" data-base="46" data-max="1.25">${esc(arabic)}</text>
+  // 420×106: the Arabic baseline sits at 78 so descenders (ق, ن) fit above 106.
+  return `<svg class="brand-names" viewBox="0 0 420 106" aria-label="${esc(name)}">
+<text class="bn-en" x="210" y="36" text-anchor="middle" data-base="40" data-max="1.05">${esc(name.toUpperCase())}</text>
+<text class="bn-ar" x="210" y="78" text-anchor="middle" data-base="46" data-max="1.25">${esc(arabic)}</text>
 </svg>`;
 }
 

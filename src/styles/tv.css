@@ -12,7 +12,7 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .tv-left { display: flex; flex-direction: column; justify-content: center; gap: 1.2vh; }
 .tv-brand { display: flex; align-items: center; gap: 1.2vw; margin-bottom: 1vh; }
 .tv-brand img { width: 7vh; height: 7vh; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0.4vh var(--gold); }
-.tv-brand .brand-names { width: 22vw; height: 4.7vw; display: block; }
+.tv-brand .brand-names { width: 22vw; height: 5.55vw; display: block; overflow: visible; }
 .bn-en { font-family: 'Montserrat', var(--head); font-weight: 700; fill: #fff; }
 .bn-ar { font-family: var(--ar-brand); font-weight: 500; fill: var(--gold-soft); }
 .tv-clock { font-family: var(--head); font-weight: 700; font-size: 17vh; line-height: 1; letter-spacing: -0.02em; display: flex; align-items: baseline; gap: 1vw; }
