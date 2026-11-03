@@ -1,0 +1,949 @@
+[
+{
+"collection": "bukhari",
+"phrase": "إنما الأعمال بالنيات",
+"category": "faith",
+"also": "Sahih Muslim 1907",
+"from": "انما الاعمال",
+"to": "ما نوي",
+"en": "Actions are judged by intentions, and every person will have only what they intended."
+},
+{
+"collection": "bukhari",
+"phrase": "بني الإسلام على خمس",
+"category": "faith",
+"also": "Sahih Muslim 16"
+},
+{
+"collection": "bukhari",
+"phrase": "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه",
+"category": "community",
+"also": "Sahih Muslim 45"
+},
+{
+"collection": "bukhari",
+"number": 10,
+"category": "character",
+"also": "Sahih Muslim 40"
+},
+{
+"collection": "bukhari",
+"phrase": "فلا يؤذ جاره",
+"category": "character",
+"also": "Sahih Muslim 47"
+},
+{
+"collection": "bukhari",
+"phrase": "أوصني قال لا تغضب",
+"category": "character"
+},
+{
+"collection": "muslim",
+"phrase": "الطهور شطر الإيمان",
+"category": "health",
+"from": "الطهور شطر",
+"to": "والارض",
+"en": "Purity is half of faith; 'al-hamdu lillah' fills the scale; and 'subhan Allah' and 'al-hamdu lillah' together fill what is between the heavens and the earth."
+},
+{
+"collection": "muslim",
+"phrase": "لا ينظر إلى صوركم وأموالكم",
+"category": "faith"
+},
+{
+"collection": "muslim",
+"phrase": "من نفس عن مؤمن كربة",
+"category": "community",
+"from": "من نفس",
+"to": "الدنيا والاخره",
+"en": "Whoever relieves a believer of a hardship of this world, Allah relieves him of a hardship on the Day of Resurrection; and whoever eases the burden of one in difficulty, Allah eases his burden in this world and the next."
+},
+{
+"collection": "muslim",
+"phrase": "ومن سلك طريقا يلتمس فيه علما",
+"suffix": "ilm",
+"from": "ومن سلك طريقا",
+"to": "الي الجنه",
+"en": "Whoever travels a path seeking knowledge, Allah makes easy for him a path to Paradise.",
+"category": "knowledge"
+},
+{
+"collection": "tirmidhi",
+"phrase": "الراحمون يرحمهم الرحمن",
+"category": "character",
+"also": "Sunan Abi Dawud 4941"
+},
+{
+"collection": "bukhari",
+"phrase": "خيركم من تعلم القرآن وعلمه",
+"category": "knowledge"
+},
+{
+"collection": "bukhari",
+"number": 6464,
+"from": "احب الاعمال",
+"to": "وان قل",
+"en": "The deeds most beloved to Allah are those done most regularly, even if they are few.",
+"category": "faith",
+"also": "Sahih Muslim 783"
+},
+{
+"collection": "muslim",
+"phrase": "ما نقصت صدقة من مال",
+"category": "charity"
+},
+{
+"collection": "muslim",
+"phrase": "مثقال ذرة من كبر",
+"category": "character"
+},
+{
+"collection": "bukhari",
+"phrase": "إن الصدق يهدي إلى البر",
+"category": "honesty",
+"also": "Sahih Muslim 2607"
+},
+{
+"collection": "bukhari",
+"phrase": "المسلم أخو المسلم لا يظلمه ولا يسلمه",
+"category": "community",
+"also": "Sahih Muslim 2580"
+},
+{
+"collection": "bukhari",
+"phrase": "من لا يرحم لا يرحم",
+"category": "character",
+"also": "Sahih Muslim 2318"
+},
+{
+"collection": "muslim",
+"phrase": "الدين النصيحة",
+"category": "faith"
+},
+{
+"collection": "muslim",
+"phrase": "من صلى علي صلاة صلى الله عليه بها عشرا",
+"category": "prophet",
+"from": "من صلي علي صلاه",
+"to": "عشرا",
+"en": "Whoever sends one blessing upon me, Allah sends ten blessings upon him."
+},
+{
+"collection": "bukhari",
+"phrase": "الكلمة الطيبة صدقة",
+"category": "charity",
+"also": "Sahih Muslim 1009",
+"from": "والكلمه الطيبه",
+"to": "عن الطريق صدقه",
+"en": "A good word is charity, every step you take towards the prayer is charity, and removing something harmful from the road is charity."
+},
+{
+"collection": "tirmidhi",
+"phrase": "تبسمك في وجه أخيك لك صدقة",
+"category": "charity",
+"from": "تبسمك",
+"to": "لك صدقه",
+"en": "Your smiling in the face of your brother is charity."
+},
+{
+"collection": "tirmidhi",
+"phrase": "اتق الله حيثما كنت",
+"category": "character"
+},
+{
+"collection": "bukhari",
+"phrase": "ليس الشديد بالصرعة",
+"category": "character",
+"also": "Sahih Muslim 2609"
+},
+{
+"collection": "muslim",
+"phrase": "إن الله رفيق يحب الرفق",
+"category": "character"
+},
+{
+"collection": "muslim",
+"phrase": "الصلوات الخمس والجمعة إلى الجمعة ورمضان إلى رمضان",
+"category": "prayer"
+},
+{
+"collection": "bukhari",
+"phrase": "صلاة الجماعة تفضل صلاة الفذ بسبع وعشرين",
+"category": "prayer",
+"also": "Sahih Muslim 650"
+},
+{
+"collection": "muslim",
+"phrase": "أقرب ما يكون العبد من ربه وهو ساجد",
+"category": "prayer"
+},
+{
+"collection": "muslim",
+"phrase": "من غشنا فليس منا",
+"category": "honesty"
+},
+{
+"collection": "bukhari",
+"phrase": "إن من خياركم أحسنكم أخلاقا",
+"category": "character",
+"also": "Sahih Muslim 2321"
+},
+{
+"collection": "bukhari",
+"phrase": "المؤمن للمؤمن كالبنيان",
+"category": "community",
+"also": "Sahih Muslim 2585"
+},
+{
+"collection": "tirmidhi",
+"phrase": "من لا يشكر الناس لا يشكر الله",
+"category": "character",
+"also": "Sunan Abi Dawud 4811"
+},
+{
+"collection": "tirmidhi",
+"phrase": "الدعاء هو العبادة",
+"category": "dhikr"
+},
+{
+"collection": "bukhari",
+"phrase": "كل معروف صدقة",
+"category": "charity"
+},
+{
+"collection": "muslim",
+"phrase": "إذا مات الإنسان انقطع عنه عمله",
+"category": "charity"
+},
+{
+"collection": "muslim",
+"phrase": "من بنى مسجدا لله بنى الله له في الجنة مثله",
+"category": "charity",
+"also": "Sahih al-Bukhari 450"
+},
+{
+"collection": "bukhari",
+"phrase": "لا تحاسدوا ولا تباغضوا ولا تدابروا",
+"category": "community",
+"also": "Sahih Muslim 2559"
+},
+{
+"collection": "bukhari",
+"phrase": "من يرد الله به خيرا يفقهه في الدين",
+"category": "knowledge",
+"also": "Sahih Muslim 1037"
+},
+{
+"collection": "bukhari",
+"number": 5971,
+"from": "من احق بحسن صحابتي",
+"to": "ثم ابوك",
+"en": "A man asked: Messenger of Allah, who most deserves my good companionship? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Then your father.",
+"category": "family",
+"also": "Sahih Muslim 2548"
+},
+{
+"collection": "bukhari",
+"phrase": "كلمتان خفيفتان على اللسان",
+"category": "dhikr",
+"also": "Sahih Muslim 2694"
+},
+{
+"collection": "bukhari",
+"phrase": "يسروا ولا تعسروا وبشروا ولا تنفروا",
+"category": "character",
+"also": "Sahih Muslim 1734"
+},
+{
+"collection": "muslim",
+"phrase": "أفشوا السلام بينكم",
+"category": "community"
+},
+{
+"collection": "muslim",
+"phrase": "المؤمن القوي خير وأحب إلى الله",
+"category": "patience",
+"from": "المؤمن القوي",
+"to": "ولا تعجز",
+"en": "The strong believer is better and more beloved to Allah than the weak believer, and there is good in both. Strive for what benefits you, seek help from Allah, and do not give up."
+},
+{
+"collection": "abudawud",
+"phrase": "أكمل المؤمنين إيمانا أحسنهم خلقا",
+"category": "character",
+"also": "Jami' at-Tirmidhi 1162"
+},
+{
+"collection": "bukhari",
+"phrase": "من صام رمضان إيمانا واحتسابا",
+"category": "ramadan",
+"also": "Sahih Muslim 760"
+},
+{
+"collection": "bukhari",
+"phrase": "من قام ليلة القدر إيمانا واحتسابا",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "إن في الجنة بابا يقال له الريان",
+"category": "ramadan",
+"also": "Sahih Muslim 1152"
+},
+{
+"collection": "bukhari",
+"phrase": "الصيام جنة فلا يرفث",
+"category": "ramadan",
+"also": "Sahih Muslim 1151",
+"from": "الصيام جنه",
+"to": "اني صائم",
+"en": "Fasting is a shield, so the fasting person should not use foul language or act foolishly; and if someone fights or insults him, let him say: I am fasting."
+},
+{
+"collection": "bukhari",
+"phrase": "إذا جاء رمضان فتحت أبواب الجنة",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "تسحروا فإن في السحور بركة",
+"category": "ramadan",
+"also": "Sahih Muslim 1095"
+},
+{
+"collection": "bukhari",
+"phrase": "لا يزال الناس بخير ما عجلوا الفطر",
+"category": "ramadan",
+"also": "Sahih Muslim 1098"
+},
+{
+"collection": "tirmidhi",
+"phrase": "من فطر صائما كان له مثل أجره",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "تحروا ليلة القدر في الوتر من العشر الأواخر",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "من لم يدع قول الزور والعمل به",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "من قام رمضان إيمانا واحتسابا",
+"category": "ramadan",
+"also": "Sahih Muslim 759"
+},
+{
+"collection": "tirmidhi",
+"phrase": "اللهم إنك عفو كريم تحب العفو فاعف عني",
+"from": "اللهم انك عفو",
+"to": "فاعف عني",
+"en": "Aisha asked what to say on Laylat al-Qadr. He said: Say, O Allah, You are Forgiving and Generous and You love to forgive, so forgive me.",
+"category": "ramadan",
+"also": "Sunan Ibn Majah 3850"
+},
+{
+"collection": "bukhari",
+"phrase": "عمرة في رمضان تقضي حجة",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"phrase": "للصائم فرحتان",
+"category": "ramadan"
+},
+{
+"collection": "bukhari",
+"number": 1969,
+"from": "فما رايت رسول الله",
+"to": "في شعبان",
+"en": "Aisha said: I never saw the Messenger of Allah ﷺ complete a month of fasting except Ramadan, and I never saw him fast more in any month than in Sha'ban.",
+"category": "shaban",
+"also": "Sahih Muslim 1156"
+},
+{
+"collection": "nasai",
+"phrase": "ذلك شهر يغفل الناس عنه بين رجب ورمضان",
+"category": "shaban"
+},
+{
+"collection": "bukhari",
+"phrase": "لا يتقدمن أحدكم رمضان بصوم يوم أو يومين",
+"category": "shaban",
+"also": "Sahih Muslim 1082"
+},
+{
+"collection": "bukhari",
+"phrase": "صوموا لرؤيته وأفطروا لرؤيته",
+"category": "shaban",
+"also": "Sahih Muslim 1081"
+},
+{
+"collection": "muslim",
+"phrase": "من صام رمضان ثم أتبعه ستا من شوال",
+"category": "shawwal"
+},
+{
+"collection": "abudawud",
+"phrase": "زكاة الفطر طهرة للصائم",
+"category": "shawwal",
+"also": "Sunan Ibn Majah 1827"
+},
+{
+"collection": "bukhari",
+"phrase": "من حج لله فلم يرفث ولم يفسق",
+"category": "hajj",
+"also": "Sahih Muslim 1350"
+},
+{
+"collection": "bukhari",
+"phrase": "العمرة إلى العمرة كفارة لما بينهما",
+"category": "hajj",
+"also": "Sahih Muslim 1349"
+},
+{
+"collection": "bukhari",
+"number": 969,
+"from": "ما العمل في ايام",
+"to": "فلم يرجع بشيء",
+"en": "No deeds are better than those done in these ten days. They asked: Not even jihad? He said: Not even jihad, except a man who goes out risking himself and his wealth and returns with neither.",
+"category": "hajj"
+},
+{
+"collection": "muslim",
+"phrase": "صيام يوم عرفة أحتسب على الله أن يكفر السنة التي قبله والسنة التي بعده",
+"category": "hajj",
+"from": "صيام يوم عرفه",
+"to": "التي بعده",
+"en": "Fasting on the day of Arafah: I hope from Allah that it expiates the year before it and the year after it."
+},
+{
+"collection": "muslim",
+"phrase": "ما من يوم أكثر من أن يعتق الله فيه عبدا من النار من يوم عرفة",
+"category": "hajj"
+},
+{
+"collection": "tirmidhi",
+"phrase": "الحج عرفة",
+"category": "hajj",
+"also": "Sunan Abi Dawud 1949"
+},
+{
+"collection": "tirmidhi",
+"phrase": "خير الدعاء دعاء يوم عرفة",
+"category": "hajj"
+},
+{
+"collection": "abudawud",
+"phrase": "يوم عرفة ويوم النحر وأيام التشريق عيدنا أهل الإسلام",
+"category": "hajj",
+"also": "Jami' at-Tirmidhi 773"
+},
+{
+"collection": "ibnmajah",
+"phrase": "من كان له سعة ولم يضح فلا يقربن مصلانا",
+"category": "hajj"
+},
+{
+"collection": "bukhari",
+"phrase": "لبيك اللهم لبيك لبيك لا شريك لك لبيك",
+"category": "hajj",
+"also": "Sahih Muslim 1184"
+},
+{
+"collection": "muslim",
+"phrase": "أفضل الصيام بعد رمضان شهر الله المحرم",
+"category": "muharram"
+},
+{
+"collection": "bukhari",
+"phrase": "يوم نجى الله بني إسرائيل من عدوهم فصامه موسى",
+"category": "muharram",
+"also": "Sahih Muslim 1130"
+},
+{
+"collection": "muslim",
+"phrase": "لئن بقيت إلى قابل لأصومن التاسع",
+"category": "muharram"
+},
+{
+"collection": "bukhari",
+"phrase": "السنة اثنا عشر شهرا منها أربعة حرم",
+"category": "sacred"
+},
+{
+"collection": "bukhari",
+"phrase": "المهاجر من هجر ما نهى الله عنه",
+"category": "muharram",
+"en": "The Muslim is the one from whose tongue and hand the Muslims are safe, and the emigrant is the one who abandons what Allah has forbidden."
+},
+{
+"collection": "bukhari",
+"phrase": "لا يؤمن أحدكم حتى أكون أحب إليه من والده وولده",
+"category": "prophet",
+"also": "Sahih Muslim 44"
+},
+{
+"collection": "bukhari",
+"phrase": "كل أمتي يدخلون الجنة إلا من أبى",
+"category": "prophet"
+},
+{
+"collection": "tirmidhi",
+"phrase": "البخيل الذي من ذكرت عنده فلم يصل علي",
+"category": "prophet"
+},
+{
+"collection": "bukhari",
+"phrase": "بعثت أنا والساعة كهاتين",
+"category": "prophet",
+"also": "Sahih Muslim 867"
+},
+{
+"collection": "muslim",
+"phrase": "خير يوم طلعت عليه الشمس يوم الجمعة",
+"category": "jumuah"
+},
+{
+"collection": "bukhari",
+"phrase": "من اغتسل يوم الجمعة غسل الجنابة ثم راح",
+"category": "jumuah",
+"also": "Sahih Muslim 850",
+"from": "من اغتسل",
+"to": "قرب بدنه",
+"en": "Whoever bathes on Friday as for major impurity and then goes early to the prayer, it is as if he had offered a camel in charity."
+},
+{
+"collection": "abudawud",
+"phrase": "إن من أفضل أيامكم يوم الجمعة",
+"category": "jumuah",
+"also": "Sunan an-Nasa'i 1374",
+"from": "ان من افضل",
+"to": "معروضه علي",
+"en": "Among the best of your days is Friday, so send many blessings upon me on that day, for your blessings are presented to me."
+},
+{
+"collection": "bukhari",
+"phrase": "فيه ساعة لا يوافقها عبد مسلم",
+"category": "jumuah",
+"also": "Sahih Muslim 852"
+},
+{
+"collection": "bukhari",
+"phrase": "إذا قلت لصاحبك يوم الجمعة أنصت",
+"category": "jumuah",
+"also": "Sahih Muslim 851"
+},
+{
+"collection": "tirmidhi",
+"phrase": "إن أول ما يحاسب به العبد يوم القيامة من عمله صلاته",
+"category": "prayer",
+"also": "Sunan Abi Dawud 864",
+"from": "ان اول ما يحاسب",
+"to": "خاب وخسر",
+"en": "The first deed a servant will be held to account for on the Day of Resurrection is his prayer: if it is sound he has succeeded and prospered, and if it is lacking he has failed and lost."
+},
+{
+"collection": "tirmidhi",
+"phrase": "العهد الذي بيننا وبينهم الصلاة",
+"category": "prayer",
+"also": "Sunan an-Nasa'i 463"
+},
+{
+"collection": "bukhari",
+"phrase": "صلوا كما رأيتموني أصلي",
+"category": "prayer"
+},
+{
+"collection": "bukhari",
+"phrase": "من صلى البردين دخل الجنة",
+"category": "prayer",
+"also": "Sahih Muslim 635"
+},
+{
+"collection": "muslim",
+"phrase": "ركعتا الفجر خير من الدنيا وما فيها",
+"category": "prayer"
+},
+{
+"collection": "muslim",
+"phrase": "ما من عبد مسلم يصلي لله كل يوم ثنتي عشرة ركعة",
+"category": "prayer"
+},
+{
+"collection": "bukhari",
+"phrase": "ليس صلاة أثقل على المنافقين من الفجر والعشاء",
+"from": "ليس صلاه اثقل",
+"to": "ولو حبوا",
+"en": "No prayer is heavier on the hypocrites than Fajr and Isha; if they knew what is in them they would come to them even if they had to crawl.",
+"category": "prayer",
+"also": "Sahih Muslim 651"
+},
+{
+"collection": "bukhari",
+"phrase": "من غدا إلى المسجد وراح أعد الله له نزله",
+"category": "prayer",
+"also": "Sahih Muslim 669"
+},
+{
+"collection": "abudawud",
+"phrase": "بشر المشائين في الظلم إلى المساجد بالنور التام",
+"category": "prayer",
+"also": "Jami' at-Tirmidhi 223"
+},
+{
+"collection": "bukhari",
+"phrase": "إذا دخل أحدكم المسجد فليركع ركعتين",
+"category": "prayer",
+"also": "Sahih Muslim 714"
+},
+{
+"collection": "bukhari",
+"phrase": "سووا صفوفكم فإن تسوية الصفوف من إقامة الصلاة",
+"category": "prayer",
+"also": "Sahih Muslim 433"
+},
+{
+"collection": "abudawud",
+"phrase": "مفتاح الصلاة الطهور",
+"category": "prayer",
+"also": "Jami' at-Tirmidhi 3"
+},
+{
+"collection": "muslim",
+"phrase": "أحب البلاد إلى الله مساجدها",
+"category": "prayer"
+},
+{
+"collection": "muslim",
+"phrase": "الإيمان بضع وسبعون",
+"category": "faith",
+"also": "Sahih al-Bukhari 9"
+},
+{
+"collection": "muslim",
+"phrase": "ذاق طعم الإيمان من رضي بالله ربا",
+"category": "faith"
+},
+{
+"collection": "tirmidhi",
+"phrase": "أفضل الذكر لا إله إلا الله",
+"category": "dhikr"
+},
+{
+"collection": "bukhari",
+"phrase": "مثل الذي يذكر ربه والذي لا يذكر مثل الحي والميت",
+"category": "dhikr",
+"also": "Sahih Muslim 779"
+},
+{
+"collection": "muslim",
+"phrase": "أحب الكلام إلى الله أربع",
+"category": "dhikr",
+"from": "احب الكلام",
+"to": "والله اكبر",
+"en": "The words most beloved to Allah are four: Subhan Allah, al-hamdu lillah, la ilaha illa Allah, and Allahu akbar."
+},
+{
+"collection": "bukhari",
+"phrase": "من قال سبحان الله وبحمده في يوم مائة مرة",
+"category": "dhikr",
+"also": "Sahih Muslim 2691"
+},
+{
+"collection": "bukhari",
+"number": 6384,
+"from": "الا ادلك علي كلمه",
+"to": "الا بالله",
+"en": "Shall I tell you of a phrase that is one of the treasures of Paradise? La hawla wa la quwwata illa billah: there is no power and no strength except with Allah.",
+"category": "dhikr",
+"also": "Sahih Muslim 2704"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ليس شيء أكرم على الله تعالى من الدعاء",
+"category": "dhikr",
+"also": "Sunan Ibn Majah 3829"
+},
+{
+"collection": "bukhari",
+"phrase": "يستجاب لأحدكم ما لم يعجل",
+"category": "dhikr",
+"also": "Sahih Muslim 2735"
+},
+{
+"collection": "bukhari",
+"phrase": "إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة",
+"category": "dhikr"
+},
+{
+"collection": "muslim",
+"phrase": "اقرءوا القرآن فإنه يأتي يوم القيامة شفيعا لأصحابه",
+"category": "knowledge",
+"from": "اقرءوا القران",
+"to": "شفيعا لاصحابه",
+"en": "Recite the Qur'an, for on the Day of Resurrection it will come as an intercessor for those who recited it."
+},
+{
+"collection": "muslim",
+"phrase": "الماهر بالقرآن مع السفرة الكرام البررة",
+"category": "knowledge",
+"also": "Sahih al-Bukhari 4937"
+},
+{
+"collection": "tirmidhi",
+"phrase": "من قرأ حرفا من كتاب الله فله به حسنة",
+"category": "knowledge"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ما شيء أثقل في ميزان المؤمن يوم القيامة من خلق حسن",
+"category": "character",
+"also": "Sunan Abi Dawud 4799"
+},
+{
+"collection": "bukhari",
+"phrase": "إن الله يحب الرفق في الأمر كله",
+"category": "character",
+"also": "Sahih Muslim 2165"
+},
+{
+"collection": "bukhari",
+"phrase": "الذي لا يأمن جاره بوائقه",
+"category": "character"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ليس المؤمن بالطعان ولا اللعان",
+"category": "character"
+},
+{
+"collection": "bukhari",
+"phrase": "الحياء لا يأتي إلا بخير",
+"category": "character",
+"also": "Sahih Muslim 37"
+},
+{
+"collection": "bukhari",
+"phrase": "إياكم والظن فإن الظن أكذب الحديث",
+"category": "character",
+"also": "Sahih Muslim 2563"
+},
+{
+"collection": "bukhari",
+"phrase": "لا يحل لمسلم أن يهجر أخاه فوق ثلاث ليال",
+"category": "community",
+"also": "Sahih Muslim 2560"
+},
+{
+"collection": "bukhari",
+"phrase": "حق المسلم على المسلم خمس",
+"category": "community",
+"also": "Sahih Muslim 2162"
+},
+{
+"collection": "bukhari",
+"phrase": "آية المنافق ثلاث",
+"category": "honesty",
+"also": "Sahih Muslim 59"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ليس منا من لم يرحم صغيرنا ويوقر كبيرنا",
+"category": "character",
+"also": "Sunan Abi Dawud 4943"
+},
+{
+"collection": "abudawud",
+"phrase": "من كظم غيظا وهو قادر على أن ينفذه",
+"category": "character",
+"also": "Jami' at-Tirmidhi 2021"
+},
+{
+"collection": "muslim",
+"phrase": "رغم أنف ثم رغم أنف ثم رغم أنف",
+"category": "family"
+},
+{
+"collection": "tirmidhi",
+"phrase": "رضا الرب في رضا الوالد",
+"category": "family"
+},
+{
+"collection": "bukhari",
+"phrase": "لا يدخل الجنة قاطع",
+"category": "family",
+"also": "Sahih Muslim 2556"
+},
+{
+"collection": "bukhari",
+"phrase": "من سره أن يبسط له في رزقه",
+"category": "family",
+"also": "Sahih Muslim 2557"
+},
+{
+"collection": "tirmidhi",
+"phrase": "خيركم خيركم لأهله",
+"category": "family",
+"also": "Sunan Ibn Majah 1977"
+},
+{
+"collection": "muslim",
+"phrase": "الدنيا متاع وخير متاع الدنيا المرأة الصالحة",
+"category": "family",
+"ref_number": 1467
+},
+{
+"collection": "bukhari",
+"phrase": "استوصوا بالنساء",
+"category": "family",
+"also": "Sahih Muslim 1468"
+},
+{
+"collection": "muslim",
+"phrase": "من عال جاريتين حتى تبلغا",
+"category": "family"
+},
+{
+"collection": "bukhari",
+"phrase": "اتقوا النار ولو بشق تمرة",
+"category": "charity",
+"also": "Sahih Muslim 1016"
+},
+{
+"collection": "bukhari",
+"phrase": "اليد العليا خير من اليد السفلى",
+"category": "charity",
+"also": "Sahih Muslim 1033"
+},
+{
+"collection": "bukhari",
+"phrase": "ما من يوم يصبح العباد فيه إلا ملكان ينزلان",
+"category": "charity",
+"also": "Sahih Muslim 1010"
+},
+{
+"collection": "bukhari",
+"phrase": "الساعي على الأرملة والمسكين كالمجاهد في سبيل الله",
+"category": "charity",
+"also": "Sahih Muslim 2982"
+},
+{
+"collection": "bukhari",
+"phrase": "أنا وكافل اليتيم في الجنة هكذا",
+"category": "charity"
+},
+{
+"collection": "bukhari",
+"phrase": "ليس الغنى عن كثرة العرض",
+"category": "patience",
+"also": "Sahih Muslim 1051"
+},
+{
+"collection": "bukhari",
+"phrase": "البيعان بالخيار ما لم يتفرقا فإن صدقا وبينا",
+"category": "honesty",
+"also": "Sahih Muslim 1532"
+},
+{
+"collection": "bukhari",
+"phrase": "رحم الله رجلا سمحا إذا باع",
+"category": "honesty"
+},
+{
+"collection": "muslim",
+"phrase": "عجبا لأمر المؤمن إن أمره كله خير",
+"category": "patience"
+},
+{
+"collection": "bukhari",
+"phrase": "ما يصيب المسلم من نصب ولا وصب",
+"category": "patience",
+"also": "Sahih Muslim 2573"
+},
+{
+"collection": "bukhari",
+"phrase": "إنما الصبر عند الصدمة الأولى",
+"category": "patience",
+"also": "Sahih Muslim 926",
+"from": "انما الصبر",
+"to": "الصدمه الاولي",
+"en": "Patience is at the first stroke of calamity."
+},
+{
+"collection": "bukhari",
+"phrase": "كن في الدنيا كأنك غريب أو عابر سبيل",
+"category": "patience"
+},
+{
+"collection": "tirmidhi",
+"phrase": "أكثروا ذكر هاذم اللذات",
+"category": "patience",
+"also": "Sunan an-Nasa'i 1824"
+},
+{
+"collection": "bukhari",
+"phrase": "نعمتان مغبون فيهما كثير من الناس",
+"category": "patience"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ما ذئبان جائعان أرسلا في غنم",
+"category": "patience"
+},
+{
+"collection": "bukhari",
+"phrase": "لو كان لابن آدم واديان من مال",
+"category": "patience",
+"also": "Sahih Muslim 1048"
+},
+{
+"collection": "tirmidhi",
+"phrase": "من كانت الآخرة همه جعل الله غناه في قلبه",
+"category": "patience",
+"also": "Sunan Ibn Majah 4105"
+},
+{
+"collection": "nasai",
+"phrase": "السواك مطهرة للفم مرضاة للرب",
+"category": "health"
+},
+{
+"collection": "bukhari",
+"phrase": "لولا أن أشق على أمتي لأمرتهم بالسواك",
+"category": "health",
+"also": "Sahih Muslim 252"
+},
+{
+"collection": "tirmidhi",
+"phrase": "ما ملأ آدمي وعاء شرا من بطن",
+"category": "health",
+"also": "Sunan Ibn Majah 3349"
+},
+{
+"collection": "muslim",
+"phrase": "مثل المؤمنين في توادهم وتراحمهم وتعاطفهم",
+"category": "community",
+"also": "Sahih al-Bukhari 6011"
+},
+{
+"collection": "muslim",
+"phrase": "من رأى منكم منكرا فليغيره بيده",
+"category": "community"
+},
+{
+"collection": "tirmidhi",
+"phrase": "الدال على الخير كفاعله",
+"category": "community"
+},
+{
+"collection": "muslim",
+"phrase": "من دعا إلى هدى كان له من الأجر مثل أجور من تبعه",
+"category": "community",
+"also": "Sunan Abi Dawud 4609"
+}
+]

@@ -4,7 +4,7 @@
 
 import type { Config, Period, StepRule } from '../engine/config';
 import { isBuiltin, resolveImage } from './assets';
-import { ALL_HADITH } from '../engine/hadith';
+import { ALL_HADITH, CATEGORIES, HIJRI_MONTH_NAMES, scheduleFor } from '../engine/hadith';
 
 const esc = (v: unknown) =>
   String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -140,7 +140,7 @@ ${check("Days before the first Friday of Ramadan use that Friday's times", 'rama
 </fieldset>
 
 <fieldset><legend>Hadith on the TV display</legend>
-<p class="help">Shows one hadith (Arabic, English and reference) for a short time at regular intervals, never around a jamaat, the Jumu'ah khutbah or while the jamaat screen is up. The built-in list comes from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com references; untick any you do not want shown and add your own below. Please have the imam check the list.</p>
+<p class="help">Shows one hadith (Arabic, English and reference) for a short time at regular intervals, never around a jamaat, the Jumu'ah khutbah or while the jamaat screen is up. The built-in list (${ALL_HADITH.length}) is taken from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi, Abu Dawud, an-Nasa'i and Ibn Majah with Sunnah.com references and gradings; only sahih and hasan narrations are included. Please have the imam check the list.</p>
 ${check('Show hadith on the TV', 'hadith.enabled', c.hadith.enabled)}
 <div class="grid">
 ${num('Every (minutes)', 'hadith.everyMin', c.hadith.everyMin)}
@@ -149,11 +149,34 @@ ${num('Not within (minutes) before a jamaat', 'hadith.quietBefore', c.hadith.qui
 ${num('Nor (minutes) after it', 'hadith.quietAfter', c.hadith.quietAfter)}
 </div>
 <p class="help">Preview on the TV page with <code>tv/?preview=hadith</code> (cycles through the list).</p>
+<h4>When each group is shown</h4>
+<p class="help">Groups set to particular Hijri months (or Fridays) alternate with the everyday groups while they are on, so Ramadan hadith come up every other slot in Ramadan.</p>
+<div class="cat-list">
+${CATEGORIES.map((cat) => {
+    const sch = scheduleFor(c, cat.id);
+    const count = ALL_HADITH.filter((h) => h.category === cat.id && !c.hadith.hidden.includes(h.id)).length + c.hadith.custom.filter((h) => h.category === cat.id && !c.hadith.hidden.includes(h.id)).length;
+    const months = HIJRI_MONTH_NAMES.map((m, i) => `<label class="mo"><input type="checkbox" data-action="hadith-month" data-cat="${cat.id}" data-month="${i + 1}" ${(sch.months ?? []).includes(i + 1) ? 'checked' : ''}>${m}</label>`).join('');
+    return `<div class="cat-row">
+  <div class="cat-name"><strong>${esc(cat.label)}</strong><small>${count} hadith</small></div>
+  <select data-action="hadith-when" data-cat="${cat.id}" aria-label="When to show ${esc(cat.label)}">
+    <option value="always" ${sch.when === 'always' ? 'selected' : ''}>Always</option>
+    <option value="months" ${sch.when === 'months' ? 'selected' : ''}>In these Hijri months</option>
+    <option value="friday" ${sch.when === 'friday' ? 'selected' : ''}>On Fridays</option>
+    <option value="never" ${sch.when === 'never' ? 'selected' : ''}>Never</option>
+  </select>
+  <div class="cat-months" ${sch.when === 'months' ? '' : 'hidden'}>${months}</div>
+</div>`;
+  }).join('')}
+</div>
 <details class="hadith-list"><summary>${ALL_HADITH.filter((h) => !c.hadith.hidden.includes(h.id)).length} of ${ALL_HADITH.length} built-in hadith shown · open to choose</summary>
-${ALL_HADITH.map((h) => `<label class="hadith-item"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}><span><span class="h-ar" lang="ar" dir="rtl">${esc(h.ar)}</span><span class="h-en">${esc(h.en)}</span><small>${esc(h.ref)} · ${esc(h.grade)}${h.season ? ' · Ramadan only' : ''}</small></span></label>`).join('')}
+${CATEGORIES.map((cat) => {
+    const items = ALL_HADITH.filter((h) => h.category === cat.id);
+    if (!items.length) return '';
+    return `<h5>${esc(cat.label)}</h5>` + items.map((h) => `<label class="hadith-item"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}><span><span class="h-ar" lang="ar" dir="rtl">${esc(h.ar)}</span><span class="h-en">${esc(h.en)}</span><small><a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.ref)}</a> · ${esc(h.grade)}</small></span></label>`).join('');
+  }).join('')}
 </details>
 <h4>Your own hadith</h4>
-<p class="help">Added to the rotation with the built-in ones. Give the Arabic, the English and the reference (collection and number) so people can look it up.</p>
+<p class="help">Added to the rotation with the built-in ones. Give the Arabic, the English and the reference (collection and number) so people can look it up, and choose the group it belongs to.</p>
 <div class="custom-list">
 ${c.hadith.custom.map((h, i) => `<div class="custom-hadith">
   <label class="f"><span>Arabic</span><textarea rows="2" lang="ar" dir="rtl" data-path="hadith.custom.${i}.ar">${esc(h.ar)}</textarea></label>
@@ -162,6 +185,7 @@ ${c.hadith.custom.map((h, i) => `<div class="custom-hadith">
     ${text('Reference', `hadith.custom.${i}.ref`, h.ref, 'e.g. Sahih Muslim 2699')}
     ${text('Grading', `hadith.custom.${i}.grade`, h.grade, 'e.g. Sahih')}
   </div>
+  <label class="f"><span>Group</span><select data-path="hadith.custom.${i}.category">${CATEGORIES.map((cat) => `<option value="${cat.id}" ${(h.category || 'faith') === cat.id ? 'selected' : ''}>${esc(cat.label)}</option>`).join('')}</select></label>
   <div class="buttons small">
     <label class="check"><input type="checkbox" data-action="hadith-toggle" data-id="${h.id}" ${c.hadith.hidden.includes(h.id) ? '' : 'checked'}> Show on the TV</label>
     <button type="button" class="ghost danger" data-action="hadith-del" data-index="${i}">Remove</button>

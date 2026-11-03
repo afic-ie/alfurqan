@@ -1,50 +1,1415 @@
 [
-  { "id": "bukhari-1", "ar": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى", "en": "Actions are judged by intentions, and every person will have only what they intended.", "ref": "Sahih al-Bukhari 1 · Sahih Muslim 1907", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:1" },
-  { "id": "bukhari-8", "ar": "بُنِيَ الإِسْلاَمُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ", "en": "Islam is built on five: testifying that there is no god but Allah and that Muhammad is the Messenger of Allah, establishing the prayer, giving zakat, the pilgrimage, and fasting Ramadan.", "ref": "Sahih al-Bukhari 8 · Sahih Muslim 16", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:8" },
-  { "id": "bukhari-13", "ar": "لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ", "en": "None of you truly believes until he loves for his brother what he loves for himself.", "ref": "Sahih al-Bukhari 13 · Sahih Muslim 45", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:13" },
-  { "id": "bukhari-10", "ar": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ", "en": "The Muslim is the one from whose tongue and hand other Muslims are safe.", "ref": "Sahih al-Bukhari 10 · Sahih Muslim 40", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:10" },
-  { "id": "bukhari-6018", "ar": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيُكْرِمْ جَارَهُ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيُكْرِمْ ضَيْفَهُ", "en": "Whoever believes in Allah and the Last Day should speak good or keep silent; whoever believes in Allah and the Last Day should honour his neighbour; and whoever believes in Allah and the Last Day should honour his guest.", "ref": "Sahih al-Bukhari 6018 · Sahih Muslim 47", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6018" },
-  { "id": "bukhari-6116", "ar": "أَنَّ رَجُلاً قَالَ لِلنَّبِيِّ ﷺ: أَوْصِنِي. قَالَ: لاَ تَغْضَبْ. فَرَدَّدَ مِرَارًا، قَالَ: لاَ تَغْضَبْ", "en": "A man said to the Prophet ﷺ, \"Advise me.\" He said, \"Do not get angry.\" The man repeated his request several times, and each time he said, \"Do not get angry.\"", "ref": "Sahih al-Bukhari 6116", "grade": "Sahih", "url": "https://sunnah.com/bukhari:6116" },
-  { "id": "muslim-223", "ar": "الطُّهُورُ شَطْرُ الإِيمَانِ", "en": "Purity is half of faith.", "ref": "Sahih Muslim 223", "grade": "Sahih", "url": "https://sunnah.com/muslim:223" },
-  { "id": "muslim-2564", "ar": "إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ", "en": "Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.", "ref": "Sahih Muslim 2564", "grade": "Sahih", "url": "https://sunnah.com/muslim:2564" },
-  { "id": "muslim-2699", "ar": "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ، وَمَنْ يَسَّرَ عَلَى مُعْسِرٍ يَسَّرَ اللَّهُ عَلَيْهِ فِي الدُّنْيَا وَالآخِرَةِ", "en": "Whoever relieves a believer of a hardship of this world, Allah will relieve him of a hardship on the Day of Resurrection; and whoever makes things easy for one in difficulty, Allah will make things easy for him in this world and the next.", "ref": "Sahih Muslim 2699", "grade": "Sahih", "url": "https://sunnah.com/muslim:2699" },
-  { "id": "muslim-2699b", "ar": "وَمَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ", "en": "Whoever travels a path in search of knowledge, Allah will make easy for him a path to Paradise.", "ref": "Sahih Muslim 2699", "grade": "Sahih", "url": "https://sunnah.com/muslim:2699" },
-  { "id": "tirmidhi-1924", "ar": "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ", "en": "The merciful are shown mercy by the Most Merciful. Be merciful to those on earth, and the One in heaven will be merciful to you.", "ref": "Jami' at-Tirmidhi 1924 · Sunan Abi Dawud 4941", "grade": "Hasan sahih (at-Tirmidhi)", "url": "https://sunnah.com/tirmidhi:1924" },
-  { "id": "bukhari-5027", "ar": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ", "en": "The best of you are those who learn the Qur'an and teach it.", "ref": "Sahih al-Bukhari 5027", "grade": "Sahih", "url": "https://sunnah.com/bukhari:5027" },
-  { "id": "bukhari-6464", "ar": "أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ أَدْوَمُهَا وَإِنْ قَلَّ", "en": "The deeds most beloved to Allah are those done most regularly, even if they are small.", "ref": "Sahih al-Bukhari 6464 · Sahih Muslim 783", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6464" },
-  { "id": "muslim-2588", "ar": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ، وَمَا زَادَ اللَّهُ عَبْدًا بِعَفْوٍ إِلاَّ عِزًّا، وَمَا تَوَاضَعَ أَحَدٌ لِلَّهِ إِلاَّ رَفَعَهُ اللَّهُ", "en": "Charity does not decrease wealth; Allah increases a servant in honour when he forgives; and no one humbles himself for the sake of Allah but Allah raises him.", "ref": "Sahih Muslim 2588", "grade": "Sahih", "url": "https://sunnah.com/muslim:2588" },
-  { "id": "muslim-91", "ar": "لاَ يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ", "en": "No one who has an atom's weight of pride in his heart will enter Paradise.", "ref": "Sahih Muslim 91", "grade": "Sahih", "url": "https://sunnah.com/muslim:91" },
-  { "id": "bukhari-6094", "ar": "إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ", "en": "Truthfulness leads to righteousness, and righteousness leads to Paradise.", "ref": "Sahih al-Bukhari 6094 · Sahih Muslim 2607", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6094" },
-  { "id": "bukhari-2442", "ar": "الْمُسْلِمُ أَخُو الْمُسْلِمِ، لاَ يَظْلِمُهُ وَلاَ يُسْلِمُهُ، وَمَنْ كَانَ فِي حَاجَةِ أَخِيهِ كَانَ اللَّهُ فِي حَاجَتِهِ", "en": "The Muslim is the brother of the Muslim: he does not wrong him nor abandon him. Whoever meets the need of his brother, Allah will meet his need.", "ref": "Sahih al-Bukhari 2442 · Sahih Muslim 2580", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:2442" },
-  { "id": "bukhari-5997", "ar": "مَنْ لاَ يَرْحَمُ لاَ يُرْحَمُ", "en": "Whoever does not show mercy will not be shown mercy.", "ref": "Sahih al-Bukhari 5997 · Sahih Muslim 2318", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:5997" },
-  { "id": "muslim-55", "ar": "الدِّينُ النَّصِيحَةُ. قُلْنَا: لِمَنْ؟ قَالَ: لِلَّهِ، وَلِكِتَابِهِ، وَلِرَسُولِهِ، وَلأَئِمَّةِ الْمُسْلِمِينَ وَعَامَّتِهِمْ", "en": "Religion is sincerity. We asked, \"To whom?\" He said, \"To Allah, His Book, His Messenger, the leaders of the Muslims and their common people.\"", "ref": "Sahih Muslim 55", "grade": "Sahih", "url": "https://sunnah.com/muslim:55" },
-  { "id": "muslim-408", "ar": "مَنْ صَلَّى عَلَيَّ صَلاَةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْرًا", "en": "Whoever sends one blessing upon me, Allah sends ten blessings upon him.", "ref": "Sahih Muslim 408", "grade": "Sahih", "url": "https://sunnah.com/muslim:408" },
-  { "id": "bukhari-2989", "ar": "وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ، وَكُلُّ خُطْوَةٍ تَمْشِيهَا إِلَى الصَّلاَةِ صَدَقَةٌ", "en": "A good word is charity, and every step you take towards the prayer is charity.", "ref": "Sahih al-Bukhari 2989 · Sahih Muslim 1009", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:2989" },
-  { "id": "tirmidhi-1956", "ar": "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ", "en": "Your smile in the face of your brother is charity.", "ref": "Jami' at-Tirmidhi 1956", "grade": "Hasan (al-Albani)", "url": "https://sunnah.com/tirmidhi:1956" },
-  { "id": "tirmidhi-1987", "ar": "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا، وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ", "en": "Fear Allah wherever you are, follow a bad deed with a good one and it will wipe it out, and treat people with good character.", "ref": "Jami' at-Tirmidhi 1987", "grade": "Hasan", "url": "https://sunnah.com/tirmidhi:1987" },
-  { "id": "bukhari-6114", "ar": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ", "en": "The strong one is not the one who overcomes others; the strong one is the one who controls himself when angry.", "ref": "Sahih al-Bukhari 6114 · Sahih Muslim 2609", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6114" },
-  { "id": "muslim-2593", "ar": "إِنَّ اللَّهَ رَفِيقٌ يُحِبُّ الرِّفْقَ", "en": "Allah is gentle and loves gentleness.", "ref": "Sahih Muslim 2593", "grade": "Sahih", "url": "https://sunnah.com/muslim:2593" },
-  { "id": "muslim-233", "ar": "الصَّلَوَاتُ الْخَمْسُ، وَالْجُمُعَةُ إِلَى الْجُمُعَةِ، وَرَمَضَانُ إِلَى رَمَضَانَ، مُكَفِّرَاتٌ مَا بَيْنَهُنَّ إِذَا اجْتَنَبَ الْكَبَائِرَ", "en": "The five prayers, Friday to Friday, and Ramadan to Ramadan wipe out whatever is between them, so long as the major sins are avoided.", "ref": "Sahih Muslim 233", "grade": "Sahih", "url": "https://sunnah.com/muslim:233" },
-  { "id": "bukhari-645", "ar": "صَلاَةُ الْجَمَاعَةِ أَفْضَلُ مِنْ صَلاَةِ الْفَذِّ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً", "en": "Prayer in congregation is better than prayer alone by twenty-seven degrees.", "ref": "Sahih al-Bukhari 645 · Sahih Muslim 650", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:645" },
-  { "id": "muslim-482", "ar": "أَقْرَبُ مَا يَكُونُ الْعَبْدُ مِنْ رَبِّهِ وَهُوَ سَاجِدٌ، فَأَكْثِرُوا الدُّعَاءَ", "en": "The closest a servant comes to his Lord is when he is in prostration, so make much supplication.", "ref": "Sahih Muslim 482", "grade": "Sahih", "url": "https://sunnah.com/muslim:482" },
-  { "id": "muslim-101", "ar": "مَنْ غَشَّنَا فَلَيْسَ مِنَّا", "en": "Whoever cheats us is not one of us.", "ref": "Sahih Muslim 101", "grade": "Sahih", "url": "https://sunnah.com/muslim:101" },
-  { "id": "bukhari-3559", "ar": "إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلاَقًا", "en": "The best of you are those with the best character.", "ref": "Sahih al-Bukhari 3559 · Sahih Muslim 2321", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:3559" },
-  { "id": "bukhari-481", "ar": "الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا", "en": "The believer to the believer is like a building, each part strengthening the other.", "ref": "Sahih al-Bukhari 481 · Sahih Muslim 2585", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:481" },
-  { "id": "tirmidhi-1954", "ar": "مَنْ لاَ يَشْكُرُ النَّاسَ لاَ يَشْكُرُ اللَّهَ", "en": "Whoever does not thank people does not thank Allah.", "ref": "Jami' at-Tirmidhi 1954 · Sunan Abi Dawud 4811", "grade": "Sahih", "url": "https://sunnah.com/tirmidhi:1954" },
-  { "id": "tirmidhi-2969", "ar": "الدُّعَاءُ هُوَ الْعِبَادَةُ", "en": "Supplication is worship.", "ref": "Jami' at-Tirmidhi 2969 · Sunan Abi Dawud 1479", "grade": "Hasan sahih (at-Tirmidhi)", "url": "https://sunnah.com/tirmidhi:2969" },
-  { "id": "bukhari-6021", "ar": "كُلُّ مَعْرُوفٍ صَدَقَةٌ", "en": "Every act of kindness is charity.", "ref": "Sahih al-Bukhari 6021", "grade": "Sahih", "url": "https://sunnah.com/bukhari:6021" },
-  { "id": "muslim-1631", "ar": "إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلاَّ مِنْ ثَلاَثَةٍ: إِلاَّ مِنْ صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ", "en": "When a person dies, his deeds come to an end except for three: ongoing charity, knowledge that benefits others, or a righteous child who prays for him.", "ref": "Sahih Muslim 1631", "grade": "Sahih", "url": "https://sunnah.com/muslim:1631" },
-  { "id": "bukhari-450", "ar": "مَنْ بَنَى مَسْجِدًا يَبْتَغِي بِهِ وَجْهَ اللَّهِ بَنَى اللَّهُ لَهُ مِثْلَهُ فِي الْجَنَّةِ", "en": "Whoever builds a mosque seeking the face of Allah, Allah will build for him the like of it in Paradise.", "ref": "Sahih al-Bukhari 450 · Sahih Muslim 533", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:450" },
-  { "id": "bukhari-6065", "ar": "لاَ تَحَاسَدُوا، وَلاَ تَبَاغَضُوا، وَلاَ تَدَابَرُوا، وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا", "en": "Do not envy one another, do not hate one another, do not turn away from one another; be, O servants of Allah, brothers.", "ref": "Sahih al-Bukhari 6065 · Sahih Muslim 2559", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6065" },
-  { "id": "bukhari-71", "ar": "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ", "en": "When Allah wishes good for someone, He gives him understanding of the religion.", "ref": "Sahih al-Bukhari 71 · Sahih Muslim 1037", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:71" },
-  { "id": "bukhari-5971", "ar": "جَاءَ رَجُلٌ إِلَى رَسُولِ اللَّهِ ﷺ فَقَالَ: مَنْ أَحَقُّ النَّاسِ بِحُسْنِ صَحَابَتِي؟ قَالَ: أُمُّكَ. قَالَ: ثُمَّ مَنْ؟ قَالَ: أُمُّكَ. قَالَ: ثُمَّ مَنْ؟ قَالَ: أُمُّكَ. قَالَ: ثُمَّ مَنْ؟ قَالَ: ثُمَّ أَبُوكَ", "en": "A man asked the Messenger of Allah ﷺ, \"Who deserves my best companionship?\" He said, \"Your mother.\" \"Then who?\" \"Your mother.\" \"Then who?\" \"Your mother.\" \"Then who?\" \"Then your father.\"", "ref": "Sahih al-Bukhari 5971 · Sahih Muslim 2548", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:5971" },
-  { "id": "bukhari-6406", "ar": "كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ", "en": "Two phrases light on the tongue, heavy on the scale, and beloved to the Most Merciful: Subhan Allahi wa bihamdihi, Subhan Allahil-Azim.", "ref": "Sahih al-Bukhari 6406 · Sahih Muslim 2694", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:6406" },
-  { "id": "bukhari-69", "ar": "يَسِّرُوا وَلاَ تُعَسِّرُوا، وَبَشِّرُوا وَلاَ تُنَفِّرُوا", "en": "Make things easy and do not make them difficult; give glad tidings and do not drive people away.", "ref": "Sahih al-Bukhari 69 · Sahih Muslim 1734", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:69" },
-  { "id": "muslim-54", "ar": "لاَ تَدْخُلُونَ الْجَنَّةَ حَتَّى تُؤْمِنُوا، وَلاَ تُؤْمِنُوا حَتَّى تَحَابُّوا، أَوَلاَ أَدُلُّكُمْ عَلَى شَيْءٍ إِذَا فَعَلْتُمُوهُ تَحَابَبْتُمْ؟ أَفْشُوا السَّلاَمَ بَيْنَكُمْ", "en": "You will not enter Paradise until you believe, and you will not believe until you love one another. Shall I tell you of something which, if you do it, you will love one another? Spread the greeting of peace among you.", "ref": "Sahih Muslim 54", "grade": "Sahih", "url": "https://sunnah.com/muslim:54" },
-  { "id": "muslim-2664", "ar": "الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ، وَفِي كُلٍّ خَيْرٌ. احْرِصْ عَلَى مَا يَنْفَعُكَ، وَاسْتَعِنْ بِاللَّهِ وَلاَ تَعْجَزْ", "en": "The strong believer is better and more beloved to Allah than the weak believer, and there is good in both. Strive for what benefits you, seek help from Allah, and do not give up.", "ref": "Sahih Muslim 2664", "grade": "Sahih", "url": "https://sunnah.com/muslim:2664" },
-  { "id": "abudawud-4682", "ar": "أَكْمَلُ الْمُؤْمِنِينَ إِيمَانًا أَحْسَنُهُمْ خُلُقًا", "en": "The most complete of the believers in faith are those with the best character.", "ref": "Sunan Abi Dawud 4682 · Jami' at-Tirmidhi 1162", "grade": "Hasan sahih (at-Tirmidhi)", "url": "https://sunnah.com/abudawud:4682" },
-  { "id": "bukhari-38", "ar": "مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", "en": "Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.", "ref": "Sahih al-Bukhari 38 · Sahih Muslim 760", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:38", "season": "ramadan" },
-  { "id": "bukhari-1901", "ar": "مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ", "en": "Whoever stands in prayer on the Night of Decree out of faith and seeking reward, his past sins will be forgiven.", "ref": "Sahih al-Bukhari 1901", "grade": "Sahih", "url": "https://sunnah.com/bukhari:1901", "season": "ramadan" },
-  { "id": "bukhari-1896", "ar": "إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ، يَدْخُلُ مِنْهُ الصَّائِمُونَ يَوْمَ الْقِيَامَةِ، لاَ يَدْخُلُ مِنْهُ أَحَدٌ غَيْرُهُمْ", "en": "In Paradise there is a gate called ar-Rayyan, through which those who fasted will enter on the Day of Resurrection, and no one else will enter through it.", "ref": "Sahih al-Bukhari 1896 · Sahih Muslim 1152", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:1896", "season": "ramadan" },
-  { "id": "bukhari-1894", "ar": "الصِّيَامُ جُنَّةٌ، فَلاَ يَرْفُثْ وَلاَ يَجْهَلْ، وَإِنِ امْرُؤٌ قَاتَلَهُ أَوْ شَاتَمَهُ فَلْيَقُلْ: إِنِّي صَائِمٌ", "en": "Fasting is a shield, so the fasting person should not use foul language or behave foolishly; and if someone fights or insults him, let him say: I am fasting.", "ref": "Sahih al-Bukhari 1894 · Sahih Muslim 1151", "grade": "Agreed upon", "url": "https://sunnah.com/bukhari:1894", "season": "ramadan" }
+ {
+  "id": "bukhari-1",
+  "category": "faith",
+  "ar": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+  "en": "Actions are judged by intentions, and every person will have only what they intended.",
+  "ref": "Sahih al-Bukhari 1 · Sahih Muslim 1907",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1"
+ },
+ {
+  "id": "bukhari-8",
+  "category": "faith",
+  "ar": "بُنِيَ الإِسْلاَمُ عَلَى خَمْسٍ شَهَادَةِ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلاَةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ",
+  "en": "Narrated Ibn 'Umar: Allah's Messenger (ﷺ) said: Islam is based on (the following) five (principles): 1. To testify that none has the right to be worshipped but Allah and Muhammad is Allah's Messenger (ﷺ). 2. To offer the (compulsory congregational) prayers dutifully and perfectly. 3. To pay Zakat (i.e. obligatory charity) . 4. To perform Hajj. (i.e. Pilgrimage to Mecca) 5. To observe fast during the month of Ramadan",
+  "ref": "Sahih al-Bukhari 8 · Sahih Muslim 16",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:8"
+ },
+ {
+  "id": "bukhari-13",
+  "category": "community",
+  "ar": "لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+  "en": "Narrated Anas: The Prophet (ﷺ) said, \"None of you will have faith till he wishes for his (Muslim) brother what he likes for himself",
+  "ref": "Sahih al-Bukhari 13 · Sahih Muslim 45",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:13"
+ },
+ {
+  "id": "bukhari-10",
+  "category": "character",
+  "ar": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ، وَالْمُهَاجِرُ مَنْ هَجَرَ مَا نَهَى اللَّهُ عَنْهُ",
+  "en": "Narrated 'Abdullah bin 'Amr: The Prophet (ﷺ) said, \"A Muslim is the one who avoids harming Muslims with his tongue and hands. And a Muhajir (emigrant) is the one who gives up (abandons) all what Allah has forbidden",
+  "ref": "Sahih al-Bukhari 10 · Sahih Muslim 40",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:10"
+ },
+ {
+  "id": "bukhari-6018",
+  "category": "character",
+  "ar": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلاَ يُؤْذِ جَارَهُ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيُكْرِمْ ضَيْفَهُ، وَمَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Anybody who believes in Allah and the Last Day should not harm his neighbor, and anybody who believes in Allah and the Last Day should entertain his guest generously and anybody who believes in Allah and the Last Day should talk what is good or keep quiet. (i.e. abstain from all kinds of evil and dirty talk)",
+  "ref": "Sahih al-Bukhari 6018 · Sahih Muslim 47",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6018"
+ },
+ {
+  "id": "bukhari-6116",
+  "category": "character",
+  "ar": "لاَ تَغْضَبْ \". فَرَدَّدَ مِرَارًا، قَالَ \" لاَ تَغْضَبْ",
+  "en": "Narrated Abu Huraira:A man said to the Prophet (ﷺ) , \"Advise me! \"The Prophet (ﷺ) said, \"Do not become angry and furious.\" The man asked (the same) again and again, and the Prophet (ﷺ) said in each case, \"Do not become angry and furious",
+  "ref": "Sahih al-Bukhari 6116",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6116"
+ },
+ {
+  "id": "muslim-223",
+  "category": "health",
+  "ar": "الطُّهُورُ شَطْرُ الإِيمَانِ وَالْحَمْدُ لِلَّهِ تَمْلأُ الْمِيزَانَ ‏.‏ وَسُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ تَمْلآنِ - أَوْ تَمْلأُ - مَا بَيْنَ السَّمَوَاتِ وَالأَرْض",
+  "en": "Purity is half of faith; 'al-hamdu lillah' fills the scale; and 'subhan Allah' and 'al-hamdu lillah' together fill what is between the heavens and the earth.",
+  "ref": "Sahih Muslim 223",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:223"
+ },
+ {
+  "id": "muslim-2564",
+  "category": "faith",
+  "ar": "إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+  "en": "Abu Huraira reported Allah's Messenger (ﷺ) as saying:Verily Allah does not look to your faces and your wealth but He looks to your heart and to your deeds",
+  "ref": "Sahih Muslim 2564",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2564"
+ },
+ {
+  "id": "muslim-2699",
+  "category": "community",
+  "ar": "مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ وَمَنْ يَسَّرَ عَلَى مُعْسِرٍ يَسَّرَ اللَّهُ عَلَيْهِ فِي الدُّنْيَا وَالآخِرَة",
+  "en": "Whoever relieves a believer of a hardship of this world, Allah relieves him of a hardship on the Day of Resurrection; and whoever eases the burden of one in difficulty, Allah eases his burden in this world and the next.",
+  "ref": "Sahih Muslim 2699",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2699"
+ },
+ {
+  "id": "muslim-2699-ilm",
+  "category": "knowledge",
+  "ar": "وَمَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّة",
+  "en": "Whoever travels a path seeking knowledge, Allah makes easy for him a path to Paradise.",
+  "ref": "Sahih Muslim 2699",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2699"
+ },
+ {
+  "id": "tirmidhi-1924",
+  "category": "character",
+  "ar": "الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ الرَّحِمُ شُجْنَةٌ مِنَ الرَّحْمَنِ فَمَنْ وَصَلَهَا وَصَلَهُ اللَّهُ وَمَنْ قَطَعَهَا قَطَعَهُ اللَّهُ",
+  "en": "Abdullah bin 'Amr narrated that the Messenger of Allah said:\"The merciful are shown mercy by Ar-Rahman. Be merciful on the earth, and you will be shown mercy from Who is above the heavens. The womb is named after Ar-Rahman, so whoever connects it, Allah connects him, and whoever severs it, Allah severs him",
+  "ref": "Jami' at-Tirmidhi 1924 · Sunan Abi Dawud 4941",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1924"
+ },
+ {
+  "id": "bukhari-5027",
+  "category": "knowledge",
+  "ar": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+  "en": "Narrated `Uthman:The Prophet (ﷺ) said, \"The best among you (Muslims) are those who learn the Qur'an and teach it",
+  "ref": "Sahih al-Bukhari 5027",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5027"
+ },
+ {
+  "id": "bukhari-6464",
+  "category": "faith",
+  "ar": "أَحَبَّ الأَعْمَالِ أَدْوَمُهَا إِلَى اللَّهِ، وَإِنْ قَل",
+  "en": "The deeds most beloved to Allah are those done most regularly, even if they are few.",
+  "ref": "Sahih al-Bukhari 6464 · Sahih Muslim 783",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6464"
+ },
+ {
+  "id": "muslim-2588",
+  "category": "charity",
+  "ar": "مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ وَمَا زَادَ اللَّهُ عَبْدًا بِعَفْوٍ إِلاَّ عِزًّا وَمَا تَوَاضَعَ أَحَدٌ لِلَّهِ إِلاَّ رَفَعَهُ اللَّهُ",
+  "en": "Abu Huraira reported Allah's Messenger (ﷺ) as saying:Charity does not decrease wealth, no one forgives another except that Allah increases his honor, and no one humbles himself for the sake of Allah except that Allah raises his status",
+  "ref": "Sahih Muslim 2588",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2588"
+ },
+ {
+  "id": "muslim-91",
+  "category": "character",
+  "ar": "لاَ يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ",
+  "en": "It is narrated on the authority of 'Abdullah that the Messenger of Allah (ﷺ) observed:He who has in his heart the weight of a mustard seed of pride shall not enter Paradise",
+  "ref": "Sahih Muslim 91",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:91"
+ },
+ {
+  "id": "bukhari-6094",
+  "category": "honesty",
+  "ar": "إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ، وَإِنَّ الرَّجُلَ لَيَصْدُقُ حَتَّى يَكُونَ صِدِّيقًا، وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ، وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ، وَإِنَّ الرَّجُلَ لَيَكْذِبُ، حَتَّى يُكْتَبَ عِنْدَ اللَّهِ كَذَّابًا",
+  "en": "Narrated `Abdullah:The Prophet (ﷺ) said, \"Truthfulness leads to righteousness, and righteousness leads to Paradise. And a man keeps on telling the truth until he becomes a truthful person. Falsehood leads to Al-Fajur (i.e. wickedness, evil-doing), and Al-Fajur (wickedness) leads to the (Hell) Fire, and a man may keep on telling lies till he is written before Allah, a liar",
+  "ref": "Sahih al-Bukhari 6094 · Sahih Muslim 2607",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6094"
+ },
+ {
+  "id": "bukhari-6951",
+  "category": "community",
+  "ar": "الْمُسْلِمُ أَخُو الْمُسْلِمِ، لاَ يَظْلِمُهُ، وَلاَ يُسْلِمُهُ، وَمَنْ كَانَ فِي حَاجَةِ أَخِيهِ، كَانَ اللَّهُ فِي حَاجَتِهِ",
+  "en": "Narrated `Abdullah bin `Umar:Allah's Messenger (ﷺ) said, \"A Muslim is a brother of another Muslim. So he should neither oppress him nor hand him over to an oppressor. And whoever fulfilled the needs of his brother, Allah will fulfill his needs",
+  "ref": "Sahih al-Bukhari 6951 · Sahih Muslim 2580",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6951"
+ },
+ {
+  "id": "bukhari-6013",
+  "category": "character",
+  "ar": "مَنْ لاَ يَرْحَمُ لاَ يُرْحَمُ",
+  "en": "Narrated Jarir bin `Abdullah:The Prophet (ﷺ) said, \"He who is not merciful to others, will not be treated mercifully",
+  "ref": "Sahih al-Bukhari 6013 · Sahih Muslim 2318",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6013"
+ },
+ {
+  "id": "muslim-55",
+  "category": "faith",
+  "ar": "الدِّينُ النَّصِيحَةُ \" قُلْنَا لِمَنْ قَالَ \" لِلَّهِ وَلِكِتَابِهِ وَلِرَسُولِهِ وَلأَئِمَّةِ الْمُسْلِمِينَ وَعَامَّتِهِمْ",
+  "en": "It is narrated on the authority of Tamim ad-Dari that the Prophet (ﷺ) said:\"The Religion is sincerity.\" We said, \"To whom?\" He said \"To Allah, to His Book, To His Messenger, and to the leaders of the Muslims and their masses",
+  "ref": "Sahih Muslim 55",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:55"
+ },
+ {
+  "id": "muslim-384",
+  "category": "prophet",
+  "ar": "مَنْ صَلَّى عَلَىَّ صَلاَةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْرًا",
+  "en": "Whoever sends one blessing upon me, Allah sends ten blessings upon him.",
+  "ref": "Sahih Muslim 384",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:384"
+ },
+ {
+  "id": "bukhari-2989",
+  "category": "charity",
+  "ar": "وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ، وَكُلُّ خَطْوَةٍ يَخْطُوهَا إِلَى الصَّلاَةِ صَدَقَةٌ، وَيُمِيطُ الأَذَى عَنِ الطَّرِيقِ صَدَقَة",
+  "en": "A good word is charity, every step you take towards the prayer is charity, and removing something harmful from the road is charity.",
+  "ref": "Sahih al-Bukhari 2989 · Sahih Muslim 1009",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2989"
+ },
+ {
+  "id": "tirmidhi-1956",
+  "category": "charity",
+  "ar": "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَة",
+  "en": "Your smiling in the face of your brother is charity.",
+  "ref": "Jami' at-Tirmidhi 1956",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1956"
+ },
+ {
+  "id": "tirmidhi-1987",
+  "category": "character",
+  "ar": "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا وَخَالِقِ النَّاسَ بِخُلُقٍ حَسَنٍ",
+  "en": "Abu Dharr said:\"The Messenger of Allah said to me: 'Have Taqwa of Allah wherever you are, and follow an evil deed with a good one to wipe it out, and treat the people with good behavior",
+  "ref": "Jami' at-Tirmidhi 1987",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/tirmidhi:1987"
+ },
+ {
+  "id": "bukhari-6114",
+  "category": "character",
+  "ar": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"The strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger",
+  "ref": "Sahih al-Bukhari 6114 · Sahih Muslim 2609",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6114"
+ },
+ {
+  "id": "muslim-2593",
+  "category": "character",
+  "ar": "يَا عَائِشَةُ إِنَّ اللَّهَ رَفِيقٌ يُحِبُّ الرِّفْقَ وَيُعْطِي عَلَى الرِّفْقِ مَا لاَ يُعْطِي عَلَى الْعُنْفِ وَمَا لاَ يُعْطِي عَلَى مَا سِوَاهُ",
+  "en": "A'isha, the wife of Allah's Apostle (ﷺ), reported that Allah's Messenger (ﷺ) said:'A'isha, verily Allah is kind and He loves kindness and confers upon kindness which he does not confer upon severity and does not confer upon anything else besides it (kindness)",
+  "ref": "Sahih Muslim 2593",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2593"
+ },
+ {
+  "id": "muslim-233",
+  "category": "prayer",
+  "ar": "الصَّلَوَاتُ الْخَمْسُ وَالْجُمُعَةُ إِلَى الْجُمُعَةِ وَرَمَضَانُ إِلَى رَمَضَانَ مُكَفِّرَاتٌ مَا بَيْنَهُنَّ إِذَا اجْتَنَبَ الْكَبَائِرَ",
+  "en": "Abu Huraira reported:Verily the Messenger of Allah (ﷺ) said: The five (daily) prayers and from one Friday prayer to the (next) Friday prayer, and from Ramadhan to Ramadhan are expiations for the (sins) committed in between (their intervals) provided one shuns the major sins",
+  "ref": "Sahih Muslim 233",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:233"
+ },
+ {
+  "id": "bukhari-645",
+  "category": "prayer",
+  "ar": "صَلاَةُ الْجَمَاعَةِ تَفْضُلُ صَلاَةَ الْفَذِّ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً",
+  "en": "Narrated `Abdullah bin `Umar:Allah's Messenger (ﷺ) said, \"The prayer in congregation is twenty seven times superior to the prayer offered by a person alone",
+  "ref": "Sahih al-Bukhari 645 · Sahih Muslim 650",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:645"
+ },
+ {
+  "id": "muslim-482",
+  "category": "prayer",
+  "ar": "أَقْرَبُ مَا يَكُونُ الْعَبْدُ مِنْ رَبِّهِ وَهُوَ سَاجِدٌ فَأَكْثِرُوا الدُّعَاءَ",
+  "en": "Abu Huraira reported:The Messenger of Allah (ﷺ) said: The nearest a servant comes to his Lord is when he is prostrating himself, so make supplication (in this state)",
+  "ref": "Sahih Muslim 482",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:482"
+ },
+ {
+  "id": "muslim-101",
+  "category": "honesty",
+  "ar": "مَنْ حَمَلَ عَلَيْنَا السِّلاَحَ فَلَيْسَ مِنَّا وَمَنْ غَشَّنَا فَلَيْسَ مِنَّا",
+  "en": "It is narrated on the authority of Abu Huraira that the Messenger of Allah (ﷺ) observed:He who took up arms against us is not of us and he who acted dishonestly towards us is not of us",
+  "ref": "Sahih Muslim 101",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:101"
+ },
+ {
+  "id": "bukhari-3559",
+  "category": "character",
+  "ar": "إِنَّ مِنْ خِيَارِكُمْ أَحْسَنَكُمْ أَخْلاَقًا",
+  "en": "Narrated `Abdullah bin `Amr:The Prophet (ﷺ) never used bad language neither a \"Fahish nor a Mutafahish. He used to say \"The best amongst you are those who have the best manners and character.\" (See Hadith No. 56 (B) Vol",
+  "ref": "Sahih al-Bukhari 3559 · Sahih Muslim 2321",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:3559"
+ },
+ {
+  "id": "bukhari-2446",
+  "category": "community",
+  "ar": "الْمُؤْمِنُ لِلْمُؤْمِنِ كَالْبُنْيَانِ يَشُدُّ بَعْضُهُ بَعْضًا",
+  "en": "Narrated Abu Musa:The Prophet (ﷺ) said, \"A believer to another believer is like a building whose different parts enforce each other.\" The Prophet (ﷺ) then clasped his hands with the fingers interlaced (while saying that)",
+  "ref": "Sahih al-Bukhari 2446 · Sahih Muslim 2585",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2446"
+ },
+ {
+  "id": "tirmidhi-1954",
+  "category": "character",
+  "ar": "مَنْ لاَ يَشْكُرِ النَّاسَ لاَ يَشْكُرِ اللَّهَ",
+  "en": "Abu Hurairah narrated that the Messenger of Allah said :\"Whoever is not grateful to the people, he is not grateful to Allah",
+  "ref": "Jami' at-Tirmidhi 1954 · Sunan Abi Dawud 4811",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1954"
+ },
+ {
+  "id": "tirmidhi-2969",
+  "category": "dhikr",
+  "ar": "الدُّعَاءُ هُوَ الْعِبَادَةُ",
+  "en": "Narrated An-Nu'man bin Bashir:from the Prophet (ﷺ) regarding Allah's saying: Your Lord said: Invoke Me, I shall respond to you (40:60, it appears that the author intended to apply it to Al-Baqarah 2:186). - he said: \"The supplication is the worship.\" And he recited: 'Your Lord said: Invoke Me, I shall respond to you.' up to His saying: 'in humiliation",
+  "ref": "Jami' at-Tirmidhi 2969",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2969"
+ },
+ {
+  "id": "bukhari-6021",
+  "category": "charity",
+  "ar": "كُلُّ مَعْرُوفٍ صَدَقَةٌ",
+  "en": "Narrated Jabir bin `Abdullah:The Prophet (ﷺ) said, Enjoining, all that is good is a Sadaqa",
+  "ref": "Sahih al-Bukhari 6021",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6021"
+ },
+ {
+  "id": "muslim-1631",
+  "category": "charity",
+  "ar": "إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلاَّ مِنْ ثَلاَثَةٍ إِلاَّ مِنْ صَدَقَةٍ جَارِيَةٍ أَوْ عِلْمٍ يُنْتَفَعُ بِهِ أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ",
+  "en": "Abu Huraira (Allah be pleased with him) reported Allah's Messenger (ﷺ) as saying:When a man dies, his acts come to an end, but three, recurring charity, or knowledge (by which people) benefit, or a pious son, who prays for him (for the deceased)",
+  "ref": "Sahih Muslim 1631",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1631"
+ },
+ {
+  "id": "muslim-533",
+  "category": "charity",
+  "ar": "مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ فِي الْجَنَّةِ مِثْلَهُ",
+  "en": "Mahmud b. Labid reported:When 'Uthman b. 'Affan intended to build the mosque (of the Prophet) the people did not approve of it. They liked that it should be kept in the same state. Thereupon he said: I heard the Messenger of Allah (ﷺ) say: He who built a mosque for Allah, Allah would build a house for him like it in Paradise",
+  "ref": "Sahih Muslim 533 · Sahih al-Bukhari 450",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:533"
+ },
+ {
+  "id": "bukhari-6066",
+  "category": "community",
+  "ar": "إِيَّاكُمْ وَالظَّنَّ، فَإِنَّ الظَّنَّ أَكْذَبُ الْحَدِيثِ، وَلاَ تَحَسَّسُوا، وَلاَ تَجَسَّسُوا، وَلاَ تَنَاجَشُوا، وَلاَ تَحَاسَدُوا، وَلاَ تَبَاغَضُوا، وَلاَ تَدَابَرُوا، وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Beware of suspicion, for suspicion is the worst of false tales. and do not look for the others' faults, and do not do spying on one another, and do not practice Najsh, and do not be jealous of one another and do not hate one another, and do not desert (stop talking to) one another. And O, Allah's worshipers! Be brothers",
+  "ref": "Sahih al-Bukhari 6066 · Sahih Muslim 2559",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6066"
+ },
+ {
+  "id": "bukhari-3116",
+  "category": "knowledge",
+  "ar": "مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ، وَاللَّهُ الْمُعْطِي وَأَنَا الْقَاسِمُ، وَلاَ تَزَالُ هَذِهِ الأُمَّةُ ظَاهِرِينَ عَلَى مَنْ خَالَفَهُمْ حَتَّى يَأْتِيَ أَمْرُ اللَّهِ وَهُمْ ظَاهِرُونَ",
+  "en": "Narrated Muawiya:Allah's Messenger (ﷺ) said, \"If Allah wants to do good for somebody, he makes him comprehend the Religion (i.e. Islam), and Allah is the Giver and I am Al-Qasim (i.e. the distributor), and this (Muslim) nation will remain victorious over their opponents, till Allah's Order comes and they will still be victorious",
+  "ref": "Sahih al-Bukhari 3116 · Sahih Muslim 1037",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:3116"
+ },
+ {
+  "id": "bukhari-5971",
+  "category": "family",
+  "ar": "مَنْ أَحَقُّ بِحُسْنِ صَحَابَتِي قَالَ ‏\"‏ أُمُّكَ ‏\"‏‏.‏ قَالَ ثُمَّ مَنْ قَالَ ‏\"‏ أُمُّكَ ‏\"‏‏.‏ قَالَ ثُمَّ مَنْ قَالَ ‏\"‏ أُمُّكَ ‏\"‏‏.‏ قَالَ ثُمَّ مَنْ قَالَ ‏\"‏ ثُمَّ أَبُوك",
+  "en": "A man asked: Messenger of Allah, who most deserves my good companionship? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Then your father.",
+  "ref": "Sahih al-Bukhari 5971 · Sahih Muslim 2548",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5971"
+ },
+ {
+  "id": "bukhari-6406",
+  "category": "dhikr",
+  "ar": "كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَنِ، سُبْحَانَ اللَّهِ الْعَظِيمِ، سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"There are two expressions which are very easy for the tongue to say, but they are very heavy in the balance and are very dear to The Beneficent (Allah), and they are, 'Subhan Allah Al- `Azim and 'Subhan Allah wa bihamdihi",
+  "ref": "Sahih al-Bukhari 6406 · Sahih Muslim 2694",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6406"
+ },
+ {
+  "id": "bukhari-69",
+  "category": "character",
+  "ar": "يَسِّرُوا وَلاَ تُعَسِّرُوا، وَبَشِّرُوا وَلاَ تُنَفِّرُوا",
+  "en": "Narrated Anas bin Malik:The Prophet (ﷺ) said, \"Facilitate things to people (concerning religious matters), and do not make it hard for them and give them good tidings and do not make them run away (from Islam)",
+  "ref": "Sahih al-Bukhari 69 · Sahih Muslim 1734",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:69"
+ },
+ {
+  "id": "muslim-54",
+  "category": "community",
+  "ar": "لاَ تَدْخُلُونَ الْجَنَّةَ حَتَّى تُؤْمِنُوا وَلاَ تُؤْمِنُوا حَتَّى تَحَابُّوا . أَوَلاَ أَدُلُّكُمْ عَلَى شَىْءٍ إِذَا فَعَلْتُمُوهُ تَحَابَبْتُمْ أَفْشُوا السَّلاَمَ بَيْنَكُمْ",
+  "en": "Abu Huraira reported:The Messenger of Allah (may peace and blessing be upon him) observed: You shall not enter Paradise so long as you do not affirm belief (in all those things which are the articles of faith) and you will not believe as long as you do not love one another. Should I not direct you to a thing which, if you do, will foster love amongst you: (i. e.) give currency to (the practice of paying salutation to one another by saying) as-salamu alaikum",
+  "ref": "Sahih Muslim 54",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:54"
+ },
+ {
+  "id": "muslim-2664",
+  "category": "patience",
+  "ar": "الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ وَفِي كُلٍّ خَيْرٌ احْرِصْ عَلَى مَا يَنْفَعُكَ وَاسْتَعِنْ بِاللَّهِ وَلاَ تَعْجِز",
+  "en": "The strong believer is better and more beloved to Allah than the weak believer, and there is good in both. Strive for what benefits you, seek help from Allah, and do not give up.",
+  "ref": "Sahih Muslim 2664",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2664"
+ },
+ {
+  "id": "abudawud-4682",
+  "category": "character",
+  "ar": "أَكْمَلُ الْمُؤْمِنِينَ إِيمَانًا أَحْسَنُهُمْ خُلُقًا",
+  "en": "Narrated AbuHurayrah: The Prophet (ﷺ) said: The most perfect believer in respect of faith is he who is best of them in manners",
+  "ref": "Sunan Abi Dawud 4682 · Jami' at-Tirmidhi 1162",
+  "grade": "Hasan Sahih",
+  "url": "https://sunnah.com/abudawud:4682"
+ },
+ {
+  "id": "bukhari-38",
+  "category": "ramadan",
+  "ar": "مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+  "en": "Narrated Abu Huraira: Allah's Messenger (ﷺ) said, \"Whoever observes fasts during the month of Ramadan out of sincere faith, and hoping to attain Allah's rewards, then all his past sins will be forgiven",
+  "ref": "Sahih al-Bukhari 38 · Sahih Muslim 760",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:38"
+ },
+ {
+  "id": "bukhari-1901",
+  "category": "ramadan",
+  "ar": "مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ، وَمَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Whoever established prayers on the night of Qadr out of sincere faith and hoping for a reward from Allah, then all his previous sins will be forgiven; and whoever fasts in the month of Ramadan out of sincere faith, and hoping for a reward from Allah, then all his previous sins will be forgiven",
+  "ref": "Sahih al-Bukhari 1901",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1901"
+ },
+ {
+  "id": "bukhari-1896",
+  "category": "ramadan",
+  "ar": "إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ، يَدْخُلُ مِنْهُ الصَّائِمُونَ يَوْمَ الْقِيَامَةِ، لاَ يَدْخُلُ مِنْهُ أَحَدٌ غَيْرُهُمْ يُقَالُ أَيْنَ الصَّائِمُونَ فَيَقُومُونَ، لاَ يَدْخُلُ مِنْهُ أَحَدٌ غَيْرُهُمْ، فَإِذَا دَخَلُوا أُغْلِقَ، فَلَمْ يَدْخُلْ مِنْهُ أَحَدٌ",
+  "en": "Narrated Sahl:The Prophet (ﷺ) said, \"There is a gate in Paradise called Ar-Raiyan, and those who observe fasts will enter through it on the Day of Resurrection and none except them will enter through it. It will be said, 'Where are those who used to observe fasts?' They will get up, and none except them will enter through it. After their entry the gate will be closed and nobody will enter through it",
+  "ref": "Sahih al-Bukhari 1896 · Sahih Muslim 1152",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1896"
+ },
+ {
+  "id": "bukhari-1894",
+  "category": "ramadan",
+  "ar": "الصِّيَامُ جُنَّةٌ، فَلاَ يَرْفُثْ وَلاَ يَجْهَلْ، وَإِنِ امْرُؤٌ قَاتَلَهُ أَوْ شَاتَمَهُ فَلْيَقُلْ إِنِّي صَائِم",
+  "en": "Fasting is a shield, so the fasting person should not use foul language or act foolishly; and if someone fights or insults him, let him say: I am fasting.",
+  "ref": "Sahih al-Bukhari 1894 · Sahih Muslim 1151",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1894"
+ },
+ {
+  "id": "bukhari-1898",
+  "category": "ramadan",
+  "ar": "إِذَا جَاءَ رَمَضَانُ فُتِحَتْ أَبْوَابُ الْجَنَّةِ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"When Ramadan begins, the gates of Paradise are opened",
+  "ref": "Sahih al-Bukhari 1898",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1898"
+ },
+ {
+  "id": "bukhari-1923",
+  "category": "ramadan",
+  "ar": "تَسَحَّرُوا فَإِنَّ فِي السَّحُورِ بَرَكَةً",
+  "en": "Narrated Anas bin Malik:The Prophet (ﷺ) said, \"Take Suhur as there is a blessing in it",
+  "ref": "Sahih al-Bukhari 1923 · Sahih Muslim 1095",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1923"
+ },
+ {
+  "id": "bukhari-1957",
+  "category": "ramadan",
+  "ar": "لاَ يَزَالُ النَّاسُ بِخَيْرٍ مَا عَجَّلُوا الْفِطْرَ",
+  "en": "Narrated Sahl bin Sa`d:Allah's Messenger (ﷺ) said, \"The people will remain on the right path as long as they hasten the breaking of the fast",
+  "ref": "Sahih al-Bukhari 1957 · Sahih Muslim 1098",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1957"
+ },
+ {
+  "id": "tirmidhi-807",
+  "category": "ramadan",
+  "ar": "مَنْ فَطَّرَ صَائِمًا كَانَ لَهُ مِثْلُ أَجْرِهِ غَيْرَ أَنَّهُ لاَ يَنْقُصُ مِنْ أَجْرِ الصَّائِمِ شَيْئًا",
+  "en": "Zaid bin Khalid Al-Juhani narrated that:The Messenger of Allah said: \"Whoever provides the food for a fasting person to break his fast with, then for him is the same reward as his (the fasting person's), without anything being diminished from the reward of the fasting person",
+  "ref": "Jami' at-Tirmidhi 807",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:807"
+ },
+ {
+  "id": "bukhari-2017",
+  "category": "ramadan",
+  "ar": "تَحَرَّوْا لَيْلَةَ الْقَدْرِ فِي الْوِتْرِ مِنَ الْعَشْرِ الأَوَاخِرِ مِنْ رَمَضَانَ",
+  "en": "Narrated `Aisha:Allah's Messenger (ﷺ) said, \"Search for the Night of Qadr in the odd nights of the last ten days of Ramadan",
+  "ref": "Sahih al-Bukhari 2017",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2017"
+ },
+ {
+  "id": "bukhari-1903",
+  "category": "ramadan",
+  "ar": "مَنْ لَمْ يَدَعْ قَوْلَ الزُّورِ وَالْعَمَلَ بِهِ فَلَيْسَ لِلَّهِ حَاجَةٌ فِي أَنْ يَدَعَ طَعَامَهُ وَشَرَابَهُ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Whoever does not give up forged speech and evil actions, Allah is not in need of his leaving his food and drink (i.e. Allah will not accept his fasting)",
+  "ref": "Sahih al-Bukhari 1903",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1903"
+ },
+ {
+  "id": "bukhari-37",
+  "category": "ramadan",
+  "ar": "مَنْ قَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
+  "en": "Narrated Abu Huraira: Allah's Messenger (ﷺ) said: \"Whoever establishes prayers during the nights of Ramadan faithfully out of sincere faith and hoping to attain Allah's rewards (not for showing off), all his past sins will be forgiven",
+  "ref": "Sahih al-Bukhari 37 · Sahih Muslim 759",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:37"
+ },
+ {
+  "id": "tirmidhi-3513",
+  "category": "ramadan",
+  "ar": "اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+  "en": "Aisha asked what to say on Laylat al-Qadr. He said: Say, O Allah, You are Forgiving and Generous and You love to forgive, so forgive me.",
+  "ref": "Jami' at-Tirmidhi 3513 · Sunan Ibn Majah 3850",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:3513"
+ },
+ {
+  "id": "bukhari-1863",
+  "category": "ramadan",
+  "ar": "مَا مَنَعَكِ مِنَ الْحَجِّ \". قَالَتْ أَبُو فُلاَنٍ ـ تَعْنِي زَوْجَهَا ـ كَانَ لَهُ نَاضِحَانِ، حَجَّ عَلَى أَحَدِهِمَا، وَالآخَرُ يَسْقِي أَرْضًا لَنَا. قَالَ \" فَإِنَّ عُمْرَةً فِي رَمَضَانَ تَقْضِي حَجَّةً مَعِي",
+  "en": "Narrated Ibn `Abbas:When the Prophet (ﷺ) returned after performing his Hajj, he asked Um Sinan Al-Ansari, \"What did forbid you to perform Hajj?\" She replied, \"Father of so-and-so (i.e. her husband) had two camels and he performed Hajj on one of them, and the second is used for the irrigation of our land.\" The Prophet (ﷺ) said (to her), \"Perform `Umra in the month of Ramadan, (as it is equivalent to Hajj or Hajj with me (in reward)",
+  "ref": "Sahih al-Bukhari 1863",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1863"
+ },
+ {
+  "id": "bukhari-7492",
+  "category": "ramadan",
+  "ar": "يَقُولُ اللَّهُ عَزَّ وَجَلَّ الصَّوْمُ لِي وَأَنَا أَجْزِي بِهِ يَدَعُ شَهْوَتَهُ وَأَكْلَهُ وَشُرْبَهُ مِنْ أَجْلِي، وَالصَّوْمُ جُنَّةٌ، وَلِلصَّائِمِ فَرْحَتَانِ فَرْحَةٌ حِينَ يُفْطِرُ وَفَرْحَةٌ حِينَ يَلْقَى رَبَّهُ، وَلَخَلُوفُ فَمِ الصَّائِمِ أَطْيَبُ عِنْدَ اللَّهِ مِنْ رِيحِ الْمِسْكِ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Allah said: The Fast is for Me and I will give the reward for it, as he (the one who observes the fast) leaves his sexual desire, food and drink for My Sake. Fasting is a screen (from Hell) and there are two pleasures for a fasting person, one at the time of breaking his fast, and the other at the time when he will meet his Lord. And the smell of the mouth of a fasting person is better in Allah's Sight than the smell of musk.\" (See Hadith No. 128, Vol)",
+  "ref": "Sahih al-Bukhari 7492",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:7492"
+ },
+ {
+  "id": "bukhari-1969",
+  "category": "shaban",
+  "ar": "فَمَا رَأَيْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم اسْتَكْمَلَ صِيَامَ شَهْرٍ إِلاَّ رَمَضَانَ، وَمَا رَأَيْتُهُ أَكْثَرَ صِيَامًا مِنْهُ فِي شَعْبَان",
+  "en": "Aisha said: I never saw the Messenger of Allah ﷺ complete a month of fasting except Ramadan, and I never saw him fast more in any month than in Sha'ban.",
+  "ref": "Sahih al-Bukhari 1969 · Sahih Muslim 1156",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1969"
+ },
+ {
+  "id": "nasai-2357",
+  "category": "shaban",
+  "ar": "ذَلِكَ شَهْرٌ يَغْفُلُ النَّاسُ عَنْهُ بَيْنَ رَجَبٍ وَرَمَضَانَ وَهُوَ شَهْرٌ تُرْفَعُ فِيهِ الأَعْمَالُ إِلَى رَبِّ الْعَالَمِينَ فَأُحِبُّ أَنْ يُرْفَعَ عَمَلِي وَأَنَا صَائِمٌ",
+  "en": "Usamah bin Zaid said:\"I said: 'O Messenger of Allah, I do not see you fasting any month as much as Shaban.' He said: 'That is a month to which people do not pay much attention, between Rajab and Ramadan. It is a month in which the deeds are taken up to the Lord of the worlds, and I like that my deeds be taken up when I am fasting",
+  "ref": "Sunan an-Nasa'i 2357",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/nasai:2357"
+ },
+ {
+  "id": "bukhari-1914",
+  "category": "shaban",
+  "ar": "لاَ يَتَقَدَّمَنَّ أَحَدُكُمْ رَمَضَانَ بِصَوْمِ يَوْمٍ أَوْ يَوْمَيْنِ، إِلاَّ أَنْ يَكُونَ رَجُلٌ كَانَ يَصُومُ صَوْمَهُ فَلْيَصُمْ ذَلِكَ الْيَوْمَ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"None of you should fast a day or two before the month of Ramadan unless he has the habit of fasting (Nawafil) (and if his fasting coincides with that day) then he can fast that day",
+  "ref": "Sahih al-Bukhari 1914 · Sahih Muslim 1082",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1914"
+ },
+ {
+  "id": "bukhari-1909",
+  "category": "shaban",
+  "ar": "صُومُوا لِرُؤْيَتِهِ، وَأَفْطِرُوا لِرُؤْيَتِهِ، فَإِنْ غُبِّيَ عَلَيْكُمْ فَأَكْمِلُوا عِدَّةَ شَعْبَانَ ثَلاَثِينَ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) or Abul-Qasim said, \"Start fasting on seeing the crescent (of Ramadan), and give up fasting on seeing the crescent (of Shawwal), and if the sky is overcast (and you cannot see it), complete thirty days of Sha'ban",
+  "ref": "Sahih al-Bukhari 1909 · Sahih Muslim 1081",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1909"
+ },
+ {
+  "id": "muslim-1164",
+  "category": "shawwal",
+  "ar": "مَنْ صَامَ رَمَضَانَ ثُمَّ أَتْبَعَهُ سِتًّا مِنْ شَوَّالٍ كَانَ كَصِيَامِ الدَّهْرِ",
+  "en": "Abu Ayyub al-Ansari (Allah be pleased with him) reported Allah's Messenger (ﷺ) as saying:He who observed the fast of Ramadan and then followed it with six (fasts) of Shawwal. it would be as if he fasted perpetually",
+  "ref": "Sahih Muslim 1164",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1164"
+ },
+ {
+  "id": "abudawud-1609",
+  "category": "shawwal",
+  "ar": "زَكَاةَ الْفِطْرِ طُهْرَةً لِلصَّائِمِ مِنَ اللَّغْوِ وَالرَّفَثِ وَطُعْمَةً لِلْمَسَاكِينِ مَنْ أَدَّاهَا قَبْلَ الصَّلاَةِ فَهِيَ زَكَاةٌ مَقْبُولَةٌ وَمَنْ أَدَّاهَا بَعْدَ الصَّلاَةِ فَهِيَ صَدَقَةٌ مِنَ الصَّدَقَاتِ",
+  "en": "Narrated Abdullah ibn Abbas: The Messenger of Allah (ﷺ) prescribed the sadaqah (alms) relating to the breaking of the fast as a purification of the fasting from empty and obscene talk and as food for the poor. If anyone pays it before the prayer (of 'Id), it will be accepted as zakat. If anyone pays it after the prayer, that will be a sadaqah like other sadaqahs (alms)",
+  "ref": "Sunan Abi Dawud 1609 · Sunan Ibn Majah 1827",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/abudawud:1609"
+ },
+ {
+  "id": "bukhari-1521",
+  "category": "hajj",
+  "ar": "مَنْ حَجَّ لِلَّهِ فَلَمْ يَرْفُثْ وَلَمْ يَفْسُقْ رَجَعَ كَيَوْمِ وَلَدَتْهُ أُمُّهُ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Whoever performs Hajj for Allah's pleasure and does not have sexual relations with his wife, and does not do evil or sins then he will return (after Hajj free from all sins) as if he were born anew",
+  "ref": "Sahih al-Bukhari 1521 · Sahih Muslim 1350",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1521"
+ },
+ {
+  "id": "bukhari-1773",
+  "category": "hajj",
+  "ar": "الْعُمْرَةُ إِلَى الْعُمْرَةِ كَفَّارَةٌ لِمَا بَيْنَهُمَا، وَالْحَجُّ الْمَبْرُورُ لَيْسَ لَهُ جَزَاءٌ إِلاَّ الْجَنَّةُ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"(The performance of) `Umra is an expiation for the sins committed (between it and the previous one). And the reward of Hajj Mabrur (the one accepted by Allah) is nothing except Paradise",
+  "ref": "Sahih al-Bukhari 1773 · Sahih Muslim 1349",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1773"
+ },
+ {
+  "id": "bukhari-969",
+  "category": "hajj",
+  "ar": "مَا الْعَمَلُ فِي أَيَّامِ الْعَشْرِ أَفْضَلَ مِنَ الْعَمَلِ فِي هَذِهِ ‏\"‏‏.‏ قَالُوا وَلاَ الْجِهَادُ قَالَ ‏\"‏ وَلاَ الْجِهَادُ، إِلاَّ رَجُلٌ خَرَجَ يُخَاطِرُ بِنَفْسِهِ وَمَالِهِ فَلَمْ يَرْجِعْ بِشَىْء",
+  "en": "No deeds are better than those done in these ten days. They asked: Not even jihad? He said: Not even jihad, except a man who goes out risking himself and his wealth and returns with neither.",
+  "ref": "Sahih al-Bukhari 969",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:969"
+ },
+ {
+  "id": "muslim-1162",
+  "category": "hajj",
+  "ar": "صِيَامُ يَوْمِ عَرَفَةَ أَحْتَسِبُ عَلَى اللَّهِ أَنْ يُكَفِّرَ السَّنَةَ الَّتِي قَبْلَهُ وَالسَّنَةَ الَّتِي بَعْدَه",
+  "en": "Fasting on the day of Arafah: I hope from Allah that it expiates the year before it and the year after it.",
+  "ref": "Sahih Muslim 1162",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1162"
+ },
+ {
+  "id": "muslim-1348",
+  "category": "hajj",
+  "ar": "مَا مِنْ يَوْمٍ أَكْثَرَ مِنْ أَنْ يُعْتِقَ اللَّهُ فِيهِ عَبْدًا مِنَ النَّارِ مِنْ يَوْمِ عَرَفَةَ وَإِنَّهُ لَيَدْنُو ثُمَّ يُبَاهِي بِهِمُ الْمَلاَئِكَةَ فَيَقُولُ مَا أَرَادَ هَؤُلاَءِ",
+  "en": "A'isha (Allah be pleased with her) reported Allah's Messenger (ﷺ) as saying:There is no day when God sets free more servants from Hell than the Day of 'Arafa. He draws near, then praises them to the angels, saying: What do these want?",
+  "ref": "Sahih Muslim 1348",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1348"
+ },
+ {
+  "id": "tirmidhi-889",
+  "category": "hajj",
+  "ar": "الْحَجُّ عَرَفَةُ مَنْ جَاءَ لَيْلَةَ جَمْعٍ قَبْلَ طُلُوعِ الْفَجْرِ فَقَدْ أَدْرَكَ الْحَجَّ أَيَّامُ مِنًى ثَلاَثَةٌ فَمَنْ تَعَجَّلَ فِي يَوْمَيْنِ فَلاَ إِثْمَ عَلَيْهِ وَمَنْ تَأَخَّرَ فَلاَ إِثْمَ عَلَيْهِ",
+  "en": "Abdur-Rahman bin Ya'mar narrated that:Some people among the residents of Najd came to the Messenger of Allah while he was at Arafat. They were questioning him, so he ordered a caller to proclaim: \"The Hajj is Arafah. Whoever came to Jam during the night, before the time of Fajr, then he has attended the Hajj. The days of Mina are three, so whoever hastens (leaving after) two days, then there is no sin upon him, and whoever delays, then there is no sin upon him.\" Muhammad said: \"Yahya added: 'And he took a companion rider to proclaim it",
+  "ref": "Jami' at-Tirmidhi 889 · Sunan Abi Dawud 1949",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:889"
+ },
+ {
+  "id": "tirmidhi-3585",
+  "category": "hajj",
+  "ar": "خَيْرُ الدُّعَاءِ دُعَاءُ يَوْمِ عَرَفَةَ وَخَيْرُ مَا قُلْتُ أَنَا وَالنَّبِيُّونَ مِنْ قَبْلِي لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+  "en": "Amr bin Shu`aib narrated from his father, from his grandfather, that the Prophet (ﷺ) said:“The best of supplication is the supplication of the Day of `Arafah. And the best of what I and the Prophets before me have said is: None has the right to be worshipped but Allah, Alone, without partner, to Him belongs all that exists, and to Him belongs the Praise, and He is powerful over all things. (Lā ilāha illallāh, waḥdahu lā sharīka lahu, lahul-mulku wa lahul-ḥamdu, wa huwa `alā kulli shai’in qadīr).’”",
+  "ref": "Jami' at-Tirmidhi 3585",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/tirmidhi:3585"
+ },
+ {
+  "id": "abudawud-2419",
+  "category": "hajj",
+  "ar": "يَوْمُ عَرَفَةَ وَيَوْمُ النَّحْرِ وَأَيَّامُ التَّشْرِيقِ عِيدُنَا أَهْلَ الإِسْلاَمِ وَهِيَ أَيَّامُ أَكْلٍ وَشُرْبٍ",
+  "en": "Narrated Uqbah ibn Amir: The Prophet (ﷺ) said: The day of Arafah, the day of sacrifice, the days of tashriq are (the days of) our festival, O people of Islam. These are the days of eating and drinking",
+  "ref": "Sunan Abi Dawud 2419 · Jami' at-Tirmidhi 773",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/abudawud:2419"
+ },
+ {
+  "id": "ibnmajah-3123",
+  "category": "hajj",
+  "ar": "مَنْ كَانَ لَهُ سَعَةٌ وَلَمْ يُضَحِّ فَلاَ يَقْرَبَنَّ مُصَلاَّنَا",
+  "en": "It was narrated from Abu Hurairah that the Messenger of Allah (ﷺ) said:“Whoever can afford it, but does not offer a sacrifice, let him not come near our prayer place.”",
+  "ref": "Sunan Ibn Majah 3123",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/ibnmajah:3123"
+ },
+ {
+  "id": "bukhari-1549",
+  "category": "hajj",
+  "ar": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لاَ شَرِيكَ لَكَ",
+  "en": "Narrated `Abdullah bin `Umar:The Talbiya of Allah's Messenger (ﷺ) was : 'Labbaika Allahumma labbaik, Labbaika la sharika Laka labbaik, Inna-l-hamda wan-ni'mata Laka walmulk, La sharika Laka' (I respond to Your call O Allah, I respond to Your call, and I am obedient to Your orders, You have no partner, I respond to Your call All the praises and blessings are for You, All the sovereignty is for You, And You have no partners with You)",
+  "ref": "Sahih al-Bukhari 1549 · Sahih Muslim 1184",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1549"
+ },
+ {
+  "id": "muslim-1163",
+  "category": "muharram",
+  "ar": "أَفْضَلُ الصِّيَامِ بَعْدَ رَمَضَانَ شَهْرُ اللَّهِ الْمُحَرَّمُ وَأَفْضَلُ الصَّلاَةِ بَعْدَ الْفَرِيضَةِ صَلاَةُ اللَّيْلِ",
+  "en": "Abu Haraira (Allah be pleased with him) reported Allah's Messenger (ﷺ) as saying:The most excellent fast after Ramadan is God's month. al-Muharram, and the most excellent prayer after what is prescribed is prayer during the night",
+  "ref": "Sahih Muslim 1163",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1163"
+ },
+ {
+  "id": "bukhari-2004",
+  "category": "muharram",
+  "ar": "مَا هَذَا \". قَالُوا هَذَا يَوْمٌ صَالِحٌ، هَذَا يَوْمٌ نَجَّى اللَّهُ بَنِي إِسْرَائِيلَ مِنْ عَدُوِّهِمْ، فَصَامَهُ مُوسَى. قَالَ \" فَأَنَا أَحَقُّ بِمُوسَى مِنْكُمْ",
+  "en": "Narrated Ibn `Abbas:The Prophet (ﷺ) came to Medina and saw the Jews fasting on the day of Ashura. He asked them about that. They replied, \"This is a good day, the day on which Allah rescued Bani Israel from their enemy. So, Moses fasted this day.\" The Prophet (ﷺ) said, \"We have more claim over Moses than you.\" So, the Prophet fasted on that day and ordered (the Muslims) to fast (on that day)",
+  "ref": "Sahih al-Bukhari 2004 · Sahih Muslim 1130",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2004"
+ },
+ {
+  "id": "muslim-1134",
+  "category": "muharram",
+  "ar": "لَئِنْ بَقِيتُ إِلَى قَابِلٍ لأَصُومَنَّ التَّاسِعَ",
+  "en": "Abdullah b 'Abbas reported that the Messenger of Allah (ﷺ) had said:If I live till the next (year), I would definitely observe fast on the 9th, and the narration transmitted by Abu Bakr is:\" He meant the day of Ashura",
+  "ref": "Sahih Muslim 1134",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1134"
+ },
+ {
+  "id": "bukhari-4662",
+  "category": "sacred",
+  "ar": "إِنَّ الزَّمَانَ قَدِ اسْتَدَارَ كَهَيْئَتِهِ يَوْمَ خَلَقَ اللَّهُ السَّمَوَاتِ وَالأَرْضَ، السَّنَةُ اثْنَا عَشَرَ شَهْرًا مِنْهَا، أَرْبَعَةٌ حُرُمٌ، ثَلاَثٌ مُتَوَالِيَاتٌ، ذُو الْقَعْدَةِ وَذُو الْحِجَّةِ وَالْمُحَرَّمُ وَرَجَبُ مُضَرَ الَّذِي بَيْنَ جُمَادَى وَشَعْبَانَ",
+  "en": "Narrated Abu Bakr:The Prophet (ﷺ) said, \"Time has come back to its original state which it had when Allah created the Heavens and the Earth; the year is twelve months, four of which are sacred. Three of them are in succession; Dhul-Qa'da, Dhul-Hijja and Al-Muharram, and (the fourth being) Rajab Mudar (named after the tribe of Mudar as they used to respect this month) which stands between Jumad (ath-thani) and Sha'ban",
+  "ref": "Sahih al-Bukhari 4662",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:4662"
+ },
+ {
+  "id": "bukhari-6484",
+  "category": "muharram",
+  "ar": "الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ، وَالْمُهَاجِرُ مَنْ هَجَرَ مَا نَهَى اللَّهُ عَنْهُ",
+  "en": "The Muslim is the one from whose tongue and hand the Muslims are safe, and the emigrant is the one who abandons what Allah has forbidden.",
+  "ref": "Sahih al-Bukhari 6484",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6484"
+ },
+ {
+  "id": "bukhari-14",
+  "category": "prophet",
+  "ar": "فَوَالَّذِي نَفْسِي بِيَدِهِ لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى أَكُونَ أَحَبَّ إِلَيْهِ مِنْ وَالِدِهِ وَوَلَدِهِ",
+  "en": "Narrated Abu Huraira: \"Allah's Messenger (ﷺ) said, \"By Him in Whose Hands my life is, none of you will have faith till he loves me more than his father and his children",
+  "ref": "Sahih al-Bukhari 14 · Sahih Muslim 44",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:14"
+ },
+ {
+  "id": "bukhari-7280",
+  "category": "prophet",
+  "ar": "كُلُّ أُمَّتِي يَدْخُلُونَ الْجَنَّةَ، إِلاَّ مَنْ أَبَى \". قَالُوا يَا رَسُولَ اللَّهِ وَمَنْ يَأْبَى قَالَ \" مَنْ أَطَاعَنِي دَخَلَ الْجَنَّةَ، وَمَنْ عَصَانِي فَقَدْ أَبَى",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"All my followers will enter Paradise except those who refuse.\" They said, \"O Allah's Messenger (ﷺ)! Who will refuse?\" He said, \"Whoever obeys me will enter Paradise, and whoever disobeys me is the one who refuses (to enter it)",
+  "ref": "Sahih al-Bukhari 7280",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:7280"
+ },
+ {
+  "id": "tirmidhi-3546",
+  "category": "prophet",
+  "ar": "الْبَخِيلُ الَّذِي مَنْ ذُكِرْتُ عِنْدَهُ فَلَمْ يُصَلِّ عَلَىَّ",
+  "en": "Ali bin Abi Talib narrated that the Messenger of Allah (ﷺ) said:“The stingy person is the one before whom I am mentioned, and he does not send Salat upon me.”",
+  "ref": "Jami' at-Tirmidhi 3546",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:3546"
+ },
+ {
+  "id": "bukhari-6504",
+  "category": "prophet",
+  "ar": "بُعِثْتُ أَنَا وَالسَّاعَةَ كَهَاتَيْنِ",
+  "en": "Narrated Anas:Allah's Messenger (ﷺ) said, \"I have been sent and the Hour (is at hand) as these two (fingers)",
+  "ref": "Sahih al-Bukhari 6504 · Sahih Muslim 867",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6504"
+ },
+ {
+  "id": "muslim-854",
+  "category": "jumuah",
+  "ar": "خَيْرُ يَوْمٍ طَلَعَتْ عَلَيْهِ الشَّمْسُ يَوْمُ الْجُمُعَةِ فِيهِ خُلِقَ آدَمُ وَفِيهِ أُدْخِلَ الْجَنَّةَ وَفِيهِ أُخْرِجَ مِنْهَا",
+  "en": "Abu Huraira reported Allah's Messenger (ﷺ) as saying:The best day on which the sun has risen is Friday; on it Adam was created, on it he was made to enter Paradise, on it he. was expelled from it",
+  "ref": "Sahih Muslim 854",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:854"
+ },
+ {
+  "id": "bukhari-881",
+  "category": "jumuah",
+  "ar": "مَنِ اغْتَسَلَ يَوْمَ الْجُمُعَةِ غُسْلَ الْجَنَابَةِ ثُمَّ رَاحَ فَكَأَنَّمَا قَرَّبَ بَدَنَة",
+  "en": "Whoever bathes on Friday as for major impurity and then goes early to the prayer, it is as if he had offered a camel in charity.",
+  "ref": "Sahih al-Bukhari 881 · Sahih Muslim 850",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:881"
+ },
+ {
+  "id": "abudawud-1531",
+  "category": "jumuah",
+  "ar": "إِنَّ مِنْ أَفْضَلِ أَيَّامِكُمْ يَوْمَ الْجُمُعَةِ فَأَكْثِرُوا عَلَىَّ مِنَ الصَّلاَةِ فِيهِ فَإِنَّ صَلاَتَكُمْ مَعْرُوضَةٌ عَلَى",
+  "en": "Among the best of your days is Friday, so send many blessings upon me on that day, for your blessings are presented to me.",
+  "ref": "Sunan Abi Dawud 1531 · Sunan an-Nasa'i 1374",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/abudawud:1531"
+ },
+ {
+  "id": "bukhari-935",
+  "category": "jumuah",
+  "ar": "فِيهِ سَاعَةٌ لاَ يُوَافِقُهَا عَبْدٌ مُسْلِمٌ، وَهْوَ قَائِمٌ يُصَلِّي، يَسْأَلُ اللَّهَ تَعَالَى شَيْئًا إِلاَّ أَعْطَاهُ إِيَّاهُ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) talked about Friday and said, \"There is an hour (opportune time) on Friday and if a Muslim gets it while praying and asks something from Allah, then Allah will definitely meet his demand.\" And he (the Prophet) pointed out the shortness of that time with his hands",
+  "ref": "Sahih al-Bukhari 935 · Sahih Muslim 852",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:935"
+ },
+ {
+  "id": "bukhari-934",
+  "category": "jumuah",
+  "ar": "إِذَا قُلْتَ لِصَاحِبِكَ يَوْمَ الْجُمُعَةِ أَنْصِتْ. وَالإِمَامُ يَخْطُبُ فَقَدْ لَغَوْتَ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"When the Imam is delivering the Khutba, and you ask your companion to keep quiet and listen, then no doubt you have done an evil act",
+  "ref": "Sahih al-Bukhari 934 · Sahih Muslim 851",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:934"
+ },
+ {
+  "id": "tirmidhi-413",
+  "category": "prayer",
+  "ar": "إِنَّ أَوَّلَ مَا يُحَاسَبُ بِهِ الْعَبْدُ يَوْمَ الْقِيَامَةِ مِنْ عَمَلِهِ صَلاَتُهُ فَإِنْ صَلُحَتْ فَقَدْ أَفْلَحَ وَأَنْجَحَ وَإِنْ فَسَدَتْ فَقَدْ خَابَ وَخَسِر",
+  "en": "The first deed a servant will be held to account for on the Day of Resurrection is his prayer: if it is sound he has succeeded and prospered, and if it is lacking he has failed and lost.",
+  "ref": "Jami' at-Tirmidhi 413 · Sunan Abi Dawud 864",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:413"
+ },
+ {
+  "id": "tirmidhi-2621",
+  "category": "prayer",
+  "ar": "الْعَهْدُ الَّذِي بَيْنَنَا وَبَيْنَهُمُ الصَّلاَةُ فَمَنْ تَرَكَهَا فَقَدْ كَفَرَ",
+  "en": "Narrated Abdullah bin Buraidah narrated from his father:that the Messenger of Allah (ﷺ) said: \"The covenant between us and them is the Salat, so whoever abandons it he has committed disbelief",
+  "ref": "Jami' at-Tirmidhi 2621 · Sunan an-Nasa'i 463",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2621"
+ },
+ {
+  "id": "bukhari-6008",
+  "category": "prayer",
+  "ar": "ارْجِعُوا إِلَى أَهْلِيكُمْ فَعَلِّمُوهُمْ وَمُرُوهُمْ، وَصَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي، وَإِذَا حَضَرَتِ الصَّلاَةُ فَلْيُؤَذِّنْ لَكُمْ أَحَدُكُمْ، ثُمَّ لِيَؤُمَّكُمْ أَكْبَرُكُمْ",
+  "en": "Narrated Abu Sulaiman and Malik bin Huwairith:We came to the Prophet (ﷺ) and we were (a few) young men of approximately equal age and stayed with him for twenty nights. Then he thought that we were anxious for our families, and he asked us whom we had left behind to look after our families, and we told him. He was kindhearted and merciful, so he said, \"Return to your families and teach them (religious knowledge) and order them (to do good deeds) and offer your prayers in the way you saw me offering my prayers, and when the stated time for the prayer becomes due, then one of you should pronounce its call (i.e. the Adhan), and the eldest of you should lead you in prayer",
+  "ref": "Sahih al-Bukhari 6008",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6008"
+ },
+ {
+  "id": "bukhari-574",
+  "category": "prayer",
+  "ar": "مَنْ صَلَّى الْبَرْدَيْنِ دَخَلَ الْجَنَّةَ",
+  "en": "Narrated Abu Bakr bin Abi Musa:My father said, \"Allah's Messenger (ﷺ) said, 'Whoever prays the two cool prayers (`Asr and Fajr) will go to Paradise",
+  "ref": "Sahih al-Bukhari 574 · Sahih Muslim 635",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:574"
+ },
+ {
+  "id": "muslim-725",
+  "category": "prayer",
+  "ar": "رَكْعَتَا الْفَجْرِ خَيْرٌ مِنَ الدُّنْيَا وَمَا فِيهَا",
+  "en": "A'isha reported Allah's Messenger as saying:The two rak'ahs at dawn are better than this world and what it contains",
+  "ref": "Sahih Muslim 725",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:725"
+ },
+ {
+  "id": "muslim-728",
+  "category": "prayer",
+  "ar": "مَا مِنْ عَبْدٍ مُسْلِمٍ يُصَلِّي لِلَّهِ كُلَّ يَوْمٍ ثِنْتَىْ عَشْرَةَ رَكْعَةً تَطَوُّعًا غَيْرَ فَرِيضَةٍ إِلاَّ بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ أَوْ إِلاَّ بُنِيَ لَهُ بَيْتٌ فِي الْجَنَّةِ",
+  "en": "Umm Habiba, the wife of the Messenger of Allah (ﷺ), reported Allah's Messenger (ﷺ) as saying:If any Muslim servant (of Allah) prays for the sake of Allah twelve rak'ahs (of Sunan) every day, over and above the obligatory ones, Allah will build for him a house in Paradise, or a house will be built for him in Paradise; and I have not abandoned observing them after (hearing it from the Messenger of Allah). (So said also 'Amr and Nu'man)",
+  "ref": "Sahih Muslim 728",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:728"
+ },
+ {
+  "id": "bukhari-657",
+  "category": "prayer",
+  "ar": "لَيْسَ صَلاَةٌ أَثْقَلَ عَلَى الْمُنَافِقِينَ مِنَ الْفَجْرِ وَالْعِشَاءِ، وَلَوْ يَعْلَمُونَ مَا فِيهِمَا لأَتَوْهُمَا وَلَوْ حَبْوًا",
+  "en": "No prayer is heavier on the hypocrites than Fajr and Isha; if they knew what is in them they would come to them even if they had to crawl.",
+  "ref": "Sahih al-Bukhari 657 · Sahih Muslim 651",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:657"
+ },
+ {
+  "id": "bukhari-662",
+  "category": "prayer",
+  "ar": "مَنْ غَدَا إِلَى الْمَسْجِدِ وَرَاحَ أَعَدَّ اللَّهُ لَهُ نُزُلَهُ مِنَ الْجَنَّةِ كُلَّمَا غَدَا أَوْ رَاحَ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Allah will prepare for him who goes to the mosque (every) morning and in the afternoon (for the congregational prayer) an honorable place in Paradise with good hospitality for (what he has done) every morning and afternoon goings",
+  "ref": "Sahih al-Bukhari 662 · Sahih Muslim 669",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:662"
+ },
+ {
+  "id": "abudawud-561",
+  "category": "prayer",
+  "ar": "بَشِّرِ الْمَشَّائِينَ فِي الظُّلَمِ إِلَى الْمَسَاجِدِ بِالنُّورِ التَّامِّ يَوْمَ الْقِيَامَةِ",
+  "en": "Narrated Buraydah ibn al-Hasib: The Prophet (ﷺ) said: Give good tidings to those who walk to the mosques in darkness for having a perfect light on the Day of Judgment",
+  "ref": "Sunan Abi Dawud 561 · Jami' at-Tirmidhi 223",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/abudawud:561"
+ },
+ {
+  "id": "bukhari-444",
+  "category": "prayer",
+  "ar": "إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلْيَرْكَعْ رَكْعَتَيْنِ قَبْلَ أَنْ يَجْلِسَ",
+  "en": "Narrated Abu Qatada Al-Aslami:Allah's Messenger (ﷺ) said, \"If anyone of you enters a mosque, he should pray two rak`at before sitting",
+  "ref": "Sahih al-Bukhari 444 · Sahih Muslim 714",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:444"
+ },
+ {
+  "id": "bukhari-723",
+  "category": "prayer",
+  "ar": "سَوُّوا صُفُوفَكُمْ فَإِنَّ تَسْوِيَةَ الصُّفُوفِ مِنْ إِقَامَةِ الصَّلاَةِ",
+  "en": "Narrated Anas bin Malik:The Prophet (ﷺ) said, \"Straighten your rows as the straightening of rows is essential for a perfect and correct prayer",
+  "ref": "Sahih al-Bukhari 723 · Sahih Muslim 433",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:723"
+ },
+ {
+  "id": "abudawud-61",
+  "category": "prayer",
+  "ar": "مِفْتَاحُ الصَّلاَةِ الطُّهُورُ وَتَحْرِيمُهَا التَّكْبِيرُ وَتَحْلِيلُهَا التَّسْلِيمُ",
+  "en": "Narrated Ali ibn AbuTalib: The key to prayer is purification; its beginning is takbir and its end is taslim",
+  "ref": "Sunan Abi Dawud 61 · Jami' at-Tirmidhi 3",
+  "grade": "Hasan Sahih",
+  "url": "https://sunnah.com/abudawud:61"
+ },
+ {
+  "id": "muslim-671",
+  "category": "prayer",
+  "ar": "أَحَبُّ الْبِلاَدِ إِلَى اللَّهِ مَسَاجِدُهَا وَأَبْغَضُ الْبِلاَدِ إِلَى اللَّهِ أَسْوَاقُهَا",
+  "en": "Abu Huraira reported that the Messenger of Allah (ﷺ) said:The parts of land dearest to Allah are its mosques, and the parts most hateful to Allah are markets",
+  "ref": "Sahih Muslim 671",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:671"
+ },
+ {
+  "id": "muslim-35",
+  "category": "faith",
+  "ar": "الإِيمَانُ بِضْعٌ وَسَبْعُونَ شُعْبَةً وَالْحَيَاءُ شُعْبَةٌ مِنَ الإِيمَانِ",
+  "en": "It is narrated on the authority of Abu Huraira that the Prophet (ﷺ) said:Iman has over seventy branches, and modesty is a branch of Iman",
+  "ref": "Sahih Muslim 35 · Sahih al-Bukhari 9",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:35"
+ },
+ {
+  "id": "muslim-34",
+  "category": "faith",
+  "ar": "ذَاقَ طَعْمَ الإِيمَانِ مَنْ رَضِيَ بِاللَّهِ رَبًّا وَبِالإِسْلاَمِ دِينًا وَبِمُحَمَّدٍ رَسُولاً",
+  "en": "It is narrated on the authority of 'Abbas b. 'Abdul-Muttalib that he heard the Messenger of Allah saying:He has found the taste of faith (iman) who is content with Allah as his Lord, with Islam as his religion (code of life) and with Muhammad (ﷺ) as his Prophet",
+  "ref": "Sahih Muslim 34",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:34"
+ },
+ {
+  "id": "tirmidhi-3383",
+  "category": "dhikr",
+  "ar": "أَفْضَلُ الذِّكْرِ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَفْضَلُ الدُّعَاءِ الْحَمْدُ لِلَّهِ",
+  "en": "Jabir bin `Abdullah (ra) narrated that :the Messenger of Allah (ﷺ) said: “The best remembrance is: ‘there is none worthy of worship except Allah (Lā ilāha illallāh)’ and the best supplication is: ‘All praise is due to Allah (Al-ḥamdulillāh).’”",
+  "ref": "Jami' at-Tirmidhi 3383",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/tirmidhi:3383"
+ },
+ {
+  "id": "bukhari-6407",
+  "category": "dhikr",
+  "ar": "مَثَلُ الَّذِي يَذْكُرُ رَبَّهُ وَالَّذِي لاَ يَذْكُرُ مَثَلُ الْحَىِّ وَالْمَيِّتِ",
+  "en": "Narrated Abu Musa:The Prophet (ﷺ) said, \"The example of the one who celebrates the Praises of his Lord (Allah) in comparison to the one who does not celebrate the Praises of his Lord, is that of a living creature compared to a dead one",
+  "ref": "Sahih al-Bukhari 6407 · Sahih Muslim 779",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6407"
+ },
+ {
+  "id": "muslim-2137",
+  "category": "dhikr",
+  "ar": "أَحَبُّ الْكَلاَمِ إِلَى اللَّهِ أَرْبَعٌ سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلاَ إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَر",
+  "en": "The words most beloved to Allah are four: Subhan Allah, al-hamdu lillah, la ilaha illa Allah, and Allahu akbar.",
+  "ref": "Sahih Muslim 2137",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2137"
+ },
+ {
+  "id": "bukhari-6405",
+  "category": "dhikr",
+  "ar": "مَنْ قَالَ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ. فِي يَوْمٍ مِائَةَ مَرَّةٍ حُطَّتْ خَطَايَاهُ، وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Whoever says, 'Subhan Allah wa bihamdihi,' one hundred times a day, will be forgiven all his sins even if they were as much as the foam of the sea",
+  "ref": "Sahih al-Bukhari 6405 · Sahih Muslim 2691",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6405"
+ },
+ {
+  "id": "bukhari-6384",
+  "category": "dhikr",
+  "ar": "أَلاَ أَدُلُّكَ عَلَى كَلِمَةٍ هِيَ كَنْزٌ مِنْ كُنُوزِ الْجَنَّةِ، لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّه",
+  "en": "Shall I tell you of a phrase that is one of the treasures of Paradise? La hawla wa la quwwata illa billah: there is no power and no strength except with Allah.",
+  "ref": "Sahih al-Bukhari 6384 · Sahih Muslim 2704",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6384"
+ },
+ {
+  "id": "tirmidhi-3370",
+  "category": "dhikr",
+  "ar": "لَيْسَ شَيْءٌ أَكْرَمَ عَلَى اللَّهِ تَعَالَى مِنَ الدُّعَاءِ",
+  "en": "Abu Hurairah narrated that:The Prophet said: “There is nothing more honorable with Allah [Most High] than supplication.”",
+  "ref": "Jami' at-Tirmidhi 3370 · Sunan Ibn Majah 3829",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/tirmidhi:3370"
+ },
+ {
+  "id": "bukhari-6340",
+  "category": "dhikr",
+  "ar": "يُسْتَجَابُ لأَحَدِكُمْ مَا لَمْ يَعْجَلْ يَقُولُ دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"The invocation of anyone of you is granted (by Allah) if he does not show impatience (by saying, \"I invoked Allah but my request has not been granted)",
+  "ref": "Sahih al-Bukhari 6340 · Sahih Muslim 2735",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6340"
+ },
+ {
+  "id": "bukhari-6307",
+  "category": "dhikr",
+  "ar": "وَاللَّهِ إِنِّي لأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ أَكْثَرَ مِنْ سَبْعِينَ مَرَّةً",
+  "en": "Narrated Abu Huraira:I heard Allah's Messenger (ﷺ) saying.\" By Allah! I ask for forgiveness from Allah and turn to Him in repentance more than seventy times a day",
+  "ref": "Sahih al-Bukhari 6307",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6307"
+ },
+ {
+  "id": "muslim-804",
+  "category": "knowledge",
+  "ar": "اقْرَءُوا الْقُرْآنَ فَإِنَّهُ يَأْتِي يَوْمَ الْقِيَامَةِ شَفِيعًا لأَصْحَابِه",
+  "en": "Recite the Qur'an, for on the Day of Resurrection it will come as an intercessor for those who recited it.",
+  "ref": "Sahih Muslim 804",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:804"
+ },
+ {
+  "id": "muslim-798",
+  "category": "knowledge",
+  "ar": "الْمَاهِرُ بِالْقُرْآنِ مَعَ السَّفَرَةِ الْكِرَامِ الْبَرَرَةِ وَالَّذِي يَقْرَأُ الْقُرْآنَ وَيَتَتَعْتَعُ فِيهِ وَهُوَ عَلَيْهِ شَاقٌّ لَهُ أَجْرَانِ",
+  "en": "A'isha reported Allah's Messenger (ﷺ) (as saying):One who is proficient in the Qur'an is associated with the noble, upright, recording angels; and he who falters in it, and finds it difficult for him, will have two rewards",
+  "ref": "Sahih Muslim 798 · Sahih al-Bukhari 4937",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:798"
+ },
+ {
+  "id": "tirmidhi-2910",
+  "category": "knowledge",
+  "ar": "مَنْ قَرَأَ حَرْفًا مِنْ كِتَابِ اللَّهِ فَلَهُ بِهِ حَسَنَةٌ وَالْحَسَنَةُ بِعَشْرِ أَمْثَالِهَا لاَ أَقُولُ الم حَرْفٌ وَلَكِنْ أَلِفٌ حَرْفٌ وَلاَمٌ حَرْفٌ وَمِيمٌ حَرْفٌ",
+  "en": "Narrated Muhammad bin Ka'b Al-Qurazi:\"I heard 'Abdullah bin Mas'ud saying: 'The Messenger of Allah (ﷺ) said: \"[Whoever recites a letter] from Allah's Book, then he receives the reward from it, and the reward of ten the like of it. I do not say that Alif Lam Mim is a letter, but Alif is a letter, Lam is a letter and Mim is a letter",
+  "ref": "Jami' at-Tirmidhi 2910",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2910"
+ },
+ {
+  "id": "tirmidhi-2002",
+  "category": "character",
+  "ar": "مَا شَيْءٌ أَثْقَلُ فِي مِيزَانِ الْمُؤْمِنِ يَوْمَ الْقِيَامَةِ مِنْ خُلُقٍ حَسَنٍ وَإِنَّ اللَّهَ لَيَبْغَضُ الْفَاحِشَ الْبَذِيءَ",
+  "en": "Abu Ad-Dardh narrated that the Messenger of Allah said:\"Nothing is heavier on the believer's Scale on the Day of Judgment than good character. For indeed Allah, Most High, is angered by the shameless obscene person",
+  "ref": "Jami' at-Tirmidhi 2002 · Sunan Abi Dawud 4799",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2002"
+ },
+ {
+  "id": "bukhari-6256",
+  "category": "character",
+  "ar": "مَهْلاً يَا عَائِشَةُ، فَإِنَّ اللَّهَ يُحِبُّ الرِّفْقَ فِي الأَمْرِ كُلِّهِ \". فَقُلْتُ يَا رَسُولَ اللَّهِ أَوَلَمْ تَسْمَعْ مَا قَالُوا قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" فَقَدْ قُلْتُ وَعَلَيْكُمْ",
+  "en": "Narrated `Aisha:A group of Jews came to Allah's Messenger (ﷺ) and said, \"As-samu 'Alaika \" (Death be on you), and I understood it and said to them, \"Alaikum AsSamu wa-l-la'na (Death and curse be on you).\" Allah's Apostle said, \"Be calm! O `Aisha, for Allah loves that one should be kind and lenient in all matters.\" I said. \"O Allah's Messenger (ﷺ)! Haven't you heard what they have said?\" Allah's Messenger (ﷺ) said, \"I have (already) said (to them), 'Alaikum (upon you)",
+  "ref": "Sahih al-Bukhari 6256 · Sahih Muslim 2165",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6256"
+ },
+ {
+  "id": "bukhari-6016",
+  "category": "character",
+  "ar": "وَاللَّهِ لاَ يُؤْمِنُ، وَاللَّهِ لاَ يُؤْمِنُ، وَاللَّهِ لاَ يُؤْمِنُ \". قِيلَ وَمَنْ يَا رَسُولَ اللَّهِ قَالَ \" الَّذِي لاَ يَأْمَنُ جَارُهُ بَوَايِقَهُ",
+  "en": "Narrated Abu Shuraih:The Prophet (ﷺ) said, \"By Allah, he does not believe! By Allah, he does not believe! By Allah, he does not believe!\" It was said, \"Who is that, O Allah's Messenger (ﷺ)?\" He said, \"That person whose neighbor does not feel safe from his evil",
+  "ref": "Sahih al-Bukhari 6016",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6016"
+ },
+ {
+  "id": "tirmidhi-1977",
+  "category": "character",
+  "ar": "لَيْسَ الْمُؤْمِنُ بِالطَّعَّانِ وَلاَ اللَّعَّانِ وَلاَ الْفَاحِشِ وَلاَ الْبَذِيءِ",
+  "en": "Abdullah narrated that the Messenger of Allah said:\"The believer does not insult the honor of others, nor curse, nor commit Fahishah, nor is he foul",
+  "ref": "Jami' at-Tirmidhi 1977",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1977"
+ },
+ {
+  "id": "bukhari-6117",
+  "category": "character",
+  "ar": "الْحَيَاءُ لاَ يَأْتِي إِلاَّ بِخَيْرٍ",
+  "en": "Narrated Abu As-Sawar Al-Adawi:`Imran bin Husain said: The Prophet (ﷺ) said, \"Haya' (pious shyness from committing religeous indiscretions) does not bring anything except good.\" Thereupon Bashir bin Ka`b said, 'It is written in the wisdom paper: Haya' leads to solemnity; Haya' leads to tranquility (peace of mind).\" `Imran said to him, \"I am narrating to you the saying of Allah's Messenger (ﷺ) and you are speaking about your paper (wisdom book)?",
+  "ref": "Sahih al-Bukhari 6117 · Sahih Muslim 37",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6117"
+ },
+ {
+  "id": "bukhari-6724",
+  "category": "character",
+  "ar": "إِيَّاكُمْ وَالظَّنَّ فَإِنَّ الظَّنَّ أَكْذَبُ الْحَدِيثِ، وَلاَ تَحَسَّسُوا، وَلاَ تَجَسَّسُوا، وَلاَ تَبَاغَضُوا، وَلاَ تَدَابَرُوا، وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, 'Beware of suspicion, for it is the worst of false tales and don't look for the other's faults and don't spy and don't hate each other, and don't desert (cut your relations with) one another O Allah's slaves, be brothers!\" (See Hadith No)",
+  "ref": "Sahih al-Bukhari 6724 · Sahih Muslim 2563",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6724"
+ },
+ {
+  "id": "bukhari-6076",
+  "category": "community",
+  "ar": "لاَ تَبَاغَضُوا، وَلاَ تَحَاسَدُوا، وَلاَ تَدَابَرُوا، وَكُونُوا عِبَادَ اللَّهِ إِخْوَانًا، وَلاَ يَحِلُّ لِمُسْلِمٍ أَنْ يَهْجُرَ أَخَاهُ فَوْقَ ثَلاَثِ لَيَالٍ",
+  "en": "Narrated Anas bin Malik:Allah's Messenger (ﷺ) said, \"Do not hate one another, nor be jealous of one another; and do not desert one another, but O Allah's worshipers! Be Brothers! And it is unlawful for a Muslim to desert his brother Muslim (and not to talk to him) for more than three nights",
+  "ref": "Sahih al-Bukhari 6076 · Sahih Muslim 2560",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6076"
+ },
+ {
+  "id": "bukhari-1240",
+  "category": "community",
+  "ar": "حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ خَمْسٌ رَدُّ السَّلاَمِ، وَعِيَادَةُ الْمَرِيضِ، وَاتِّبَاعُ الْجَنَائِزِ، وَإِجَابَةُ الدَّعْوَةِ، وَتَشْمِيتُ الْعَاطِسِ",
+  "en": "Narrated Abu Huraira:I heard Allah's Messenger (ﷺ) saying, \"The rights of a Muslim on the Muslims are five: to respond to the salaam, visiting the sick, to follow the funeral processions, to accept an invitation, and to reply to those who sneeze. (see Hadith)",
+  "ref": "Sahih al-Bukhari 1240 · Sahih Muslim 2162",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1240"
+ },
+ {
+  "id": "bukhari-6095",
+  "category": "honesty",
+  "ar": "آيَةُ الْمُنَافِقِ ثَلاَثٌ إِذَا حَدَّثَ كَذَبَ، وَإِذَا وَعَدَ أَخْلَفَ، وَإِذَا اؤْتُمِنَ خَانَ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"The signs of a hypocrite are three: Whenever he speaks, he tells a lie; and whenever he promises, he breaks his promise; and whenever he is entrusted, he betrays (proves to be dishonest)",
+  "ref": "Sahih al-Bukhari 6095 · Sahih Muslim 59",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6095"
+ },
+ {
+  "id": "tirmidhi-1919",
+  "category": "character",
+  "ar": "لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا",
+  "en": "Anas bin Malik narrated that:\"An older man came to talk to the Prophet, and the people were hesitant to make room for him. The Prophet said: ;He is not one of us who does not have mercy on our young and does not respect our elders",
+  "ref": "Jami' at-Tirmidhi 1919 · Sunan Abi Dawud 4943",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1919"
+ },
+ {
+  "id": "abudawud-4777",
+  "category": "character",
+  "ar": "مَنْ كَظَمَ غَيْظًا - وَهُوَ قَادِرٌ عَلَى أَنْ يُنْفِذَهُ - دَعَاهُ اللَّهُ عَزَّ وَجَلَّ عَلَى رُءُوسِ الْخَلاَئِقِ يَوْمَ الْقِيَامَةِ حَتَّى يُخَيِّرَهُ اللَّهُ مِنَ الْحُورِ مَا شَاءَ",
+  "en": "Narrated Mu'adh ibn Anas: The Messenger of Allah (ﷺ) said: If anyone suppresses anger when he is in a position to give vent to it, Allah, the Exalted, will call him on the Day of Resurrection over the heads of all creatures, and ask him to choose any of the bright and large eyed maidens he wishes. Abu Dawud said: The name of the transmitter Abu Marhum is 'Abd al-Rahman b. Maimun",
+  "ref": "Sunan Abi Dawud 4777 · Jami' at-Tirmidhi 2021",
+  "grade": "Hasan",
+  "url": "https://sunnah.com/abudawud:4777"
+ },
+ {
+  "id": "muslim-2551",
+  "category": "family",
+  "ar": "رَغِمَ أَنْفُ ثُمَّ رَغِمَ أَنْفُ ثُمَّ رَغِمَ أَنْفُ \" . قِيلَ مَنْ يَا رَسُولَ اللَّهِ قَالَ \" مَنْ أَدْرَكَ أَبَوَيْهِ عِنْدَ الْكِبَرِ أَحَدَهُمَا أَوْ كِلَيْهِمَا فَلَمْ يَدْخُلِ الْجَنَّةَ",
+  "en": "Abu Huraira reported Allah's Apostle (ﷺ) as saying:Let him be humbled into dust; let him be humbled into dust. It was said: Allah's Messenger, who is he? He said: He who sees either of his parents during their old age or he sees both of them, but he does not enter Paradise",
+  "ref": "Sahih Muslim 2551",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2551"
+ },
+ {
+  "id": "tirmidhi-1899",
+  "category": "family",
+  "ar": "رِضَا الرَّبِّ فِي رِضَا الْوَالِدِ وَسَخَطُ الرَّبِّ فِي سَخَطِ الْوَالِدِ",
+  "en": "Abdullah bin Amr narrated that:the Prophet said: \"The Lord's pleasure is in the parent's pleasure, and the Lord's anger is in the parent's anger.\"(Hasan)",
+  "ref": "Jami' at-Tirmidhi 1899",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:1899"
+ },
+ {
+  "id": "bukhari-5984",
+  "category": "family",
+  "ar": "لاَ يَدْخُلُ الْجَنَّةَ قَاطِعٌ",
+  "en": "Narrated Jubair bin Mut`im:That he heard the Prophet (ﷺ) saying, \"The person who severs the bond of kinship will not enter Paradise",
+  "ref": "Sahih al-Bukhari 5984 · Sahih Muslim 2556",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5984"
+ },
+ {
+  "id": "bukhari-5985",
+  "category": "family",
+  "ar": "مَنْ سَرَّهُ أَنْ يُبْسَطَ لَهُ فِي رِزْقِهِ، وَأَنْ يُنْسَأَ لَهُ فِي أَثَرِهِ، فَلْيَصِلْ رَحِمَهُ",
+  "en": "Narrated Abu Huraira:I heard Allah's Messenger (ﷺ) saying, \"Who ever is pleased that he be granted more wealth and that his lease of life be pro longed, then he should keep good relations with his Kith and kin",
+  "ref": "Sahih al-Bukhari 5985 · Sahih Muslim 2557",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5985"
+ },
+ {
+  "id": "tirmidhi-3895",
+  "category": "family",
+  "ar": "خَيْرُكُمْ خَيْرُكُمْ لأَهْلِهِ وَأَنَا خَيْرُكُمْ لأَهْلِي وَإِذَا مَاتَ صَاحِبُكُمْ فَدَعُوهُ",
+  "en": "Narrated 'Aishah:that the Messenger of Allah (ﷺ) said: \"The best of you is the best to his wives, and I am the best of you to my wives, and when your companion dies, leave him alone",
+  "ref": "Jami' at-Tirmidhi 3895 · Sunan Ibn Majah 1977",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:3895"
+ },
+ {
+  "id": "muslim-1467",
+  "category": "family",
+  "ar": "الدُّنْيَا مَتَاعٌ وَخَيْرُ مَتَاعِ الدُّنْيَا الْمَرْأَةُ الصَّالِحَةُ",
+  "en": "Abdullah b. Amr reported Allah's Messenger (ﷺ) as saying:The whole world is a provision, and the best object of benefit of the world is the pious woman",
+  "ref": "Sahih Muslim 1467",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:1467"
+ },
+ {
+  "id": "bukhari-3331",
+  "category": "family",
+  "ar": "اسْتَوْصُوا بِالنِّسَاءِ، فَإِنَّ الْمَرْأَةَ خُلِقَتْ مِنْ ضِلَعٍ، وَإِنَّ أَعْوَجَ شَىْءٍ فِي الضِّلَعِ أَعْلاَهُ، فَإِنْ ذَهَبْتَ تُقِيمُهُ كَسَرْتَهُ، وَإِنْ تَرَكْتَهُ لَمْ يَزَلْ أَعْوَجَ، فَاسْتَوْصُوا بِالنِّسَاءِ",
+  "en": "Narrated Abu Huraira:Allah's Apostle said, \"Treat women nicely, for a woman is created from a rib, and the most curved portion of the rib is its upper portion, so, if you should try to straighten it, it will break, but if you leave it as it is, it will remain crooked. So treat women nicely",
+  "ref": "Sahih al-Bukhari 3331 · Sahih Muslim 1468",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:3331"
+ },
+ {
+  "id": "muslim-2631",
+  "category": "family",
+  "ar": "مَنْ عَالَ جَارِيَتَيْنِ حَتَّى تَبْلُغَا جَاءَ يَوْمَ الْقِيَامَةِ أَنَا وَهُوَ",
+  "en": "Malik reported Allah's Messenger (ﷺ) as saying:He, who brought up two girls properly till they grew up, he and I would come (together) (very closely) on the Day of Resurrection, and he interlaced his fingers (for explaining the point of nearness between him and that person)",
+  "ref": "Sahih Muslim 2631",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2631"
+ },
+ {
+  "id": "bukhari-1417",
+  "category": "charity",
+  "ar": "اتَّقُوا النَّارَ وَلَوْ بِشِقِّ تَمْرَةٍ",
+  "en": "Narrated `Adi bin Hatim heard the Prophet (ﷺ) saying:\"Save yourself from Hell-fire even by giving half a date-fruit in charity",
+  "ref": "Sahih al-Bukhari 1417 · Sahih Muslim 1016",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1417"
+ },
+ {
+  "id": "bukhari-1427",
+  "category": "charity",
+  "ar": "الْيَدُ الْعُلْيَا خَيْرٌ مِنَ الْيَدِ السُّفْلَى، وَابْدَأْ بِمَنْ تَعُولُ، وَخَيْرُ الصَّدَقَةِ عَنْ ظَهْرِ غِنًى، وَمَنْ يَسْتَعْفِفْ يُعِفَّهُ اللَّهُ، وَمَنْ يَسْتَغْنِ يُغْنِهِ اللَّهُ",
+  "en": "Narrated Hakim bin Hizam:The Prophet (ﷺ) said, \"The upper hand is better than the lower hand (i.e. he who gives in charity is better than him who takes it). One should start giving first to his dependents. And the best object of charity is that which is given by a wealthy person (from the money which is left after his expenses). And whoever abstains from asking others for some financial help, Allah will give him and save him from asking others, Allah will make him self-sufficient",
+  "ref": "Sahih al-Bukhari 1427 · Sahih Muslim 1033",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1427"
+ },
+ {
+  "id": "bukhari-1442",
+  "category": "charity",
+  "ar": "مَا مِنْ يَوْمٍ يُصْبِحُ الْعِبَادُ فِيهِ إِلاَّ مَلَكَانِ يَنْزِلاَنِ فَيَقُولُ أَحَدُهُمَا اللَّهُمَّ أَعْطِ مُنْفِقًا خَلَفًا، وَيَقُولُ الآخَرُ اللَّهُمَّ أَعْطِ مُمْسِكًا تَلَفًا",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Every day two angels come down from Heaven and one of them says, 'O Allah! Compensate every person who spends in Your Cause,' and the other (angel) says, 'O Allah! Destroy every miser",
+  "ref": "Sahih al-Bukhari 1442 · Sahih Muslim 1010",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1442"
+ },
+ {
+  "id": "bukhari-5353",
+  "category": "charity",
+  "ar": "السَّاعِي عَلَى الأَرْمَلَةِ وَالْمِسْكِينِ كَالْمُجَاهِدِ فِي سَبِيلِ اللَّهِ، أَوِ الْقَائِمِ اللَّيْلَ الصَّائِمِ النَّهَارَ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"The one who looks after a widow or a poor person is like a Mujahid (warrior) who fights for Allah's Cause, or like him who performs prayers all the night and fasts all the day",
+  "ref": "Sahih al-Bukhari 5353 · Sahih Muslim 2982",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5353"
+ },
+ {
+  "id": "bukhari-5304",
+  "category": "charity",
+  "ar": "أَنَا وَكَافِلُ الْيَتِيمِ فِي الْجَنَّةِ هَكَذَا",
+  "en": "Narrated Sahl:Allah's Messenger (ﷺ) said, \"I and the one who looks after an orphan will be like this in Paradise,\" showing his middle and index fingers and separating them",
+  "ref": "Sahih al-Bukhari 5304",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5304"
+ },
+ {
+  "id": "bukhari-6446",
+  "category": "patience",
+  "ar": "لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ، وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ",
+  "en": "Narrated Abu Huraira:The Prophet (ﷺ) said, \"Wealth is not in having many possessions, but rather (true) wealth is feeling sufficiency in the soul",
+  "ref": "Sahih al-Bukhari 6446 · Sahih Muslim 1051",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6446"
+ },
+ {
+  "id": "bukhari-2110",
+  "category": "honesty",
+  "ar": "الْبَيِّعَانِ بِالْخِيَارِ مَا لَمْ يَتَفَرَّقَا، فَإِنْ صَدَقَا وَبَيَّنَا بُورِكَ لَهُمَا فِي بَيْعِهِمَا، وَإِنْ كَذَبَا وَكَتَمَا مُحِقَتْ بَرَكَةُ بَيْعِهِمَا",
+  "en": "Narrated Hakim bin Hizam:The Prophet (ﷺ) said, \"The buyer and the seller have the option of canceling or confirming the bargain unless they separate, and if they spoke the truth and made clear the defects of the goods, then they would be blessed in their bargain, and if they told lies and hid some facts, their bargain would be deprived of Allah's blessings",
+  "ref": "Sahih al-Bukhari 2110 · Sahih Muslim 1532",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2110"
+ },
+ {
+  "id": "bukhari-2076",
+  "category": "honesty",
+  "ar": "رَحِمَ اللَّهُ رَجُلاً سَمْحًا إِذَا بَاعَ، وَإِذَا اشْتَرَى، وَإِذَا اقْتَضَى",
+  "en": "Narrated Jabir bin `Abdullah:Allah's Messenger (ﷺ) said, \"May Allah's mercy be on him who is lenient in his buying, selling, and in demanding back his money",
+  "ref": "Sahih al-Bukhari 2076",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:2076"
+ },
+ {
+  "id": "muslim-2999",
+  "category": "patience",
+  "ar": "عَجَبًا لأَمْرِ الْمُؤْمِنِ إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ وَلَيْسَ ذَاكَ لأَحَدٍ إِلاَّ لِلْمُؤْمِنِ إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ",
+  "en": "Suhaib reported that Allah's Messenger (ﷺ) said:Strange are the ways of a believer for there is good in every affair of his and this is not the case with anyone else except in the case of a believer for if he has an occasion to feel delight, he thanks (God), thus there is a good for him in it, and if he gets into trouble and shows resignation (and endures it patiently), there is a good for him in it",
+  "ref": "Sahih Muslim 2999",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2999"
+ },
+ {
+  "id": "bukhari-5641",
+  "category": "patience",
+  "ar": "مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلاَ وَصَبٍ وَلاَ هَمٍّ وَلاَ حُزْنٍ وَلاَ أَذًى وَلاَ غَمٍّ حَتَّى الشَّوْكَةِ يُشَاكُهَا، إِلاَّ كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ",
+  "en": "Narrated Abu Sa`id Al-Khudri and Abu Huraira:The Prophet (ﷺ) said, \"No fatigue, nor disease, nor sorrow, nor sadness, nor hurt, nor distress befalls a Muslim, even if it were the prick he receives from a thorn, but that Allah expiates some of his sins for that",
+  "ref": "Sahih al-Bukhari 5641 · Sahih Muslim 2573",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:5641"
+ },
+ {
+  "id": "bukhari-1283",
+  "category": "patience",
+  "ar": "إِنَّمَا الصَّبْرُ عِنْدَ الصَّدْمَةِ الأُولَى",
+  "en": "Patience is at the first stroke of calamity.",
+  "ref": "Sahih al-Bukhari 1283 · Sahih Muslim 926",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:1283"
+ },
+ {
+  "id": "bukhari-6416",
+  "category": "patience",
+  "ar": "كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ، أَوْ عَابِرُ سَبِيلٍ",
+  "en": "Narrated Mujahid:`Abdullah bin `Umar said, \"Allah's Messenger (ﷺ) took hold of my shoulder and said, 'Be in this world as if you were a stranger or a traveler.\" The sub-narrator added: Ibn `Umar used to say, \"If you survive till the evening, do not expect to be alive in the morning, and if you survive till the morning, do not expect to be alive in the evening, and take from your health for your sickness, and (take) from your life for your death",
+  "ref": "Sahih al-Bukhari 6416",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6416"
+ },
+ {
+  "id": "tirmidhi-2307",
+  "category": "patience",
+  "ar": "أَكْثِرُوا ذِكْرَ هَاذِمِ اللَّذَّاتِ",
+  "en": "Abu Hurairah narrated that the Messenger of Allah (s.a.w) said:\"Increase in remembrance of the severer of pleasures.\" Meaning death",
+  "ref": "Jami' at-Tirmidhi 2307 · Sunan an-Nasa'i 1824",
+  "grade": "Hasan Sahih",
+  "url": "https://sunnah.com/tirmidhi:2307"
+ },
+ {
+  "id": "bukhari-6412",
+  "category": "patience",
+  "ar": "نِعْمَتَانِ مَغْبُونٌ فِيهِمَا كَثِيرٌ مِنَ النَّاسِ، الصِّحَّةُ وَالْفَرَاغُ",
+  "en": "Narrated Ibn `Abbas:The Prophet (ﷺ) said: \"There are two blessings that many people are deceived into losing: health and free time",
+  "ref": "Sahih al-Bukhari 6412",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6412"
+ },
+ {
+  "id": "tirmidhi-2376",
+  "category": "patience",
+  "ar": "مَا ذِئْبَانِ جَائِعَانِ أُرْسِلاَ فِي غَنَمٍ بِأَفْسَدَ لَهَا مِنْ حِرْصِ الْمَرْءِ عَلَى الْمَالِ وَالشَّرَفِ لِدِينِهِ",
+  "en": "Ibn Ka'b bin Malik Al-Ansari narrated from his father, that the Messenger of Allah (s.a.w) said:\"Two wolves free among sheep are no more destructive to them than a man's desire for wealth and honor is to his religion",
+  "ref": "Jami' at-Tirmidhi 2376",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2376"
+ },
+ {
+  "id": "bukhari-6436",
+  "category": "patience",
+  "ar": "لَوْ كَانَ لاِبْنِ آدَمَ وَادِيَانِ مِنْ مَالٍ لاَبْتَغَى ثَالِثًا، وَلاَ يَمْلأُ جَوْفَ ابْنِ آدَمَ إِلاَّ التُّرَابُ، وَيَتُوبُ اللَّهُ عَلَى مَنْ تَابَ",
+  "en": "Narrated Ibn `Abbas:I heard the Prophet (ﷺ) saying, \"If the son of Adam (the human being) had two valleys of money, he would wish for a third, for nothing can fill the belly of Adam's son except dust, and Allah forgives him who repents to Him",
+  "ref": "Sahih al-Bukhari 6436 · Sahih Muslim 1048",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:6436"
+ },
+ {
+  "id": "tirmidhi-2465",
+  "category": "patience",
+  "ar": "مَنْ كَانَتِ الآخِرَةُ هَمَّهُ جَعَلَ اللَّهُ غِنَاهُ فِي قَلْبِهِ وَجَمَعَ لَهُ شَمْلَهُ وَأَتَتْهُ الدُّنْيَا وَهِيَ رَاغِمَةٌ وَمَنْ كَانَتِ الدُّنْيَا هَمَّهُ جَعَلَ اللَّهُ فَقْرَهُ بَيْنَ عَيْنَيْهِ وَفَرَّقَ عَلَيْهِ شَمْلَهَ وَلَمْ يَأْتِهِ مِنَ الدُّنْيَا إِلاَّ مَا قُدِّرَ لَهُ",
+  "en": "Anas bin Malik narrated that the Messenger of Allah (ﷺ) said:\"Whoever makes the Hereafter his goal, Allah makes his heart rich, and organizes his affairs, and the world comes to him whether it wants to or not. And whoever makes the world his goal, Allah puts his poverty right before his eyes, and disorganizes his affairs, and the world does not come to him, except what has been decreed for him",
+  "ref": "Jami' at-Tirmidhi 2465 · Sunan Ibn Majah 4105",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2465"
+ },
+ {
+  "id": "nasai-5",
+  "category": "health",
+  "ar": "السِّوَاكُ مَطْهَرَةٌ لِلْفَمِ مَرْضَاةٌ لِلرَّبِّ",
+  "en": "Abdur-Rahman bin Abu 'Atiq said:\"My father told me: 'I heard 'Aishah say, (narrating) from the Prophet (ﷺ): \"Siwak is a means of purification for the mouth and is pleasing to the Lord",
+  "ref": "Sunan an-Nasa'i 5",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/nasai:5"
+ },
+ {
+  "id": "bukhari-7240",
+  "category": "health",
+  "ar": "لَوْلاَ أَنْ أَشُقَّ عَلَى أُمَّتِي لأَمَرْتُهُمْ بِالسِّوَاكِ",
+  "en": "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"Were I not afraid that it would be hard on my followers, I would order them to use the siwak (as obligatory, for cleaning the teeth)",
+  "ref": "Sahih al-Bukhari 7240 · Sahih Muslim 252",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/bukhari:7240"
+ },
+ {
+  "id": "tirmidhi-2380",
+  "category": "health",
+  "ar": "مَا مَلأَ آدَمِيٌّ وِعَاءً شَرًّا مِنْ بَطْنٍ بِحَسْبِ ابْنِ آدَمَ أُكُلاَتٌ يُقِمْنَ صُلْبَهُ فَإِنْ كَانَ لاَ مَحَالَةَ فَثُلُثٌ لِطَعَامِهِ وَثُلُثٌ لِشَرَابِهِ وَثُلُثٌ لِنَفَسِهِ",
+  "en": "Miqdam bin Ma'dikarib said:\"I heard the Messenger of Allah (S.a.w) saying: 'The human does not fill any container that is worse than his stomach. It is sufficient for the son of Adam to eat what will support his back. If this is not possible, then a third for food, a third for drink, and third for his breath",
+  "ref": "Jami' at-Tirmidhi 2380 · Sunan Ibn Majah 3349",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/tirmidhi:2380"
+ },
+ {
+  "id": "muslim-2586",
+  "category": "community",
+  "ar": "مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى",
+  "en": "Nu'man b. Bashir reported Allah's Messenger (ﷺ) as saying:The similitude of believers in regard to mutual love, affection, fellow-feeling is that of one body; when any limb of it aches, the whole body aches, because of sleeplessness and fever",
+  "ref": "Sahih Muslim 2586 · Sahih al-Bukhari 6011",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2586"
+ },
+ {
+  "id": "muslim-49",
+  "category": "community",
+  "ar": "مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ وَذَلِكَ أَضْعَفُ الإِيمَانِ",
+  "en": "It is narrated on the authority of Tariq b. Shihab:It was Marwan who initiated (the practice) of delivering khutbah (address) before the prayer on the 'Id day. A man stood up and said: Prayer should precede khutbah. He (Marwan) remarked, This (practice) has been done away with. Upon this Abu Sa'id remarked: This man has performed (his duty) laid on him. I heard the Messenger of Allah as saying: He who amongst you sees something abominable should modify it with the help of his hand; and if he has not strength enough to do it, then he should do it with his tongue, and if he has not strength enough to do it, (even) then he should (abhor it) from his heart, and that is the least of faith",
+  "ref": "Sahih Muslim 49",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:49"
+ },
+ {
+  "id": "tirmidhi-2670",
+  "category": "community",
+  "ar": "إِنَّ الدَّالَّ عَلَى الْخَيْرِ كَفَاعِلِهِ",
+  "en": "Narrated Anas bin Malik:\"A man came to the Prophet (ﷺ) to get a mount, but he (ﷺ) did not have anything to mount him on with him. So he was lead to another person to give him a mount. He came to the Prophet (ﷺ) to inform him about that and he said: 'Whoever leads to good, he is like the one who does it",
+  "ref": "Jami' at-Tirmidhi 2670",
+  "grade": "Hasan Sahih",
+  "url": "https://sunnah.com/tirmidhi:2670"
+ },
+ {
+  "id": "muslim-2674",
+  "category": "community",
+  "ar": "مَنْ دَعَا إِلَى هُدًى كَانَ لَهُ مِنَ الأَجْرِ مِثْلُ أُجُورِ مَنْ تَبِعَهُ لاَ يَنْقُصُ ذَلِكَ مِنْ أُجُورِهِمْ شَيْئًا وَمَنْ دَعَا إِلَى ضَلاَلَةٍ كَانَ عَلَيْهِ مِنَ الإِثْمِ مِثْلُ آثَامِ مَنْ تَبِعَهُ لاَ يَنْقُصُ ذَلِكَ مِنْ آثَامِهِمْ شَيْئًا",
+  "en": "Abu Huraira reported Allah's Messenger (ﷺ) as saying:He who called (people) to righteousness, there would be reward (assured) for him like the rewards of those who adhered to it, without their rewards being diminished in any respect. And he who called (people) to error, he shall have to carry (the burden) of its sin, like those who committed it, without their sins being diminished in any respect",
+  "ref": "Sahih Muslim 2674 · Sunan Abi Dawud 4609",
+  "grade": "Sahih",
+  "url": "https://sunnah.com/muslim:2674"
+ }
 ]

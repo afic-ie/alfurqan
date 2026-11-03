@@ -23,7 +23,7 @@ import { loadPublished } from '../site/data';
 import { registerPwa } from '../site/pwa';
 import { isEid, ramadanDates, ramadanDay, ramadanSeason } from '../engine/ramadan';
 import { longDate } from '../ui/page';
-import { ALL_HADITH, hadithNow, type Hadith } from '../engine/hadith';
+import { ALL_HADITH, dayContext, hadithNow, type Hadith } from '../engine/hadith';
 
 const root = '../';
 const CACHE_KEY = 'alfurqan.tv.published';
@@ -97,7 +97,7 @@ let lastOverlay = '';
 let lastHadith = '';
 
 function hadithHtml(h: Hadith): string {
-  return `<div class="hd-in"><div class="hd-label">The Prophet ﷺ said</div><div class="hd-ar" lang="ar" dir="rtl">${esc(h.ar)}</div><div class="hd-en">${esc(h.en)}</div><div class="hd-ref">${esc(h.ref)} · ${esc(h.grade)}</div></div>`;
+  return `<div class="hd-in"><div class="hd-label">Hadith</div><div class="hd-ar" lang="ar" dir="rtl">${esc(h.ar)}</div><div class="hd-en">${esc(h.en)}</div><div class="hd-ref">${esc(h.ref)} · ${esc(h.grade)}</div></div>`;
 }
 
 function render() {
@@ -171,10 +171,9 @@ function render() {
 
   // hadith slot (never over the jamaat screen)
   const hd = $('hadith');
-  const inRamadan = !!ramadanDay(ramadanDates(pub.config), t);
   const h = previewHadith
     ? ALL_HADITH[Math.floor(Date.now() / 12_000) % ALL_HADITH.length]
-    : inProgress ? null : hadithNow(pub.config, row, t, nowMin, inRamadan);
+    : inProgress ? null : hadithNow(pub.config, row, t, nowMin, dayContext(pub.config, t, row.isFriday));
   if (h) {
     if (lastHadith !== h.id) { lastHadith = h.id; hd.innerHTML = hadithHtml(h); }
     hd.hidden = false;

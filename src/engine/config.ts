@@ -105,9 +105,17 @@ export interface RamadanInfo {
   khutbah: string;
 }
 
+/** When a hadith category is shown on the TV. */
+export interface HadithSchedule {
+  when: 'always' | 'never' | 'months' | 'friday';
+  /** Hijri months 1–12 for when = 'months' */
+  months?: number[];
+}
+
 /** A hadith added in Settings (the built-in list is in src/data/hadith.json). */
 export interface CustomHadith {
   id: string;
+  category: string;
   ar: string;
   en: string;
   ref: string;
@@ -125,6 +133,8 @@ export interface HadithSettings {
   hidden: string[];
   /** hadith added in Settings, shown in the rotation with the built-in ones */
   custom: CustomHadith[];
+  /** per-category schedule; categories not listed use the built-in default */
+  schedule: Record<string, HadithSchedule>;
 }
 
 export interface Config {
@@ -183,7 +193,7 @@ export const DEFAULT_CONFIG: Config = {
     eidPrayer: '', eidVenue: '', zakatFitr: '', taraweeh: '', note: '',
     fajrGap: 10, ishaEarliest: '20:00', firstWeekFromFriday: true, khutbah: '13:30',
   },
-  hadith: { enabled: true, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [], custom: [] },
+  hadith: { enabled: true, everyMin: 15, showSec: 30, quietBefore: 10, quietAfter: 20, hidden: [], custom: [], schedule: {} },
   hijriOffset: 0,
   showHijri: true,
 };
@@ -203,7 +213,7 @@ export function normaliseConfig(raw: unknown): Config {
     version: 1,
     mosque: { ...base.mosque, ...(r.mosque ?? {}), qrs: Array.isArray(r.mosque?.qrs) ? r.mosque.qrs : base.mosque.qrs },
     ramadan: { ...base.ramadan, ...(r.ramadan ?? {}) },
-    hadith: { ...base.hadith, ...(r.hadith ?? {}), hidden: Array.isArray(r.hadith?.hidden) ? r.hadith.hidden : [], custom: Array.isArray(r.hadith?.custom) ? r.hadith.custom : [] },
+    hadith: { ...base.hadith, ...(r.hadith ?? {}), hidden: Array.isArray(r.hadith?.hidden) ? r.hadith.hidden : [], custom: Array.isArray(r.hadith?.custom) ? r.hadith.custom : [], schedule: r.hadith?.schedule && typeof r.hadith.schedule === 'object' ? r.hadith.schedule : {} },
     rules: { ...base.rules, ...(r.rules ?? {}) },
     khutbah: Array.isArray(r.khutbah) ? r.khutbah : base.khutbah,
   };
