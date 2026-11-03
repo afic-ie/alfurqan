@@ -154,6 +154,55 @@ To rebuild the list after editing the selection, download the editions
 `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/` into a folder
 and run `python3 -I tools/build_hadith.py <folder>`.
 
+## Setting up the TV box
+
+The TV page is an ordinary web page that keeps working without internet once
+it has loaded, so the box only needs a browser that opens it full screen on
+boot. These steps use **Fully Kiosk Browser**, a one-off licence per device;
+any kiosk browser with a start URL and autostart will do.
+
+1. Connect the box to the mosque wifi. In the box's settings set the date and
+   time to automatic and the time zone to Europe/Dublin: the display uses the
+   box's clock.
+2. Install Fully Kiosk Browser from the Play Store, or the APK from
+   fully-kiosk.com if the store on the box does not list it.
+3. In Fully's settings set the **Start URL** to
+   `https://saajunaid.github.io/alfurqan/tv/`.
+4. Turn on: Autostart on boot, Keep screen on, Fullscreen mode, Hide
+   navigation bar, Auto reload on network reconnect; set the screen-off timer
+   to never. In the box's own settings set display sleep to never and switch
+   off any screensaver.
+5. Reboot. The timetable should appear on its own; press once on the remote
+   if the page asks to go full screen. Optionally set a kiosk PIN in Fully so
+   the remote cannot leave the page.
+6. Leave the box online for a minute after the first load so the page can
+   store everything it needs (see below).
+
+What happens afterwards:
+
+* The page checks for a newly published version every 30 minutes (every 5
+  minutes from two weeks before Ramadan until Eid) and reloads itself at 03:30
+  each night to pick up app updates, but only when the site is reachable.
+* Publishing from the admin page is all that is needed to change what is on
+  the screen.
+* When the repository moves to the AFIC organisation, or a custom domain is
+  set up, change the Start URL in Fully to the new address.
+
+### Working without internet
+
+After the first load the page has everything it needs stored on the box: the
+app, the fonts, the published settings and the whole adhan table, so it can
+compute any date on its own. With the wifi off it keeps showing the right
+times, Hijri dates, Ramadan details and hadith indefinitely, including across
+the clock changes, as long as the box's own clock stays right.
+
+The page asks the browser for persistent storage and fetches every font while
+online so nothing is missing later, and it never reloads itself while offline.
+Two limits remain: nothing published from the admin page reaches an offline
+box until it is back on wifi, and a browser that is uninstalled, reset or
+cleared loses the stored copy and needs one more online load. A box that is
+normally offline should be put on wifi (or a phone hotspot) after each publish.
+
 ## Project layout
 
 | Path | What it is |

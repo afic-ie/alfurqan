@@ -55,6 +55,18 @@ async function getPublished(): Promise<Published> {
 let pub = await getPublished();
 registerPwa(root);
 
+// Offline hardening for the TV box: ask the browser to keep our storage
+// (service-worker cache and localStorage) rather than evict it under
+// pressure, and fetch every font face the display can need now, while we are
+// online, so the first hadith or Arabic heading does not fall back to a
+// system font after the wifi is gone.
+void navigator.storage?.persist?.().catch(() => undefined);
+void document.fonts?.ready.then(() => {
+  const faces = ['500 20px Manrope', '600 20px Manrope', '700 20px Manrope', '800 20px Manrope', '500 20px Outfit', '700 20px Outfit', '700 20px Montserrat',
+    '700 20px Cairo', '500 20px "Reem Kufi"', '400 20px Amiri', '700 20px Amiri'];
+  for (const f of faces) void document.fonts.load(f, 'الحمد لله Masjid 0123456789').catch(() => undefined);
+});
+
 // ---------- layout ----------
 const app = document.getElementById('app')!;
 document.documentElement.style.setProperty('--pattern-dark', starPattern('#d9b96a', 0.16, 72));
@@ -196,9 +208,14 @@ setInterval(async () => {
   const fresh = await getPublished();
   if (fresh.publishedAt !== pub.publishedAt) { pub = fresh; shownDay = ''; render(); }
 }, 60 * 1000);
+// Reload only when the page itself is reachable: offline, a reload would
+// only swap the running app for the cached copy, and if the cache had been
+// evicted it would leave an error page on the screen until someone noticed.
 setInterval(() => {
   const n = new Date();
-  if (n.getHours() === 3 && n.getMinutes() === 30 && n.getSeconds() < 2) location.reload();
+  if (n.getHours() === 3 && n.getMinutes() === 30 && n.getSeconds() < 2 && navigator.onLine) {
+    fetch('./', { cache: 'no-store', method: 'HEAD' }).then((r) => { if (r.ok) location.reload(); }).catch(() => undefined);
+  }
 }, 1000);
 
 // Click or tap anywhere to go full screen (needed once on the TV box).
