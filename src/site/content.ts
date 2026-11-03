@@ -11,5 +11,6 @@ export const SITE = {
 
 export const NAV = [
   { href: '', label: 'Timetable' },
+  { href: 'tv/', label: 'TV display' },
   { href: 'admin/', label: 'Admin' },
 ];

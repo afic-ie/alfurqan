@@ -6,6 +6,7 @@ Live at <https://saajunaid.github.io/alfurqan/>.
 | Page | What it is |
 |---|---|
 | `/` | Public timetable: today's adhan and jamaat times, next-prayer countdown, the monthly timetable, print / save as PDF |
+| `/tv/` | TV display for the mosque screen (landscape, full screen, works offline) |
 | `/admin/` | Editor: jamaat rules, manual changes, settings, print |
 
 The public page reads `public/data/published.json`. The admin page edits a
@@ -25,6 +26,23 @@ republishes the site within a couple of minutes.
 
 Edits are stored per browser. On a new computer, Settings → **Load the
 published version** starts you from what is live.
+
+## The TV display (`/tv/`)
+
+Shows the clock, date (English and Hijri), the five prayers with adhan and
+jamaat, the next prayer with a countdown, sunrise, the Jumu'ah khutbah time,
+and the announcement set in Admin. For ten minutes from each jamaat time it
+switches to a full-screen "jamaat in progress" reminder.
+
+It keeps working with no internet: the page and the published data are
+cached on the device after the first load. It checks for newly published
+data every 30 minutes (when online) and reloads itself at 03:30 each day.
+
+**Android box setup:** install a kiosk browser (e.g. Fully Kiosk Browser,
+free), set its start URL to `https://saajunaid.github.io/alfurqan/tv/`, turn on
+"start on boot", "keep screen on" and "fullscreen". Tap the screen once to go
+full screen in an ordinary browser. The box must keep the correct time, so
+set its time zone to Dublin and leave automatic time on if it has internet.
 
 The mosque website (afic.ie) is a separate project; it will embed today's
 times and the timetable from this app.
@@ -103,6 +121,6 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 1. ~~Monthly timetable generator~~
 2. ~~Public timetable page with today's times~~
 3. ~~Publish from the admin page~~
-4. TV display mode for the mosque screen (offline Android box)
+4. ~~TV display mode for the mosque screen~~
 5. Ramadan timetable
 6. Embed for the afic.ie website (separate project)
