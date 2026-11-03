@@ -133,7 +133,7 @@ function render() {
   if (inProgress) {
     if (lastOverlay !== inProgress) {
       lastOverlay = inProgress;
-      ov.innerHTML = `<div class="ov-in"><div class="ov-ar" lang="ar">${NAMES[inProgress][1]}</div><div class="ov-en">${NAMES[inProgress][0]} jamaat</div><div class="ov-sub">Please switch off your phones · Straighten the rows</div><div class="ov-time">${fmt12ampm(row.jamaat[inProgress])}</div></div>`;
+      ov.innerHTML = `<div class="ov-in"><div class="ov-ar" lang="ar">${NAMES[inProgress][1]}</div><div class="ov-en">${NAMES[inProgress][0]} jamaat</div><div class="ov-ar-sub" lang="ar">اِسْتَوُوا وَسُدُّوا الْخَلَل</div><div class="ov-sub">Straighten the rows · Close the gaps · Please switch off your phones</div><div class="ov-time">${fmt12ampm(row.jamaat[inProgress])}</div></div>`;
     }
     ov.hidden = false;
   } else {
