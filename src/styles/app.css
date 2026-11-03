@@ -309,6 +309,7 @@ legend { font-family: var(--head); font-weight: 700; color: var(--navy); padding
 .qr-fields .f { margin: 2px 0; }
 .qr-fields small { color: var(--muted); font-size: 12px; }
 
+fieldset h4 { margin: 14px 0 2px; font-family: var(--head); color: var(--navy); font-size: 14px; }
 .hadith-list summary { cursor: pointer; font-weight: 600; color: var(--navy); margin: 6px 0; }
 .hadith-item { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; align-items: start; }
 .hadith-item .h-ar { display: block; font-family: var(--ar); font-size: 16px; line-height: 1.7; color: var(--navy-deep); }

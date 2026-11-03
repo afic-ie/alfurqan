@@ -112,7 +112,9 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 
 Settings → **Ramadan** holds the first day of fasting, the Eid date (30 days
 assumed when empty), the Eid prayer time and venue, the Zakat-ul-Fitr amount and
-the Taraweeh time. Tick *confirmed* after the moon sighting to drop the
+the Taraweeh time, plus the Ramadan jamaat rules (Fajr 10 minutes after the
+week's latest adhan, Isha not before 8 pm, khutbah 1:30 pm, days before the
+first Friday follow that Friday). Tick *confirmed* after the moon sighting to drop the
 "subject to moon sighting" wording. **Ramadan** in the admin toolbar shows the
 printable Ramadan timetable (day number, Suhoor ends, Iftar, the dua for
 breaking the fast, Zakat-ul-Fitr and Eid). After publishing, the website and the

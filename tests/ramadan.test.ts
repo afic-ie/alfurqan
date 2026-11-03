@@ -53,3 +53,38 @@ describe('Ramadan dates', () => {
     expect(html).toContain('رمضان ١٤٤٨هـ');
   });
 });
+
+import sheet from './fixtures/ramadan-2026.json';
+import { ramadanRows } from '../src/ui/ramadan';
+import { fmt12 } from '../src/engine/time';
+
+describe('Ramadan 2026 sheet', () => {
+  it('is reproduced to the minute by the rules with the Ramadan settings', () => {
+    const c = cloneConfig(DEFAULT_CONFIG);
+    c.ramadan.start = sheet.start;
+    c.ramadan.eid = sheet.eid;
+    const rows = ramadanRows(ramadanDates(c)!, c, {});
+    const diffs: string[] = [];
+    sheet.rows.forEach((s, i) => {
+      const r = rows[i];
+      const adhan = [r.adhan.fajr, r.adhan.sunrise, r.adhan.dhuhr, r.adhan.asr, r.adhan.maghrib, r.shownAdhan.isha].map(fmt12);
+      const jamaat = [r.jamaat.fajr, r.jamaat.dhuhr, r.jamaat.asr, r.jamaat.isha].map(fmt12);
+      if (adhan.join() !== s.adhan.join()) diffs.push(`${s.date} adhan ${adhan.join()} vs ${s.adhan.join()}`);
+      if (jamaat.join() !== s.jamaat.join()) diffs.push(`${s.date} jamaat ${jamaat.join()} vs ${s.jamaat.join()}`);
+      if (r.isFriday) expect(r.khutbah).toBe(13 * 60 + 30);
+    });
+    expect(diffs).toEqual([]);
+    expect(rows.length).toBe(30);
+  });
+
+  it('leaves regular months alone when no Ramadan is set', () => {
+    const feb = buildDayPlain(ymd(2026, 2, 20));
+    expect(fmt12(feb.jamaat.fajr)).toBe('6:30');
+    expect(feb.khutbah).toBe(13 * 60 + 20);
+  });
+});
+
+function buildDayPlain(x: ReturnType<typeof ymd>) {
+  return buildDay(x, DEFAULT_CONFIG);
+}
+import { buildDay } from '../src/engine/timetable';

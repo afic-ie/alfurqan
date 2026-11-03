@@ -3,7 +3,7 @@
 
 import type { Config } from './config';
 import { hijri } from './hijri';
-import { addDays, compare, parseIso, type Ymd } from './time';
+import { addDays, compare, parseIso, weekday, type Ymd } from './time';
 
 export interface RamadanDates {
   start: Ymd;
@@ -51,3 +51,10 @@ export function ramadanSeason(r: RamadanDates | null, x: Ymd): boolean {
 }
 
 export const isEid = (r: RamadanDates | null, x: Ymd) => !!r && compare(r.eid, x) === 0;
+
+/** The first Friday of Ramadan (the start itself when it falls on a Friday). */
+export function firstFriday(r: RamadanDates): Ymd {
+  let d = r.start;
+  while (weekday(d) !== 5) d = addDays(d, 1);
+  return d;
+}
