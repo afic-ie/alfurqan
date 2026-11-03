@@ -48,6 +48,17 @@ export interface AdhanRule {
 
 export type Rule = StepRule | PeriodRule | AdhanRule;
 
+/**
+ * A QR code printed in the footer. `image` is an uploaded image (data URL),
+ * a built-in one ("builtin:qr-whatsapp", "builtin:qr-stripe"), or empty to
+ * generate a plain QR code from `url`.
+ */
+export interface QrItem {
+  label: string;
+  url: string;
+  image: string;
+}
+
 export interface MosqueInfo {
   name: string;
   arabicName: string;
@@ -55,9 +66,8 @@ export interface MosqueInfo {
   website: string;
   bankLine: string;
   donateCaption: string;
-  donationUrl: string; // QR code is generated from this when no QR image is uploaded
-  qrImage: string; // optional uploaded image (data URL)
-  logo: string; // optional uploaded logo (data URL)
+  logo: string; // uploaded logo (data URL) or "builtin:logo"
+  qrs: QrItem[];
   extraNote: string;
 }
 
@@ -66,7 +76,7 @@ export interface Config {
   mosque: MosqueInfo;
   rules: Record<JamaatPrayer, Rule>;
   khutbah: Period[];
-  hijriOffset: number; // days, to follow local moon sighting
+  hijriOffset: number; // days, added to the Umm al-Qura (Saudi) date
   showHijri: boolean;
 }
 
@@ -78,10 +88,12 @@ export const DEFAULT_CONFIG: Config = {
     city: 'Limerick',
     website: 'www.alfurqan.ie',
     bankLine: 'BANK: BOI · IBAN: IE36 BOFI 9043 0983 4507 78 · BIC: BOFIIE2D',
-    donateCaption: 'Donate for the Mosque',
-    donationUrl: '',
-    qrImage: '',
-    logo: '',
+    donateCaption: 'Please donate for the Mosque',
+    logo: 'builtin:logo',
+    qrs: [
+      { label: 'Join our WhatsApp group', url: 'https://chat.whatsapp.com/IPdUcxaNsjyFQ5RMLtEvYN', image: 'builtin:qr-whatsapp' },
+      { label: 'Donate online', url: 'https://donate.stripe.com/14kg0o9m60b78mY9AA', image: 'builtin:qr-stripe' },
+    ],
     extraNote: '',
   },
   rules: {
@@ -98,7 +110,7 @@ export const DEFAULT_CONFIG: Config = {
     },
     asr: { kind: 'step', gapWinter: 5, gapSummer: 45, step: 30, earliest: '15:00', latest: '19:00' },
     maghrib: { kind: 'adhan', offset: 0 },
-    isha: { kind: 'step', gapWinter: 0, gapSummer: 0, step: 15, earliest: '19:30', latest: '23:20' },
+    isha: { kind: 'step', gapWinter: 0, gapSummer: 0, step: 15, earliest: '19:00', latest: '23:20' },
   },
   khutbah: [
     { from: '01-01', time: '13:20' },
@@ -124,7 +136,7 @@ export function normaliseConfig(raw: unknown): Config {
     ...base,
     ...r,
     version: 1,
-    mosque: { ...base.mosque, ...(r.mosque ?? {}) },
+    mosque: { ...base.mosque, ...(r.mosque ?? {}), qrs: Array.isArray(r.mosque?.qrs) ? r.mosque.qrs : base.mosque.qrs },
     rules: { ...base.rules, ...(r.rules ?? {}) },
     khutbah: Array.isArray(r.khutbah) ? r.khutbah : base.khutbah,
   };

@@ -4,6 +4,7 @@ import type { Config } from '../engine/config';
 import { buildMonth, type DayRow, type Overrides } from '../engine/timetable';
 import { MONTH_NAMES, fmt12, fmt12ampm, iso, today, type Ymd } from '../engine/time';
 import { defaultEmblem, qrSvg, starGlyph } from './art';
+import { resolveImage } from './assets';
 
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -21,15 +22,19 @@ const COLS: { p: 'fajr' | 'sunrise' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'; en: 
 ];
 
 function logoHtml(config: Config): string {
-  return config.mosque.logo
-    ? `<img class="logo-img" src="${esc(config.mosque.logo)}" alt="${esc(config.mosque.name)} logo">`
-    : defaultEmblem();
+  const src = resolveImage(config.mosque.logo);
+  return src ? `<img class="logo-img" src="${esc(src)}" alt="${esc(config.mosque.name)} logo">` : defaultEmblem();
 }
 
-function qrHtml(config: Config): string {
-  if (config.mosque.qrImage) return `<img src="${esc(config.mosque.qrImage)}" alt="Donation QR code">`;
-  const svg = qrSvg(config.mosque.donationUrl);
-  return svg || '<div class="qr-missing">Add a donation link or QR image in Settings</div>';
+function qrsHtml(config: Config): string {
+  return config.mosque.qrs
+    .map((q) => {
+      const src = resolveImage(q.image);
+      const code = src ? `<img src="${esc(src)}" alt="QR code">` : qrSvg(q.url);
+      if (!code) return '';
+      return `<div class="qr"><div class="qr-code">${code}</div><div class="qr-label">${esc(q.label)}</div></div>`;
+    })
+    .join('');
 }
 
 function hijriRange(rows: DayRow[]): { en: string; ar: string } {
@@ -70,7 +75,7 @@ function footerNotes(rows: DayRow[]): string[] {
   if (fixedIsha.length) {
     notes.push(`<span class="mark">*</span> Summer: Isha jamaat at a fixed ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
   }
-  notes.push('Maghrib jamaat at adhan time · <span class="legend-dot"></span> jamaat time changes');
+  notes.push('Maghrib jamaat at adhan time · <span class="legend-dot"></span> marks a change in jamaat time');
   return notes;
 }
 
@@ -106,7 +111,7 @@ ${hijriCell}${cells}</tr>`;
   ).join('');
   const head2 = COLS.filter((c) => c.jamaat).map(() => '<th class="sub">Adhan</th><th class="sub j">Jamaat</th>').join('');
 
-  const notes = footerNotes(rows).map((n) => `<li>${starGlyph('var(--gold)', 8)}<span>${n}</span></li>`).join('');
+  const notes = footerNotes(rows).map((n) => `<li>${starGlyph('var(--accent)', 8)}<span>${n}</span></li>`).join('');
 
   return `<section class="page" data-month="${y}-${m}">
 <div class="frame">
@@ -125,7 +130,7 @@ ${hijriCell}${cells}</tr>`;
     <div class="month-hijri-ar" lang="ar" dir="rtl">${esc(hr.ar)}</div>
   </div>
 </header>
-<div class="rule">${starGlyph('var(--gold)', 12)}</div>
+<div class="rule">${starGlyph('var(--accent)', 12)}</div>
 <table class="tt">
   <colgroup><col class="c-date">${config.showHijri ? '<col class="c-hijri">' : ''}${COLS.map((c) => (c.jamaat ? '<col class="c-a"><col class="c-j">' : '<col class="c-a">')).join('')}</colgroup>
   <thead>
@@ -135,14 +140,14 @@ ${hijriCell}${cells}</tr>`;
   <tbody class="rows-${rows.length}">${body}</tbody>
 </table>
 <footer class="foot">
-  <ul class="notes">${notes}${info.extraNote ? `<li>${starGlyph('var(--gold)', 8)}<span>${esc(info.extraNote)}</span></li>` : ''}</ul>
+  <ul class="notes">${notes}${info.extraNote ? `<li>${starGlyph('var(--accent)', 8)}<span>${esc(info.extraNote)}</span></li>` : ''}</ul>
   <div class="give">
     <div class="give-text">
       <div class="give-title">${esc(info.donateCaption)}</div>
       <div class="bank">${esc(info.bankLine)}</div>
       <div class="web">${esc(info.website)}</div>
     </div>
-    <div class="qr">${qrHtml(config)}</div>
+    <div class="qrs">${qrsHtml(config)}</div>
   </div>
 </footer>
 <div class="credit">Adhan times: Islamic Foundation of Ireland (${esc(info.city)}). Jamaat times: ${esc(info.name)}.</div>

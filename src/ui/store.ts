@@ -28,7 +28,7 @@ export function save(s: Saved): boolean {
     localStorage.setItem(KEY, JSON.stringify(s));
     return true;
   } catch {
-    return false; // e.g. very large logo image, or private browsing
+    return false; // e.g. very large images, or private browsing
   }
 }
 

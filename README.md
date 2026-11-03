@@ -18,14 +18,18 @@ worked out from the mosque's past timetables.
 
 1. Open the app and pick the first month (it starts on the next two-month
    block, e.g. January when used in November).
-2. Check the jamaat columns. Gold diamonds mark the days a jamaat time
-   changes. Click a time to change it for the whole week (Friday to Thursday)
-   or just that day.
-3. **Settings:** upload the logo and the donation QR code (or paste the
-   donation link and a QR code is made from it). You can also change the bank
-   details, khutbah times and the jamaat rules here.
+2. Check the jamaat columns. Blue diamonds mark the days a jamaat time
+   changes. Click a time to change it for that day, the whole week (Friday to
+   Thursday) or any range of dates. **Adjust jamaat** in the toolbar does the
+   same for any prayer and date range.
+3. **Settings:** the mosque logo and the WhatsApp and Stripe QR codes are
+   built in. You can replace them, add more QR codes (from an image or just a
+   link), and change the bank details, khutbah times and the jamaat rules.
 4. **Print / Save PDF:** choose A4, margins *None*, and turn on *Background
    graphics*.
+
+The Hijri column uses the Umm al-Qura (Saudi) calendar; Settings has a
+day offset if the local announcement differs.
 
 Settings and changes are saved in the browser. Use **Download settings file**
 to back them up or move them to another computer.
@@ -55,9 +59,10 @@ internet needed. You can also host it anywhere, e.g. GitHub Pages.
 | `src/data/ifi-limerick.json` | IFI Limerick adhan table (normal and leap year) |
 | `src/engine/` | Adhan times, clock changes, jamaat rules, Hijri dates |
 | `src/engine/config.ts` | Default settings and jamaat rules (explained in comments) |
+| `src/assets/` | Logo and QR code images (WhatsApp group, Stripe donations) |
 | `src/ui/` | Timetable page design, settings panel, storage |
 | `src/styles/app.css` | Look and feel, including the print layout |
-| `tests/` | Tests; `fixtures/published-jamaat.json` holds the mosque's published 2024–26 jamaat times |
+| `tests/` | Tests; `fixtures/published-jamaat.json` holds the mosque's published jamaat times (2024 – Dec 2026) |
 | `tools/extract_ifi_tables.py` | Rebuilds the IFI table from IFI's web app |
 
 ## Roadmap

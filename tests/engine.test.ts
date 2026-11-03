@@ -137,16 +137,27 @@ describe('default rules vs published timetables', () => {
   };
 
   const report: string[] = [];
-  for (const [label, from, to] of [['2025', '2025-01-01', '2025-12-31'], ['Jan-Feb 2026', '2026-01-01', '2026-02-28']]) {
+  // Winter Isha jamaat moved from 7:30 (2025, Jan-Feb 2026) to 7:00 (Nov-Dec
+  // 2026). The defaults follow the latest practice, so Isha is only checked
+  // strictly on the most recent timetable.
+  const periods: [string, string, string, boolean][] = [
+    ['2025', '2025-01-01', '2025-12-31', false],
+    ['Jan-Feb 2026', '2026-01-01', '2026-02-28', false],
+    ['Nov-Dec 2026', '2026-11-01', '2026-12-31', true],
+  ];
+  for (const [label, from, to, latest] of periods) {
     it(`are close to ${label}`, () => {
       const r = Object.fromEntries((['fajr', 'dhuhr', 'asr', 'isha'] as JamaatPrayer[]).map((p) => [p, rate(p, from, to)]));
       const w = Object.fromEntries((['fajr', 'asr', 'isha'] as JamaatPrayer[]).map((p) => [p, rate(p, from, to, 15)]));
       report.push(`${label}: exact ${JSON.stringify(r)} within 15 min ${JSON.stringify(w)}`);
       expect(r.dhuhr).toBeGreaterThan(0.95);
-      expect(r.isha).toBeGreaterThan(0.7);
       expect(r.fajr).toBeGreaterThan(0.6);
-      expect(r.asr).toBeGreaterThan(0.75);
       expect(w.fajr).toBeGreaterThan(0.95);
+      expect(r.asr).toBeGreaterThan(0.75);
+      if (latest) {
+        expect(r.isha).toBeGreaterThan(0.85);
+        expect(w.isha).toBeGreaterThan(0.95);
+      }
     });
   }
   it('report', () => console.log(report.join('\n')));

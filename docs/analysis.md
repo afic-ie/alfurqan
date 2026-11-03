@@ -50,9 +50,11 @@ Looking at 2025 and 2026, the mosque's jamaat times follow a clear system:
 * **Asr:** half-hour steps. Just after the adhan in winter (3:00 → 4:30); in
   summer about 45 minutes after, up to 7:00 pm.
 * **Maghrib:** at adhan time.
-* **Isha:** the first quarter-hour at or after the week's latest adhan, never
-  before 7:30 pm. In summer it is held at a fixed 11:20 pm, even though the
-  adhan is later in June/July. The old timetables hid the adhan in those weeks;
+* **Isha:** the first quarter-hour at or after the week's latest adhan, with
+  a winter floor. The floor was 7:30 pm through 2025 and January 2026; from
+  November 2026 it is **7:00 pm** (the app follows the latest practice). In
+  summer it is held at a fixed 11:20 pm, even though the adhan is later in
+  June/July. The old timetables hid the adhan in those weeks;
   the new one shows both and marks the jamaat with `*`.
 
 The app turns this into one rule per prayer (see `src/engine/config.ts`).
@@ -64,11 +66,15 @@ Share of days where the rule gives exactly the published jamaat time:
 
 | | Fajr | Dhuhr | Asr | Isha |
 |---|---|---|---|---|
-| 2025 | 64% (100% within 15 min) | 98% | 80% | 92% |
-| Jan–Feb 2026 | 88% | 100% | 88% | 76% |
+| 2025 | 64% (100% within 15 min) | 98% | 80% | 67%* |
+| Jan–Feb 2026 | 88% | 100% | 88% | 15%* |
+| Nov–Dec 2026 | 66% (100% within 15 min) | 100% | 100% | 92% |
+
+\* Isha differs only because the winter floor changed to 7:00 pm in late 2026.
 
 The rest are judgement calls, e.g. moving Fajr in 5-minute steps in March
-2025, or rounding Isha to 8:00 rather than 7:45. Practice also changes from
+2025, rounding Isha to 8:00 rather than 7:45, or (Nov–Dec 2026) stepping
+Fajr every two weeks rather than when the rule would. Practice also changes from
 year to year: summer Isha was 11:15 in 2024 and 11:20 in 2025. That is why
 the app **proposes** times from the rules and lets you change any week with a
 click. Those changes are saved and kept.

@@ -5,10 +5,10 @@ import '@fontsource/amiri/arabic-400.css';
 import '@fontsource/amiri/arabic-700.css';
 import './styles/app.css';
 
-import { cloneConfig, DEFAULT_CONFIG, type JamaatPrayer } from './engine/config';
+import { cloneConfig, DEFAULT_CONFIG, JAMAAT_PRAYERS, type JamaatPrayer } from './engine/config';
 import { ruleJamaat, weekDays } from './engine/jamaat';
 import { buildDay } from './engine/timetable';
-import { MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today } from './engine/time';
+import { addDays, compare, daysInMonth, MONTH_NAMES, fmt12ampm, fmt24, iso, parseIso, parseTime, today, ymd } from './engine/time';
 import { starPattern } from './ui/art';
 import { renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
@@ -35,8 +35,8 @@ const state: Saved & { y: number; m: number; months: number } = (() => {
 })();
 
 const app = document.getElementById('app')!;
-document.documentElement.style.setProperty('--pattern-gold', starPattern('#c9a24a', 0.28));
-document.documentElement.style.setProperty('--pattern-soft', starPattern('#0f5b4a', 0.06, 64));
+document.documentElement.style.setProperty('--pattern-dark', starPattern('#8fc4ff', 0.22));
+document.documentElement.style.setProperty('--pattern-soft', starPattern('#1547c2', 0.06, 64));
 
 function persist() {
   if (!save(state)) toast('Could not save in this browser (storage full or blocked). Use “Download settings file”.');
@@ -60,11 +60,12 @@ app.innerHTML = `
     </label>
   </div>
   <div class="tb-right">
+    <button type="button" data-action="adjust">Adjust jamaat</button>
     <button type="button" data-action="settings">Settings</button>
     <button type="button" class="primary" data-action="print">Print / Save PDF</button>
   </div>
 </div>
-<p class="hint no-print">Click any <strong>jamaat</strong> time to change it. Gold dots mark the days jamaat changes.</p>
+<p class="hint no-print">Click any <strong>jamaat</strong> time to change it for a day, a week or a range of dates. Blue diamonds mark the days jamaat changes.</p>
 <main class="pages" id="pages"></main>
 <aside class="drawer no-print" id="drawer" hidden></aside>
 <dialog class="editor no-print" id="editor"></dialog>
@@ -88,6 +89,13 @@ const monthSel = app.querySelector<HTMLSelectElement>('[data-control="month"]')!
 const yearIn = app.querySelector<HTMLInputElement>('[data-control="year"]')!;
 const monthsSel = app.querySelector<HTMLSelectElement>('[data-control="months"]')!;
 
+function lastShownDay() {
+  let y = state.y;
+  let m = state.m + state.months - 1;
+  while (m > 12) { m -= 12; y++; }
+  return ymd(y, m, daysInMonth(y, m));
+}
+
 function renderPages() {
   monthSel.value = String(state.m);
   yearIn.value = String(state.y);
@@ -107,6 +115,12 @@ function renderPages() {
 
 function renderDrawer() {
   drawer.innerHTML = renderSettings(state.config, Object.values(state.overrides).reduce((n, o) => n + Object.keys(o).length, 0));
+}
+
+function refresh() {
+  persist();
+  renderPages();
+  if (!drawer.hidden) renderDrawer();
 }
 
 // Scale A4 pages down on small screens.
@@ -144,20 +158,53 @@ const dayLabel = (k: string) => {
   return `${DAY[new Date(Date.UTC(d.y, d.m - 1, d.d)).getUTCDay()]} ${d.d} ${MONTH_NAMES[d.m - 1].slice(0, 3)}`;
 };
 
-function openEditor(key: string, p: JamaatPrayer) {
+function daysBetween(from: string, to: string): string[] {
+  const a = parseIso(from);
+  const b = parseIso(to);
+  if (compare(a, b) > 0) return daysBetween(to, from);
+  const out: string[] = [];
+  for (let d = a; compare(d, b) <= 0; d = addDays(d, 1)) out.push(iso(d));
+  return out;
+}
+
+/** Set (or clear, with t === null) the jamaat for a prayer on a list of days. */
+function applyJamaat(p: JamaatPrayer, keys: string[], t: number | null) {
+  for (const k of keys) {
+    const o = state.overrides[k];
+    if (t === null || t === ruleJamaat(p, state.config.rules[p], parseIso(k))) {
+      if (o) delete o[p];
+    } else {
+      (state.overrides[k] ??= {})[p] = t;
+    }
+    if (state.overrides[k] && !Object.keys(state.overrides[k]).length) delete state.overrides[k];
+  }
+}
+
+/**
+ * key: the day that was clicked (or the first shown day for the toolbar
+ * button). pick: let the user choose the prayer too.
+ */
+function openEditor(key: string, p: JamaatPrayer, pick = false) {
   const date = parseIso(key);
   const row = buildDay(date, state.config, state.overrides);
   const rule = ruleJamaat(p, state.config.rules[p], date);
   const week = weekDays(date).map(iso);
   const weekText = `${dayLabel(week[0])} – ${dayLabel(week[week.length - 1])}`;
+  const rangeEnd = iso(lastShownDay());
+  const prayerField = pick
+    ? `<label class="f"><span>Prayer</span><select name="p">${JAMAAT_PRAYERS.map((x) => `<option value="${x}" ${x === p ? 'selected' : ''}>${NAMES[x]}</option>`).join('')}</select></label>`
+    : '';
   editor.innerHTML = `
 <form method="dialog" class="edit-form">
-  <h3>${NAMES[p]} jamaat · ${dayLabel(key)}</h3>
-  <p class="help">Adhan ${fmt12ampm(row.adhan[p])}. The rule gives ${fmt12ampm(rule)}.</p>
+  <h3>${pick ? 'Adjust jamaat time' : `${NAMES[p]} jamaat · ${dayLabel(key)}`}</h3>
+  ${pick ? '' : `<p class="help">Adhan ${fmt12ampm(row.adhan[p])}. The rule gives ${fmt12ampm(rule)}.</p>`}
+  ${prayerField}
   <label class="f"><span>Jamaat time</span><input type="time" name="t" value="${fmt24(row.jamaat[p])}" required></label>
   <fieldset class="scope"><legend>Apply to</legend>
-    <label><input type="radio" name="scope" value="week" checked> The whole week (${weekText})</label>
+    <label><input type="radio" name="scope" value="week" ${pick ? '' : 'checked'}> The whole week (${weekText})</label>
     <label><input type="radio" name="scope" value="day"> Only ${dayLabel(key)}</label>
+    <label><input type="radio" name="scope" value="range" ${pick ? 'checked' : ''}> A range of dates</label>
+    <div class="range">from <input type="date" name="from" value="${key}"> to <input type="date" name="to" value="${rangeEnd}"></div>
   </fieldset>
   <div class="buttons">
     <button type="submit" class="primary" value="save">Save</button>
@@ -166,27 +213,33 @@ function openEditor(key: string, p: JamaatPrayer) {
   </div>
 </form>`;
   const form = editor.querySelector('form')!;
+  form.querySelectorAll<HTMLInputElement>('.range input').forEach((i) =>
+    i.addEventListener('focus', () => ((form.elements.namedItem('scope') as RadioNodeList).value = 'range')),
+  );
   form.addEventListener('submit', (e) => {
     const action = (e.submitter as HTMLButtonElement | null)?.value;
     const fd = new FormData(form);
-    const keys = fd.get('scope') === 'week' ? week : [key];
+    const prayer = (pick ? String(fd.get('p')) : p) as JamaatPrayer;
+    const scope = fd.get('scope');
+    let keys: string[];
+    if (scope === 'week') keys = week;
+    else if (scope === 'day') keys = [key];
+    else {
+      const from = String(fd.get('from'));
+      const to = String(fd.get('to'));
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || !/^\d{4}-\d{2}-\d{2}$/.test(to)) { e.preventDefault(); return; }
+      keys = daysBetween(from, to);
+      if (keys.length > 800) { e.preventDefault(); toast('Please choose a range of two years or less.'); return; }
+    }
     if (action === 'save') {
       const t = parseTime(String(fd.get('t')));
       if (t === null) return;
-      for (const k of keys) {
-        if (t === ruleJamaat(p, state.config.rules[p], parseIso(k))) {
-          if (state.overrides[k]) delete state.overrides[k][p];
-        } else {
-          (state.overrides[k] ??= {})[p] = t;
-        }
-      }
+      applyJamaat(prayer, keys, t);
+      toast(`${NAMES[prayer]} jamaat set to ${fmt12ampm(t)} for ${keys.length} day${keys.length === 1 ? '' : 's'}.`);
     } else if (action === 'reset') {
-      for (const k of keys) if (state.overrides[k]) delete state.overrides[k][p];
+      applyJamaat(prayer, keys, null);
     } else return;
-    for (const k of keys) if (state.overrides[k] && !Object.keys(state.overrides[k]).length) delete state.overrides[k];
-    persist();
-    renderPages();
-    if (!drawer.hidden) renderDrawer();
+    refresh();
   });
   editor.showModal();
 }
@@ -230,13 +283,16 @@ drawer.addEventListener('change', async (e) => {
       state.config = s.config;
       state.overrides = s.overrides;
       toast('Settings loaded.');
-    } else if (kind === 'logo' || kind === 'qrImage') {
+    } else {
       if (file.size > 1_500_000) return toast('Please use an image under 1.5 MB.');
-      state.config.mosque[kind] = await readImageFile(file);
+      const data = await readImageFile(file);
+      if (kind === 'logo') state.config.mosque.logo = data;
+      else if (kind === 'qr') {
+        const q = state.config.mosque.qrs[Number(el.dataset.index)];
+        if (q) q.image = data;
+      }
     }
-    persist();
-    renderDrawer();
-    renderPages();
+    refresh();
   } catch {
     toast('Could not read that file.');
   }
@@ -250,31 +306,34 @@ app.addEventListener('click', (e) => {
   const btn = t.closest<HTMLElement>('[data-action]');
   if (!btn) return;
   const a = btn.dataset.action;
+  const qrs = state.config.mosque.qrs;
+  const idx = Number(btn.dataset.index);
   if (a === 'prev') shiftMonth(-1);
   else if (a === 'next') shiftMonth(1);
+  else if (a === 'adjust') openEditor(iso(ymd(state.y, state.m, 1)), 'fajr', true);
   else if (a === 'print') printHelp.showModal();
   else if (a === 'print-now') { printHelp.close(); setTimeout(() => window.print(), 50); }
   else if (a === 'close-dialog') (btn.closest('dialog') as HTMLDialogElement).close();
   else if (a === 'settings') { renderDrawer(); drawer.hidden = false; document.body.classList.add('drawer-open'); }
   else if (a === 'close-settings') { drawer.hidden = true; document.body.classList.remove('drawer-open'); }
   else if (a === 'export') downloadJson(state, `alfurqan-timetable-settings-${iso(today())}.json`);
-  else if (a === 'clear-logo') { state.config.mosque.logo = ''; persist(); renderDrawer(); renderPages(); }
-  else if (a === 'clear-qr') { state.config.mosque.qrImage = ''; persist(); renderDrawer(); renderPages(); }
+  else if (a === 'clear-logo') { state.config.mosque.logo = ''; refresh(); }
+  else if (a === 'logo-default') { state.config.mosque.logo = 'builtin:logo'; refresh(); }
+  else if (a === 'qr-add') { qrs.push({ label: 'New QR code', url: '', image: '' }); refresh(); }
+  else if (a === 'qr-del') { qrs.splice(idx, 1); refresh(); }
+  else if (a === 'qr-generate') { if (qrs[idx]) qrs[idx].image = ''; refresh(); }
   else if (a === 'clear-edits') {
-    if (confirm('Remove all manual jamaat changes?')) { state.overrides = {}; persist(); renderDrawer(); renderPages(); }
+    if (confirm('Remove all manual jamaat changes?')) { state.overrides = {}; refresh(); }
   } else if (a === 'reset') {
-    if (confirm('Restore all settings to the defaults? (Logo, QR image and manual changes are kept.)')) {
-      const keep = state.config.mosque;
+    if (confirm('Restore all settings to the defaults? (Manual jamaat changes are kept.)')) {
       state.config = cloneConfig(DEFAULT_CONFIG);
-      state.config.mosque.logo = keep.logo;
-      state.config.mosque.qrImage = keep.qrImage;
-      persist(); renderDrawer(); renderPages();
+      refresh();
     }
   } else if (a === 'period-add' || a === 'period-del') {
     const list = getPath(state.config, btn.dataset.list!) as { from: string; time: string }[];
     if (a === 'period-add') list.push({ from: '01-01', time: '13:00' });
-    else list.splice(Number(btn.dataset.index), 1);
-    persist(); renderDrawer(); renderPages();
+    else list.splice(idx, 1);
+    refresh();
   }
 });
 
