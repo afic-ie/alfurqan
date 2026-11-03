@@ -21,6 +21,15 @@ const COLS: { p: 'fajr' | 'sunrise' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'; en: 
   { p: 'isha', en: 'Isha', ar: 'العشاء', jamaat: true },
 ];
 
+/** Mosque name in English and Arabic, both stretched to the same width. */
+function brandNames(name: string, arabic: string): string {
+  const W = 420;
+  return `<svg class="brand-names" viewBox="0 0 ${W} 120" aria-label="${esc(name)}">
+<text class="bn-en" x="0" y="46" textLength="${W}" lengthAdjust="spacing">${esc(name.toUpperCase())}</text>
+<text class="bn-ar" x="0" y="108" textLength="${W}" lengthAdjust="spacingAndGlyphs">${esc(arabic)}</text>
+</svg>`;
+}
+
 function logoHtml(config: Config): string {
   const src = resolveImage(config.mosque.logo);
   return src ? `<img class="logo-img" src="${esc(src)}" alt="${esc(config.mosque.name)} logo">` : defaultEmblem();
@@ -68,14 +77,13 @@ function footerNotes(rows: DayRow[]): string[] {
     notes.push(`<strong>Jumu'ah khutbah</strong> starts at ${parts.join(', ')}`);
   }
   for (const r of rows) {
-    if (r.clockChange === 'forward') notes.push(`Clocks go <strong>forward</strong> one hour on ${longDate(r.date)}. Times shown are already adjusted.`);
-    if (r.clockChange === 'back') notes.push(`Clocks go <strong>back</strong> one hour on ${longDate(r.date)}. Times shown are already adjusted.`);
+    if (r.clockChange) notes.push(`<strong>Summer time ${r.clockChange === 'forward' ? 'starts' : 'ends'}</strong> on ${longDate(r.date)}: clocks go ${r.clockChange} one hour. All times are already adjusted.`);
   }
   const fixedIsha = rows.filter((r) => r.beforeAdhan.isha);
   if (fixedIsha.length) {
     notes.push(`<span class="mark">*</span> Summer: Isha jamaat at a fixed ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
   }
-  notes.push('Maghrib jamaat at adhan time · <span class="legend-dot"></span> marks a change in jamaat time');
+  notes.push('<span class="legend-dot"></span> marks a change in jamaat time');
   return notes;
 }
 
@@ -100,8 +108,12 @@ export function renderMonth(y: number, m: number, config: Config, overrides: Ove
         const star = r.beforeAdhan[p] ? '<span class="mark">*</span>' : '';
         return `${a}<td class="${jc}" data-key="${r.key}" data-p="${p}" title="Click to change">${fmt12(r.jamaat[p])}${star}</td>`;
       }).join('');
-      return `<tr class="${cls}">
-<td class="date"><span class="dn">${r.date.d}</span><span class="wd">${r.isFriday ? "Jumu'ah" : DAY_SHORT[r.weekday]}</span></td>
+      const cols = (config.showHijri ? 2 : 1) + COLS.reduce((n, c) => n + (c.jamaat ? 2 : 1), 0);
+      const banner = r.clockChange
+        ? `<tr class="notice"><td colspan="${cols}">⏱ Clocks go ${r.clockChange === 'forward' ? 'FORWARD' : 'BACK'} one hour on ${longDate(r.date)} — times below are already adjusted</td></tr>`
+        : '';
+      return `${banner}<tr class="${cls}">
+<td class="date"><span class="dn">${r.date.d}</span><span class="wd">${r.isFriday ? `Jumu'ah${r.khutbah !== null ? `<span class="kh">Khutbah ${fmt12(r.khutbah)}</span>` : ''}` : DAY_SHORT[r.weekday]}</span></td>
 ${hijriCell}${cells}</tr>`;
     })
     .join('');
@@ -121,8 +133,7 @@ ${hijriCell}${cells}</tr>`;
   <div class="brand">
     <div class="logo">${logoHtml(config)}</div>
     <div class="names">
-      <div class="name-en">${esc(info.name)}</div>
-      <div class="name-ar" lang="ar" dir="rtl">${esc(info.arabicName)}</div>
+      ${brandNames(info.name, info.arabicName)}
       <div class="city">${esc(info.city)} · Prayer Timetable</div>
     </div>
   </div>

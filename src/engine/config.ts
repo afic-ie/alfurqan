@@ -91,7 +91,7 @@ export const DEFAULT_CONFIG: Config = {
     donateCaption: 'Please donate for the Mosque',
     logo: 'builtin:logo',
     qrs: [
-      { label: 'Join our WhatsApp group', url: 'https://chat.whatsapp.com/IPdUcxaNsjyFQ5RMLtEvYN', image: 'builtin:qr-whatsapp' },
+      { label: 'WhatsApp group', url: 'https://chat.whatsapp.com/IPdUcxaNsjyFQ5RMLtEvYN', image: 'builtin:qr-whatsapp' },
       { label: 'Donate online', url: 'https://donate.stripe.com/14kg0o9m60b78mY9AA', image: 'builtin:qr-stripe' },
     ],
     extraNote: '',
