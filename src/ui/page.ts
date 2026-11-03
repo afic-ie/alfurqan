@@ -24,9 +24,9 @@ const COLS: { p: 'fajr' | 'sunrise' | 'dhuhr' | 'asr' | 'maghrib' | 'isha'; en: 
 /** Mosque name in English and Arabic, both stretched to the same width. */
 function brandNames(name: string, arabic: string): string {
   const W = 420;
-  return `<svg class="brand-names" viewBox="0 0 ${W} 120" aria-label="${esc(name)}">
-<text class="bn-en" x="0" y="46" textLength="${W}" lengthAdjust="spacing">${esc(name.toUpperCase())}</text>
-<text class="bn-ar" x="0" y="108" textLength="${W}" lengthAdjust="spacingAndGlyphs">${esc(arabic)}</text>
+  return `<svg class="brand-names" viewBox="0 0 ${W} 96" aria-label="${esc(name)}">
+<text class="bn-en" x="0" y="38" textLength="${W}" lengthAdjust="spacing">${esc(name.toUpperCase())}</text>
+<text class="bn-ar" x="0" y="86" textLength="${W}" lengthAdjust="spacingAndGlyphs">${esc(arabic)}</text>
 </svg>`;
 }
 
@@ -81,9 +81,9 @@ function footerNotes(rows: DayRow[]): string[] {
   }
   const fixedIsha = rows.filter((r) => r.beforeAdhan.isha);
   if (fixedIsha.length) {
-    notes.push(`<span class="mark">*</span> Summer: Isha jamaat at a fixed ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
+    notes.push(`<span class="mark">*</span> Summer: Isha adhan and jamaat are fixed at ${fmt12ampm(fixedIsha[0].jamaat.isha)}.`);
   }
-  notes.push('<span class="legend-dot"></span> marks a change in jamaat time');
+  notes.push('<span class="tri up"></span> jamaat moves later · <span class="tri down"></span> jamaat moves earlier');
   return notes;
 }
 
@@ -101,10 +101,10 @@ export function renderMonth(y: number, m: number, config: Config, overrides: Ove
         ? `<td class="hijri">${h.day}${h.day === 1 || i === 0 ? `<span class="hm">${HIJRI_SHORT[h.month - 1]}</span>` : ''}</td>`
         : '';
       const cells = COLS.map((c) => {
-        const a = `<td class="a${c.jamaat ? ' has-j' : ''}">${fmt12(r.adhan[c.p])}</td>`;
+        const a = `<td class="a${c.jamaat ? ' has-j' : ''}">${fmt12(r.shownAdhan[c.p])}</td>`;
         if (!c.jamaat) return a;
         const p = c.p as 'fajr' | 'dhuhr' | 'asr' | 'isha';
-        const jc = ['j', r.changed[p] ? 'chg' : '', r.edited[p] ? 'edited' : ''].join(' ').trim();
+        const jc = ['j', r.changed[p] ? `chg ${r.direction[p] > 0 ? 'up' : 'down'}` : '', r.edited[p] ? 'edited' : ''].join(' ').trim();
         const star = r.beforeAdhan[p] ? '<span class="mark">*</span>' : '';
         return `${a}<td class="${jc}" data-key="${r.key}" data-p="${p}" title="Click to change">${fmt12(r.jamaat[p])}${star}</td>`;
       }).join('');
