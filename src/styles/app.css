@@ -178,6 +178,9 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 .tt th.pr { vertical-align: bottom; padding-bottom: 0.6mm; }
 .tt th .en { display: block; font-family: var(--head); font-size: 9.5pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .tt th .ar { display: block; font-family: var(--ar); font-size: 11pt; font-weight: 700; color: var(--gold-deep); line-height: 1.1; }
+/* single-column headings (Sunrise, Maghrib) must fit one narrow column */
+.tt th.pr:not(.grp):not(.d) .en { font-size: 8pt; letter-spacing: 0.03em; }
+.tt th.pr:not(.grp):not(.d) .ar { font-size: 10pt; }
 .tt th.grp { border-bottom: 0.25mm solid var(--line); }
 .tt th.sub { font-size: 6.8pt; font-weight: 600; color: #3c4660; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.6mm 0 1mm; }
 .tt th.sub.j { color: var(--blue); font-weight: 700; }
