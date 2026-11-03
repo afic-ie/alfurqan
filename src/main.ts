@@ -107,7 +107,7 @@ function renderPages() {
   let y = state.y;
   let m = state.m;
   for (let i = 0; i < state.months; i++) {
-    out.push(renderMonth(y, m, state.config, state.overrides));
+    out.push(`<div class="page-wrap">${renderMonth(y, m, state.config, state.overrides)}</div>`);
     m++;
     if (m > 12) { m = 1; y++; }
   }

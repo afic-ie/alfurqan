@@ -41,7 +41,7 @@ startCountdown(pub);
 const pages = document.getElementById('pages')!;
 function render() {
   document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
-  pages.innerHTML = renderMonth(y, m, pub.config, pub.overrides);
+  pages.innerHTML = `<div class="page-wrap">${renderMonth(y, m, pub.config, pub.overrides)}</div>`;
   history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
   fit();
 }

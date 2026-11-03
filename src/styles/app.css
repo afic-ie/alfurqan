@@ -28,7 +28,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; }
+html, body { margin: 0; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   font-family: var(--en);
   font-weight: 500;
@@ -81,7 +81,11 @@ dialog code { background: var(--tint); padding: 0 4px; border-radius: 4px; font-
 
 /* ---------------- pages on screen ---------------- */
 .pages { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 16px 8px 48px; }
-.page { zoom: var(--fit); box-shadow: 0 6px 30px rgb(10 31 92 / 0.22); }
+/* Scale the A4 page to the screen with a transform (zoom makes iOS Safari
+   inflate small text). The wrapper takes the scaled size in the layout. */
+.page-wrap { width: calc(210mm * var(--fit)); height: calc(297mm * var(--fit)); }
+.page-wrap .page { transform: scale(var(--fit)); transform-origin: top left; }
+.page { box-shadow: 0 6px 30px rgb(10 31 92 / 0.22); }
 
 /* ---------------- the A4 timetable page ---------------- */
 .page {
@@ -294,7 +298,9 @@ dialog select { padding: 7px 9px; border: 1px solid var(--line); border-radius: 
   html, body { background: #fff; }
   .no-print, .toolbar, .hint, .drawer, dialog, .toast { display: none !important; }
   .pages { display: block; padding: 0; }
-  .page { zoom: 1; box-shadow: none; break-after: page; page-break-after: always; }
-  .page:last-child { break-after: auto; page-break-after: auto; }
+  .page-wrap { width: auto; height: auto; }
+  .page-wrap .page { transform: none; }
+  .page { box-shadow: none; break-after: page; page-break-after: always; }
+  .page-wrap:last-child .page { break-after: auto; page-break-after: auto; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
