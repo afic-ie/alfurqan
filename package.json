@@ -1,0 +1,26 @@
+{
+  "name": "alfurqan-timetable",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Prayer timetable generator for Masjid Al-Furqan, Limerick",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "@fontsource/amiri": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "qrcode-generator": "^2.0.4"
+  }
+}
