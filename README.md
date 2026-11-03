@@ -108,6 +108,17 @@ npm run build    # builds dist/index.html
 `npm run build` writes the whole site to `dist/`. Every merge into `main`
 publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 
+## Ramadan
+
+Settings → **Ramadan** holds the first day of fasting, the Eid date (30 days
+assumed when empty), the Eid prayer time and venue, the Zakat-ul-Fitr amount and
+the Taraweeh time. Tick *confirmed* after the moon sighting to drop the
+"subject to moon sighting" wording. **Ramadan** in the admin toolbar shows the
+printable Ramadan timetable (day number, Suhoor ends, Iftar, the dua for
+breaking the fast, Zakat-ul-Fitr and Eid). After publishing, the website and the
+TV show the Ramadan day, Suhoor/Iftar and Taraweeh from two weeks before the
+start until Eid, and the TV checks for changes every five minutes in that period.
+
 ## Project layout
 
 | Path | What it is |
@@ -116,7 +127,7 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 | `src/engine/` | Adhan times, clock changes, jamaat rules, Hijri dates |
 | `src/engine/config.ts` | Default settings and jamaat rules (explained in comments) |
 | `src/assets/` | Logo and QR code images (WhatsApp group, Stripe donations) |
-| `src/ui/` | Timetable page design, settings panel, storage |
+| `src/ui/` | Timetable page design, Ramadan page, settings panel, storage |
 | `src/site/` | Public page: layout and navigation, today widget, published data |
 | `src/pages/` | Entry script for the public page |
 | `public/data/published.json` | Published jamaat changes read by the public pages |
@@ -130,5 +141,6 @@ publishes it to GitHub Pages automatically (`.github/workflows/pages.yml`).
 2. ~~Public timetable page with today's times~~
 3. ~~Publish from the admin page~~
 4. ~~TV display mode for the mosque screen~~
-5. Ramadan timetable
-6. Embed for the afic.ie website (separate project)
+5. ~~Ramadan timetable~~
+6. Hadith rotation on the TV display
+7. Embed for the afic.ie website (separate project)

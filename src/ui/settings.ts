@@ -12,6 +12,10 @@ const text = (label: string, path: string, value: string, hint = '') =>
   `<label class="f"><span>${label}</span><input type="text" data-path="${path}" value="${esc(value)}">${hint ? `<small>${hint}</small>` : ''}</label>`;
 const num = (label: string, path: string, value: number, hint = '') =>
   `<label class="f n"><span>${label}</span><input type="number" step="1" data-path="${path}" data-type="number" value="${esc(value)}">${hint ? `<small>${hint}</small>` : ''}</label>`;
+const date = (label: string, path: string, value = '', hint = '') =>
+  `<label class="f n"><span>${label}</span><input type="date" data-path="${path}" value="${esc(value)}">${hint ? `<small>${hint}</small>` : ''}</label>`;
+const check = (label: string, path: string, value: boolean) =>
+  `<label class="check"><input type="checkbox" data-path="${path}" data-type="bool" ${value ? 'checked' : ''}> ${label}</label>`;
 const time = (label: string, path: string, value = '') =>
   `<label class="f n"><span>${label}</span><input type="time" data-path="${path}" value="${esc(value)}"></label>`;
 
@@ -110,6 +114,21 @@ ${stepRule('Asr', 'asr', r.asr as StepRule, 'Later in summer, e.g. adhan 5:58 pm
 ${r.maghrib.kind === 'adhan' ? `<fieldset><legend>Maghrib</legend>${num('Minutes after adhan', 'rules.maghrib.offset', r.maghrib.offset)}</fieldset>` : ''}
 ${stepRule('Isha', 'isha', r.isha as StepRule, '“Never earlier than” is the winter Isha time; “never later than” is the fixed summer time (marked * on the timetable).')}
 ${periods("Jumu'ah khutbah", 'khutbah', c.khutbah, anchorHelp)}
+
+<fieldset><legend>Ramadan</legend>
+<p class="help">Set the expected first day of fasting as soon as it is known and tick <strong>confirmed</strong> after the moon sighting. <strong>Ramadan</strong> in the toolbar shows the printable Ramadan timetable; the website and TV show Ramadan details from two weeks before the start until Eid, once published.</p>
+<div class="grid">
+${date('First day of fasting', 'ramadan.start', c.ramadan.start)}
+${date('Eid al-Fitr', 'ramadan.eid', c.ramadan.eid, 'Leave empty to assume 30 days.')}
+${check('Start confirmed (moon sighted)', 'ramadan.startConfirmed', c.ramadan.startConfirmed)}
+${check('Eid confirmed', 'ramadan.eidConfirmed', c.ramadan.eidConfirmed)}
+${text('Eid prayer time(s)', 'ramadan.eidPrayer', c.ramadan.eidPrayer, 'e.g. 8:00 am and 9:30 am')}
+${text('Eid prayer venue', 'ramadan.eidVenue', c.ramadan.eidVenue)}
+${text('Zakat-ul-Fitr', 'ramadan.zakatFitr', c.ramadan.zakatFitr, 'e.g. €10 per person')}
+${text('Taraweeh', 'ramadan.taraweeh', c.ramadan.taraweeh, 'Website and TV only, e.g. “after Isha jamaat”.')}
+</div>
+${text('Extra note on the Ramadan timetable (optional)', 'ramadan.note', c.ramadan.note)}
+</fieldset>
 
 <fieldset><legend>Hijri date</legend>
 <p class="help">Uses the Umm al-Qura calendar (Saudi Arabia).</p>

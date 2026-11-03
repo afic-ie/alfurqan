@@ -9,6 +9,9 @@ import { icon, mountShell } from '../site/layout';
 import { renderToday, startCountdown } from '../site/today';
 import { MONTH_NAMES, today } from '../engine/time';
 import { fitBrandNames, renderMonth } from '../ui/page';
+import { renderRamadan } from '../ui/ramadan';
+import { ramadanDates } from '../engine/ramadan';
+import { addDays, compare } from '../engine/time';
 
 const root = './';
 const pub = await loadPublished(root);
@@ -18,6 +21,10 @@ let m = t.m;
 const q = new URLSearchParams(location.search);
 if (/^\d{4}$/.test(q.get('y') ?? '')) y = Number(q.get('y'));
 if (/^\d{1,2}$/.test(q.get('m') ?? '') && Number(q.get('m')) >= 1 && Number(q.get('m')) <= 12) m = Number(q.get('m'));
+const ram = ramadanDates(pub.config);
+// Offer the Ramadan timetable from six weeks before the start until the day after Eid.
+const ramOffered = !!ram && compare(t, addDays(ram.start, -42)) >= 0 && compare(t, addDays(ram.eid, 1)) <= 0;
+let view: 'months' | 'ramadan' = ramOffered && q.get('view') === 'ramadan' ? 'ramadan' : 'months';
 
 mountShell(root, '', `
 <section class="hero"><div class="wrap hero-grid">
@@ -29,6 +36,7 @@ mountShell(root, '', `
       <button type="button" class="btn ghost icon-btn" data-action="prev" aria-label="Previous month">‹</button>
       <div class="tt-month" id="tt-month"></div>
       <button type="button" class="btn ghost icon-btn" data-action="next" aria-label="Next month">›</button>
+      ${ramOffered ? '<button type="button" class="btn ghost" data-action="ramadan" id="ram-btn">Ramadan timetable</button>' : ''}
       <button type="button" class="btn primary" data-action="print">${icon('print')} Print / Save PDF</button>
     </div>
   </div>
@@ -41,10 +49,19 @@ startCountdown(pub);
 
 const pages = document.getElementById('pages')!;
 function render() {
-  document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
-  pages.innerHTML = `<div class="page-wrap">${renderMonth(y, m, pub.config, pub.overrides)}</div>`;
+  const ramPage = view === 'ramadan' ? renderRamadan(pub.config, pub.overrides) : null;
+  if (ramPage) {
+    document.getElementById('tt-month')!.textContent = `Ramadan ${ram!.year}`;
+    pages.innerHTML = `<div class="page-wrap">${ramPage}</div>`;
+    history.replaceState(null, '', '?view=ramadan');
+  } else {
+    view = 'months';
+    document.getElementById('tt-month')!.textContent = `${MONTH_NAMES[m - 1]} ${y}`;
+    pages.innerHTML = `<div class="page-wrap">${renderMonth(y, m, pub.config, pub.overrides)}</div>`;
+    history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
+  }
+  document.getElementById('ram-btn')?.classList.toggle('active', view === 'ramadan');
   fitBrandNames(pages);
-  history.replaceState(null, '', y === t.y && m === t.m ? location.pathname : `?y=${y}&m=${m}`);
   fit();
 }
 function fit() {
@@ -54,8 +71,9 @@ function fit() {
 window.addEventListener('resize', fit);
 document.addEventListener('click', (e) => {
   const a = (e.target as HTMLElement).closest<HTMLElement>('[data-action]')?.dataset.action;
-  if (a === 'prev') { m--; if (m < 1) { m = 12; y--; } render(); }
-  if (a === 'next') { m++; if (m > 12) { m = 1; y++; } render(); }
+  if (a === 'prev') { view = 'months'; m--; if (m < 1) { m = 12; y--; } render(); }
+  if (a === 'next') { view = 'months'; m++; if (m > 12) { m = 1; y++; } render(); }
+  if (a === 'ramadan') { view = view === 'ramadan' ? 'months' : 'ramadan'; render(); }
   if (a === 'print') window.print();
 });
 render();

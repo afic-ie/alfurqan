@@ -2,9 +2,11 @@
 
 import { JAMAAT_PRAYERS, type JamaatPrayer } from '../engine/config';
 import { buildDay, type DayRow } from '../engine/timetable';
-import { DAY_NAMES, MONTH_NAMES, addDays, fmt12, fmt12ampm, today } from '../engine/time';
+import { DAY_NAMES, MONTH_NAMES, addDays, fmt12, fmt12ampm, today, type Ymd } from '../engine/time';
 import type { Published } from './data';
 import { esc, icon } from './layout';
+import { isEid, ramadanDates, ramadanDay, ramadanSeason } from '../engine/ramadan';
+import { longDate } from '../ui/page';
 
 const NAMES: Record<JamaatPrayer, [string, string]> = {
   fajr: ['Fajr', 'الفجر'], dhuhr: ['Dhuhr', 'الظهر'], asr: ['Asr', 'العصر'], maghrib: ['Maghrib', 'المغرب'], isha: ['Isha', 'العشاء'],
@@ -24,6 +26,25 @@ export function nextJamaat(pub: Published): { name: string; at: number; row: Day
   const tm = buildDay(addDays(t, 1), pub.config, pub.overrides);
   return { name: NAMES.fajr[0], at: tm.jamaat.fajr + 24 * 60, row: tm, tomorrow: true };
 }
+
+/** Ramadan line for the today card (empty outside the Ramadan season). */
+export function ramadanLine(pub: Published, t: Ymd, row: DayRow): string {
+  const r = ramadanDates(pub.config);
+  if (!ramadanSeason(r, t)) return '';
+  const ram = pub.config.ramadan;
+  const day = ramadanDay(r, t);
+  let main: string;
+  if (day) main = `<strong>Ramadan ${day}</strong> · Suhoor ends ${fmt12ampm(row.adhan.fajr)} · Iftar ${fmt12ampm(row.adhan.maghrib)}`;
+  else if (isEid(r, t)) main = `<strong>Eid Mubarak</strong>${ram.eidPrayer ? ` · Eid prayer ${esc(ram.eidPrayer)}` : ''}${ram.eidVenue ? ` · ${esc(ram.eidVenue)}` : ''}`;
+  else if (compareYmd(t, r!.start) < 0) main = `<strong>Ramadan</strong> ${r!.startConfirmed ? 'begins' : 'is expected to begin'} on ${longDate(r!.start)}`;
+  else main = `<strong>Eid al-Fitr</strong> ${r!.eidConfirmed ? 'is' : 'is expected'} on ${longDate(r!.eid)}${ram.eidPrayer ? ` · Eid prayer ${esc(ram.eidPrayer)}` : ''}`;
+  const extras: string[] = [];
+  if (day && ram.taraweeh) extras.push(`Taraweeh ${esc(ram.taraweeh)}`);
+  if (ram.zakatFitr && !isEid(r, t)) extras.push(`Zakat-ul-Fitr ${esc(ram.zakatFitr)}`);
+  return `<div class="ram-line">${main}${extras.length ? `<small>${extras.join(' · ')}</small>` : ''}</div>`;
+}
+
+const compareYmd = (a: Ymd, b: Ymd) => a.y - b.y || a.m - b.m || a.d - b.d;
 
 export function renderToday(pub: Published, root: string): string {
   const t = today();
@@ -46,6 +67,7 @@ export function renderToday(pub: Published, root: string): string {
     </div>
     <div class="next" id="next"></div>
   </div>
+  ${ramadanLine(pub, t, row)}
   <div class="pr-list">${rows}</div>
   ${kh}
   ${row.beforeAdhan.isha ? '<div class="note">* Summer: Isha adhan and jamaat are fixed.</div>' : ''}

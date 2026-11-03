@@ -20,6 +20,10 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .tv-date { font-family: var(--head); font-size: 4vh; font-weight: 500; }
 .tv-hijri { font-size: 2.8vh; color: var(--gold-soft); }
 .tv-hijri [lang='ar'] { font-family: var(--ar); font-size: 2.9vh; margin-left: 1vw; }
+.tv-ram { margin-top: 1.5vh; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6vh 1.6vw; padding: 1.4vh 2vw; border-radius: 1.5vh; background: rgb(201 162 74 / 0.16); border-left: 0.5vw solid var(--gold); font-size: 2.6vh; }
+.tv-ram strong { font-family: var(--head); font-size: 3.6vh; color: var(--gold-soft); }
+.tv-ram b { font-weight: 700; color: #fff; }
+.tv-ram span { color: rgb(255 255 255 / 0.85); white-space: nowrap; }
 .tv-next { margin-top: 2.5vh; background: rgb(255 255 255 / 0.08); border: 0.25vh solid var(--gold); border-radius: 2vh; padding: 2vh 2.4vw; line-height: 1.15; }
 .tv-next small { display: block; font-size: 2.2vh; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
 .tv-next strong { font-family: var(--head); font-size: 6vh; display: block; }

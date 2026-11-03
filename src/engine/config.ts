@@ -73,9 +73,33 @@ export interface MosqueInfo {
   announcement: string;
 }
 
+/**
+ * Ramadan details. Dates are "YYYY-MM-DD" or empty. The start is the first
+ * day of fasting; until it is confirmed the pages say "subject to the
+ * sighting of the moon". Eid is the day after the last fast; when empty,
+ * 30 days are assumed. Everything here is editable in Settings and takes
+ * effect on the website and TV as soon as it is published.
+ */
+export interface RamadanInfo {
+  start: string;
+  startConfirmed: boolean;
+  eid: string;
+  eidConfirmed: boolean;
+  /** Eid prayer time(s) as text, e.g. "8:00 am and 9:30 am". */
+  eidPrayer: string;
+  eidVenue: string;
+  /** Zakat-ul-Fitr amount as text, e.g. "€10 per person". */
+  zakatFitr: string;
+  /** Taraweeh time as text; shown on the website and TV only. */
+  taraweeh: string;
+  /** Extra line printed on the Ramadan timetable (optional). */
+  note: string;
+}
+
 export interface Config {
   version: 1;
   mosque: MosqueInfo;
+  ramadan: RamadanInfo;
   rules: Record<JamaatPrayer, Rule>;
   khutbah: Period[];
   hijriOffset: number; // days, added to the Umm al-Qura (Saudi) date
@@ -122,6 +146,10 @@ export const DEFAULT_CONFIG: Config = {
     { from: '10-01', time: '13:30' },
     { from: 'summer-end', time: '13:20' },
   ],
+  ramadan: {
+    start: '', startConfirmed: false, eid: '', eidConfirmed: false,
+    eidPrayer: '', eidVenue: '', zakatFitr: '', taraweeh: '', note: '',
+  },
   hijriOffset: 0,
   showHijri: true,
 };
@@ -140,6 +168,7 @@ export function normaliseConfig(raw: unknown): Config {
     ...r,
     version: 1,
     mosque: { ...base.mosque, ...(r.mosque ?? {}), qrs: Array.isArray(r.mosque?.qrs) ? r.mosque.qrs : base.mosque.qrs },
+    ramadan: { ...base.ramadan, ...(r.ramadan ?? {}) },
     rules: { ...base.rules, ...(r.rules ?? {}) },
     khutbah: Array.isArray(r.khutbah) ? r.khutbah : base.khutbah,
   };
