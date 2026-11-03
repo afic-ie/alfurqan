@@ -4,6 +4,7 @@ import '../styles/fonts';
 import '../styles/app.css';
 import '../styles/site.css';
 import { loadPublished } from '../site/data';
+import { registerPwa } from '../site/pwa';
 import { icon, mountShell } from '../site/layout';
 import { renderToday, startCountdown } from '../site/today';
 import { MONTH_NAMES, today } from '../engine/time';
@@ -57,3 +58,4 @@ document.addEventListener('click', (e) => {
   if (a === 'print') window.print();
 });
 render();
+registerPwa(root);

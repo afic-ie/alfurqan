@@ -27,6 +27,14 @@ republishes the site within a couple of minutes.
 Edits are stored per browser. On a new computer, Settings → **Load the
 published version** starts you from what is live.
 
+## Install as an app (PWA)
+
+The site is a progressive web app: on a phone, use the browser's **Add to
+Home Screen** (iPhone: Share → Add to Home Screen; Android: the install
+prompt or ⋮ → Install app). It opens full screen with the mosque icon, and
+every page keeps working without internet once it has been opened once.
+New versions are picked up automatically on the next online visit.
+
 ## The TV display (`/tv/`)
 
 Shows the clock, date (English and Hijri), the five prayers with adhan and

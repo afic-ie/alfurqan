@@ -11,6 +11,7 @@ import { renderMonth } from './ui/page';
 import { renderSettings } from './ui/settings';
 import { downloadJson, hasSaved, load, readImageFile, readJsonFile, save, type Saved } from './ui/store';
 import { loadPublished } from './site/data';
+import { registerPwa } from './site/pwa';
 import { getToken, publish, PublishError, setToken, TARGET, TOKEN_HELP_URL } from './site/publish';
 
 // ---------- state ----------
@@ -389,3 +390,4 @@ document.addEventListener('keydown', (e) => {
 });
 
 renderPages();
+registerPwa('../');
