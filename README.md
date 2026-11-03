@@ -126,8 +126,8 @@ start until Eid, and the TV checks for changes every five minutes in that period
 Settings → **Hadith on the TV display** switches on a rotation of short hadith
 (Arabic, English, reference and grading) from `src/data/hadith.json`, sourced
 from Sahih al-Bukhari, Sahih Muslim, at-Tirmidhi and Abu Dawud with Sunnah.com
-references. Nothing is shown until the list has been checked and *reviewed by the
-imam* is ticked. One hadith appears for the set number of seconds at the start of
+references, and more can be added, edited or removed in the same panel. It is
+on by default and can be switched off there. One hadith appears for the set number of seconds at the start of
 every interval (default every 15 minutes for 30 seconds), never within the quiet
 window around a jamaat (default 10 minutes before to 20 after), around the
 Jumu'ah khutbah, or while the jamaat screen is up. Individual hadith can be

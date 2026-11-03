@@ -385,7 +385,16 @@ app.addEventListener('click', (e) => {
     state.config.hadith.hidden = [...hidden];
     persist();
     const sum = drawer.querySelector('.hadith-list summary');
-    if (sum) sum.textContent = `${ALL_HADITH.length - hidden.size} of ${ALL_HADITH.length} hadith shown · open to choose`;
+    if (sum) sum.textContent = `${ALL_HADITH.filter((h) => !hidden.has(h.id)).length} of ${ALL_HADITH.length} built-in hadith shown · open to choose`;
+  }
+  else if (a === 'hadith-add') {
+    state.config.hadith.custom.push({ id: `custom-${Date.now().toString(36)}`, ar: '', en: '', ref: '', grade: '' });
+    persist(); renderDrawer();
+    drawer.querySelector<HTMLTextAreaElement>('.custom-hadith:last-child textarea')?.focus();
+  }
+  else if (a === 'hadith-del') {
+    const h = state.config.hadith.custom[idx];
+    if (h && (!(h.ar || h.en) || confirm('Remove this hadith?'))) { state.config.hadith.custom.splice(idx, 1); persist(); renderDrawer(); }
   }
   else if (a === 'clear-logo') { state.config.mosque.logo = ''; refresh(); }
   else if (a === 'logo-default') { state.config.mosque.logo = 'builtin:logo'; refresh(); }

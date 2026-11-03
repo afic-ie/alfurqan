@@ -1,8 +1,7 @@
 // Hadith rotation for the TV display: which hadith to show and when.
 //
 // A curated list lives in src/data/hadith.json (Arabic, English, reference
-// and grading). Nothing is shown until Settings → Hadith is switched on AND
-// marked as reviewed. A hadith appears for `showSec` seconds at the start of
+// and grading); more can be added in Settings. When switched on, a hadith appears for `showSec` seconds at the start of
 // every `everyMin`-minute slot, except in a quiet window around each jamaat
 // (`quietBefore` minutes before to `quietAfter` after), around the Jumu'ah
 // khutbah, and while the jamaat screen is up. Slots rotate through the list
@@ -26,10 +25,14 @@ export interface Hadith {
 
 export const ALL_HADITH: Hadith[] = data as Hadith[];
 
-/** The hadith eligible today: not hidden in Settings; Ramadan ones only in Ramadan. */
+/** The hadith eligible today: built-in and custom, not hidden in Settings;
+ *  Ramadan ones only in Ramadan; custom entries need Arabic or English text. */
 export function hadithList(config: Config, inRamadan: boolean): Hadith[] {
   const hidden = new Set(config.hadith.hidden);
-  return ALL_HADITH.filter((h) => !hidden.has(h.id) && (inRamadan || h.season !== 'ramadan'));
+  const custom: Hadith[] = (config.hadith.custom ?? [])
+    .filter((h) => (h.ar?.trim() || h.en?.trim()) && !hidden.has(h.id))
+    .map((h) => ({ id: h.id, ar: h.ar.trim(), en: h.en.trim(), ref: h.ref.trim(), grade: h.grade.trim(), url: '' }));
+  return [...ALL_HADITH.filter((h) => !hidden.has(h.id) && (inRamadan || h.season !== 'ramadan')), ...custom];
 }
 
 /** True inside the quiet window around a jamaat or the Friday khutbah. */
@@ -46,7 +49,7 @@ export function isQuietTime(config: Config, row: DayRow, nowMin: number): boolea
 /** Which hadith (if any) the TV should show right now. */
 export function hadithNow(config: Config, row: DayRow, date: Ymd, nowMin: number, inRamadan: boolean): Hadith | null {
   const h = config.hadith;
-  if (!h.enabled || !h.approved) return null;
+  if (!h.enabled) return null;
   const every = Math.max(5, h.everyMin);
   const slotStart = Math.floor(nowMin / every) * every;
   if (nowMin - slotStart >= Math.max(5, h.showSec) / 60) return null;
