@@ -9,12 +9,11 @@
   --gold: #c9a24a;         /* borders, ornaments, markers */
   --gold-deep: #9a7a2b;    /* gold text on light backgrounds */
   --gold-soft: #ead9a6;    /* gold text on dark panels */
-  --cream: #fdfbf4;
   --tint: #e6f0ff;         /* jamaat cells */
   --tint-2: #dce9fb;       /* jamaat cells, alternate rows */
   --fri: #eef5ff;          /* Friday rows */
   --fri-j: #d2e4fb;        /* Friday jamaat cells */
-  --paper: #fdfcf7;
+  --paper: #fbfcfe;
   --ink: #16213a;
   --muted: #5f6b84;
   --line: #dde4f0;
@@ -135,7 +134,7 @@ button.icon { width: 34px; height: 34px; padding: 0; font-size: 20px; line-heigh
 .month-en { font-family: var(--head); font-size: 22pt; font-weight: 700; letter-spacing: 0.01em; }
 .month-en span { font-weight: 400; color: var(--gold-soft); }
 .month-hijri { font-size: 9pt; opacity: 0.9; margin-top: 0.8mm; }
-.month-hijri-ar { font-size: 11pt; color: var(--gold-soft); }
+.month-hijri-ar { font-family: var(--ar-brand); font-size: 10.5pt; font-weight: 700; color: var(--gold-soft); letter-spacing: 0.02em; }
 
 .rule { display: flex; align-items: center; gap: 2mm; margin: 2.2mm 1.2mm 1.6mm; }
 .rule::before, .rule::after { content: ''; flex: 1; height: 0.3mm; background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent); }
