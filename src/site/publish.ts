@@ -20,7 +20,7 @@ function detectTarget(): { owner: string; repo: string } {
   const m = /^([a-z0-9-]+)\.github\.io$/i.exec(location.hostname);
   const repo = location.pathname.split('/').filter(Boolean)[0];
   if (m && repo && repo !== 'admin') return { owner: m[1], repo };
-  return { owner: 'saajunaid', repo: 'alfurqan' };
+  return { owner: 'afic-ie', repo: 'alfurqan' };
 }
 export const TARGET = { ...detectTarget(), branch: 'main', path: 'public/data/published.json' };
 const TOKEN_KEY = 'alfurqan.timetable.github-token';

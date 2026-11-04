@@ -1,7 +1,7 @@
 # Masjid Al-Furqan – prayer timetable app
 
 Manages and publishes the prayer timetable for Masjid Al-Furqan (Limerick).
-Live at <https://saajunaid.github.io/alfurqan/>.
+Live at <https://afic-ie.github.io/alfurqan/>.
 
 | Page | What it is |
 |---|---|
@@ -47,7 +47,7 @@ cached on the device after the first load. It checks for newly published
 data every 30 minutes (when online) and reloads itself at 03:30 each day.
 
 **Android box setup:** install a kiosk browser (e.g. Fully Kiosk Browser,
-free), set its start URL to `https://saajunaid.github.io/alfurqan/tv/`, turn on
+free), set its start URL to `https://afic-ie.github.io/alfurqan/tv/`, turn on
 "start on boot", "keep screen on" and "fullscreen". Tap the screen once to go
 full screen in an ordinary browser. The box must keep the correct time, so
 set its time zone to Dublin and leave automatic time on if it has internet.
@@ -167,7 +167,7 @@ any kiosk browser with a start URL and autostart will do.
 2. Install Fully Kiosk Browser from the Play Store, or the APK from
    fully-kiosk.com if the store on the box does not list it.
 3. In Fully's settings set the **Start URL** to
-   `https://saajunaid.github.io/alfurqan/tv/`.
+   `https://afic-ie.github.io/alfurqan/tv/`.
 4. Turn on: Autostart on boot, Keep screen on, Fullscreen mode, Hide
    navigation bar, Auto reload on network reconnect; set the screen-off timer
    to never. In the box's own settings set display sleep to never and switch
