@@ -44,7 +44,7 @@ body.tv-body { font-family: var(--en); color: var(--ink); background: var(--patt
 .tv-adhan { font-size: 5.6vh; font-weight: 500; opacity: 0.9; }
 .tv-jamaat { font-family: var(--head); font-size: 6.6vh; font-weight: 700; color: #fff; }
 .tv-row.is-next .tv-jamaat { color: var(--gold-soft); }
-.tv-sun { font-size: 2.4vh; color: rgb(255 255 255 / 0.7); padding: 0 2vw 0.8vh; margin-top: -1vh; }
+.tv-sun { font-size: 2.4vh; color: rgb(255 255 255 / 0.7); padding: 0.6vh 2vw 0.8vh; }
 .tv-foot { display: flex; flex-wrap: wrap; gap: 1vh 2.5vw; margin-top: 2.5vh; padding: 0 2vw; font-size: 2.8vh; color: var(--gold-soft); font-weight: 600; }
 
 .tv-ticker { position: fixed; left: 0; right: 0; bottom: 0; background: var(--gold); color: var(--navy-deep); font-family: var(--head); font-weight: 700; font-size: 3vh; padding: 1.2vh 0; white-space: nowrap; overflow: hidden; }
